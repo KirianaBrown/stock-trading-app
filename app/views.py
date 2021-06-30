@@ -6,5 +6,4 @@ load_dotenv()
 
 @app.route("/")
 def index():
-  # secret = os.environ.get("SECRET")
   return f'hello world - testing link'
