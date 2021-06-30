@@ -16,18 +16,12 @@ class Config(object):
   SESSION_COOKIE_SECURE = True
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-  SQLALCHEMY_DATABASE_URI = ''
+  SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
 class ProductConfig(Config):
   pass
 
 class DevelopmentConfig(Config):
   DEBUG: True
-  # Production Database
-  DB_NAME = 'gw_portal'
-  DB_USERNAME = 'postgres'
-  DB_PASSWORD = 'password'
 
   SESSION_COOKIE_SECURE = False
-
-  SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost/gw_portal'
