@@ -5,12 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kb Trader</title>
+    <title>{% block title %} {% endblock %}</title>
     {% assets "all_css" %}
-    <link rel="stylesheet" href="{{ ASSET_URL }}"> {% endassets %} </head>
+    <link rel="stylesheet" href="{{ ASSET_URL }}"> {% endassets %}
+    <link rel="icon" type="image/ico" href="{{ url_for('static', filename='img/logo.ico')}}">
+</head>
 
 <body>
-    <h1> Kb Stock Trader App </h1>
+    <header class="header">
+        <div class="header-logo">
+            <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Kb Trader Logo" class="header-logo--img">
+            <h1>Kb Trader</h1>
+        </div>
+        <nav class="header-nav">
+            <ul class="header-nav--items">
+                <li class="header-nav--item">
+                    <a href="#" class="header-nav--item_link">About</a>
+                </li>
+                <li class="header-nav--item">
+                    <a href="#" class="header-nav--item_link">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block main %} {%endblock%}
+    <footer>
+        <p>Footer details</p>
+    </footer>
 </body>
 
 </html>

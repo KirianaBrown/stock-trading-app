@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="102px" height="92px" viewBox="0 0 102 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>1635991151543238897</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#1FC9F2" offset="0%"></stop>
+            <stop stop-color="#EE67BD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#20C9F2" offset="0%"></stop>
+            <stop stop-color="#E46EC2" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#1FCAF2" offset="0%"></stop>
+            <stop stop-color="#ED68BD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop-View" transform="translate(-541.000000, -873.000000)">
+            <g id="1635991151543238897" transform="translate(591.000000, 920.000000) rotate(36.000000) translate(-591.000000, -920.000000) translate(548.000000, 877.000000)">
+                <polygon id="Path" stroke="url(#linearGradient-1)" stroke-width="8" points="43 0 0 21.5 43 43 86 21.5"></polygon>
+                <polyline id="Path" stroke="url(#linearGradient-2)" stroke-width="5" points="0 64 43 86 86 64"></polyline>
+                <polyline id="Path" stroke="url(#linearGradient-3)" stroke-width="7" points="0 43 43 65 86 43"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
