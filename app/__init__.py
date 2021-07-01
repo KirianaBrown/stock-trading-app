@@ -1,6 +1,8 @@
 # App constructor where we init our new app
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_assets import Environment, Bundle
+from .util.assets import bundles
 
 app = Flask(__name__)
 
@@ -11,6 +13,9 @@ else:
   print('Config: Development')
 
 db = SQLAlchemy(app)
+
+assets = Environment(app)
+assets.register(bundles)
 
 from app import views
 
