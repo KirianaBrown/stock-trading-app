@@ -1,0 +1,21 @@
+.animate-float {
+    animation-name: float;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes float {
+    0% {
+        // transform: translateY(-10px);
+        transform: translate3d(-10px, -10px, 0px);
+    }
+    50% {
+        // transform: translateY(10px);
+        transform: translate3d(10px, 10px, 0px);
+    }
+    100% {
+        // transform: translateY(-10px);
+        transform: translate3d(-10px, -10px, 0px);
+    }
+}

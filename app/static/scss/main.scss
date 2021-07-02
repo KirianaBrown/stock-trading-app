@@ -1,2 +1,7 @@
-@import './base/variables';
-@import './base/base';
+@import './base/_variables.scss';
+@import './base/_base.scss';
+@import './base/animation';
+@import './components/button';
+@import './layout/header';
+@import './layout/footer';
+@import './views/index';

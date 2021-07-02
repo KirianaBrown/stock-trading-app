@@ -9,5 +9,28 @@ html {
 }
 
 body {
-    background-color: hotpink;
+    background-color: $color-blue-darkest;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $color-white-light;
+    min-height: 100vh;
+    letter-spacing: 1.1px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.body-wrapper {
+    // border: orange solid 2px;
+    // padding: 2rem;
+    // margin: 1rem;
+    min-height: 88vh;
+}
+
+.color-blue {
+    color: $color-blue-main;
+    font-weight: 700;
+    font-style: bold;
+    font-size: 1.8rem;
 }

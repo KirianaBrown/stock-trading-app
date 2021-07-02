@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-logo {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        &--img {
+            height: 4rem;
+            width: 4rem;
+            padding: .5rem;
+        }
+        &--name {
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+    }
+    &-nav {
+        padding: 1rem;
+        &--items {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+        }
+        &--item {
+            margin-left: 1rem;
+            &_link {
+                display: inline-block;
+            }
+        }
+    }
+}

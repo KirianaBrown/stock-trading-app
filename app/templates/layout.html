@@ -15,22 +15,48 @@
     <header class="header">
         <div class="header-logo">
             <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Kb Trader Logo" class="header-logo--img">
-            <h1>Kb Trader</h1>
+            <h1 class="header-logo--name">KB Trader</h1>
         </div>
         <nav class="header-nav">
             <ul class="header-nav--items">
                 <li class="header-nav--item">
-                    <a href="#" class="header-nav--item_link">About</a>
+                    <a href="#" class="header-nav--item_link btn-tertiary">
+                     Register
+                    </a>
                 </li>
                 <li class="header-nav--item">
-                    <a href="#" class="header-nav--item_link">Login</a>
+                    <a href="#" class="header-nav--item_link btn-primary">
+                     Login
+                    </a>
                 </li>
             </ul>
         </nav>
     </header>
-    {% block main %} {%endblock%}
-    <footer>
-        <p>Footer details</p>
+    <div class="body-wrapper">
+        {% block main %} {%endblock%}
+    </div>
+    <footer class="footer">
+        <img src="{{url_for('static', filename='img/logo.svg')}}" class='footer-image'>
+        <h6 class='footer-name'>KB Trader</h6>
+        <div class="footer-container">
+            <div class="footer-container-left">
+                <ul class='footer-list'>
+                    <li>About</li>
+                    <li>Settings</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div class="footer-container-middle">
+                KB Trader &copy;2021
+            </div>
+            <div class="footer-container-right">
+                <ul class='footer-list footer-list-right'>
+                    <li>Facebook</li>
+                    <li>LinkedIn</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
     </footer>
 </body>
 

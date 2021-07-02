@@ -1,0 +1,42 @@
+.footer {
+    width: 100%;
+    padding: 1rem;
+    height: 40vh;
+    background-color: $color-black-darkest;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &-image {
+        height: 10rem;
+    }
+    &-name {
+        color: $color-white-light;
+        font-size: 4rem;
+        margin-top: 2rem;
+    }
+    &-container {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        justify-content: space-evenly;
+        margin-top: 4rem;
+        &-left {
+            margin: 2rem;
+        }
+        &-middle {
+            margin: 2rem;
+        }
+        &-right {
+            margin: 2rem;
+        }
+    }
+    &-list {
+        list-style-type: none;
+        display: flex;
+        li {
+            margin: 0rem 1rem;
+        }
+    }
+}
