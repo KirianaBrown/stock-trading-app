@@ -18,10 +18,13 @@ class Config(object):
 
   SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 
-class ProductConfig(Config):
+class ProductionConfig(Config):
   pass
 
 class DevelopmentConfig(Config):
   DEBUG: True
-
+  # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+  # SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost/stock_trader'
+  SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost/gw_portal'
+  SQLALCHEMY_TRACK_MODIFICATIONS = False
   SESSION_COOKIE_SECURE = False
