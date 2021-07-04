@@ -12,5 +12,4 @@ load_dotenv()
 
 @app.route("/")
 def index():
-  database = os.environ.get('DATABASE_URL')
-  return f'db: {database}'
+  return render_template('/index.html')

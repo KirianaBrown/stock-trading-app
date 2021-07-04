@@ -14,7 +14,7 @@ else:
   app.config.from_object('config.DevelopmentConfig')
   print('Config: Development')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:password@localhost:5432/stock_trader"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:password@localhost:5432/stock_trader"
 
 # init db
 db = SQLAlchemy(app)
