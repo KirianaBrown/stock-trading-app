@@ -18,11 +18,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:password@localhos
 
 # init db
 db = SQLAlchemy(app)
-
 migrate = Migrate(app, db)
 
 db.init_app(app)
-
 
 assets = Environment(app)
 assets.register(bundles)

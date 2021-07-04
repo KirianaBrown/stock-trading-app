@@ -1,6 +1,7 @@
 import os
 from app import app
 from flask import Flask, render_template
+from .models import db, User
 
 from dotenv import load_dotenv
 load_dotenv()

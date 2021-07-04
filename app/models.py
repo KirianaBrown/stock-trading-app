@@ -1,13 +1,21 @@
 from . import app, db
 
-class Test(db.Model):
-  __tablename__ = 'testing'
-  id = db.Column(db.Integer, primary_key=True)
-  username = db.Column(db.String(64), unique=True, nullable=False)
-  hash = db.Column(db.Text, nullable=False)
-  balance = db.Column(db.Integer)
+class User(db.Model):
+  __tablename__ = 'users'
+  id = db.Column(
+    db.Integer,
+    primary_key=True
+  )
+  username = db.Column(
+    db.String(64),
+    nullable=False,
+    unique=True
+  )
+  password = db.Column(
+    db.Text,
+    nullable=False
+  )
 
-  def __init__(self, username, hash, balance):
-    self.username = username
-    self.hash = hash
-    self.balance = balance
+  def __init__(self, username, password):
+    self.username = username,
+    self.password = password
