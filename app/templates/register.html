@@ -6,6 +6,11 @@
 {% block main %}
 <div class="registration">
     <form action="/register" method='POST' class='registration-form'>
+        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+
+        <p class='flash_messages'>{{ message | safe }}</p>
+
+        {% endfor %} {% endif %} {% endwith %}
         <div class="registration-form-header">
             <img class='registration-image' src="{{url_for('static', filename='img/logo.svg')}}" alt="KB Trader Logo">
             <h1 class="registration-form-heading"> Register for new account</h1>

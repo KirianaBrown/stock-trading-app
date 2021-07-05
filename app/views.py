@@ -1,7 +1,15 @@
 import os
+
+from flask.helpers import url_for
 from app import app
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request, session, flash, abort
+from flask_session import Session
+# Werkzeug security
+from werkzeug.security import check_password_hash, generate_password_hash
 from .models import db, User
+# Helper Functions
+from .helpers import check_registration_valid
+
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -19,4 +27,9 @@ def register():
   if request.method == 'GET':
     return render_template('/register.html')
   else:
-    return 'POST register'
+    # 1. get form data
+    username = request.form.get('username')
+    password = request.form.get('password')
+
+    flash(check_registration_valid(username, password))
+    return redirect(request.url)
