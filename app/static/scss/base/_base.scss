@@ -24,6 +24,9 @@ a {
 .body-wrapper {
     min-height: 88vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .color-blue {
@@ -31,4 +34,8 @@ a {
     font-weight: 700;
     font-style: bold;
     font-size: 1.8rem;
+}
+
+.highlight-link {
+    color: $color-blue-highlight;
 }

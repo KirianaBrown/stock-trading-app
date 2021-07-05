@@ -5,18 +5,23 @@
 <!-- Main Content -->
 {% block main %}
 <div class="registration">
-    <h1 class="registration-heading"> Register for new account</h1>
     <form action="/register" method='POST' class='registration-form'>
+        <div class="registration-form-header">
+            <img class='registration-image' src="{{url_for('static', filename='img/logo.svg')}}" alt="KB Trader Logo">
+            <h1 class="registration-form-heading"> Register for new account</h1>
+        </div>
         <div class="registration-form-group">
-            <input type='text' placeholder='username' name='username' class="registration-form-input">
+            <label for='username' class='registration-form-label'>Username</label>
+            <input type='text' placeholder='username' name='username' id='username' class="registration-form-input">
         </div>
         <div class=" registration-form-group ">
-            <p>Password must be 8 digits long</p>
-            <input type='password' name='password' placeholder='Password' class="registration-form-input">
+            <label for='password' class='registration-form-label'>Password</label>
+            <input type='password' name='password' placeholder='Password' id='password' class="registration-form-input">
+            <p class='registration-form-text'>Password must be 8 digits long</p>
         </div>
         <div class="registration-form-group ">
             <input type='submit' value='Register' class='btn-primary registration-form-button'>
-            <p>Already have an account? <a href="# ">Login</a> here</p>
+            <p>Already have an account? <a href="# " class='highlight-link'>Login</a> here</p>
         </div>
     </form>
 </div>

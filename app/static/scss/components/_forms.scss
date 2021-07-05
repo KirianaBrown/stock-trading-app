@@ -1,5 +1,61 @@
 .registration {
-    background-color: orange;
-    color: black;
+    // background-color: orange;
     width: 80%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-form {
+        // background-color: $color-black-darkest;
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 4rem;
+        &-header {
+            // background-color: yellow;
+            padding: 2rem 0rem;
+            display: flex;
+            align-items: center;
+            width: 80%;
+            justify-content: center;
+        }
+        &-heading {
+            margin-left: 2rem;
+            font-size: 2.4rem;
+            margin-top: 2rem;
+        }
+        &-group {
+            display: flex;
+            flex-direction: column;
+            padding: .5rem 0rem;
+            // background-color: violet;
+            width: 60%;
+            margin-left: 6rem;
+        }
+        &-label {
+            color: $color-blue-highlight;
+            margin-bottom: .5rem;
+        }
+        &-input {
+            // width: 60%;
+            padding: 1rem;
+            margin: .5rem 0;
+            border-radius: $border-radius;
+            border: none;
+        }
+        &-text {
+            // color: $color-white-light;
+            font-family: inherit;
+            color: #c5c5c5;
+            font-weight: 300;
+        }
+        &-button {
+            width: 30%;
+            margin-top: 2rem;
+            margin-bottom: .5rem;
+        }
+    }
 }
