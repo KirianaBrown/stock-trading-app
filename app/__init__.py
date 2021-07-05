@@ -8,6 +8,9 @@ from .util.assets import bundles
 
 app = Flask(__name__)
 
+assets = Environment(app)
+assets.register(bundles)
+
 if app.config['ENV'] == 'production':
   app.config.from_object('config.ProductionConfig')
 else:
@@ -21,9 +24,6 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 db.init_app(app)
-
-assets = Environment(app)
-assets.register(bundles)
 
 # import views
 from app import views

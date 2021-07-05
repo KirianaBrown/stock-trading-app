@@ -4,5 +4,20 @@
 
 <!-- Main Content -->
 {% block main %}
-<h1> Register for new account</h1>
+<div class="registration">
+    <h1 class="registration-heading"> Register for new account</h1>
+    <form action="/register" method='POST' class='registration-form'>
+        <div class="registration-form-group">
+            <input type='text' placeholder='username' name='username' class="registration-form-input">
+        </div>
+        <div class=" registration-form-group ">
+            <p>Password must be 8 digits long</p>
+            <input type='password' name='password' placeholder='Password' class="registration-form-input">
+        </div>
+        <div class="registration-form-group ">
+            <input type='submit' value='Register' class='btn-primary registration-form-button'>
+            <p>Already have an account? <a href="# ">Login</a> here</p>
+        </div>
+    </form>
+</div>
 {%endblock%}

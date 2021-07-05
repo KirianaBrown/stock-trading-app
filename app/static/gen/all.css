@@ -20,7 +20,8 @@ a {
   color: inherit; }
 
 .body-wrapper {
-  min-height: 88vh; }
+  min-height: 88vh;
+  width: 100%; }
 
 .color-blue {
   color: #2E75DF;
@@ -69,6 +70,11 @@ a {
 
 .btn-tertiary {
   color: #2E75DF; }
+
+.registration {
+  background-color: orange;
+  color: black;
+  width: 80%; }
 
 .header {
   display: flex;
