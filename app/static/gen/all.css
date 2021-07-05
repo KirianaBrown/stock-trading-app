@@ -32,6 +32,10 @@ a {
 .highlight-link {
   color: #67CDE4; }
 
+.flex {
+  display: flex;
+  align-items: center; }
+
 .animate-float {
   animation-name: float;
   animation-timing-function: ease;

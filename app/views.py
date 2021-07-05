@@ -28,8 +28,7 @@ def register():
     return render_template('/register.html')
   else:
     # 1. get form data
-    username = request.form.get('username')
-    username.lower()
+    username = request.form.get('username').lower()
     password = request.form.get('password')
     confirmation = request.form.get('confirmation')
 
@@ -59,4 +58,23 @@ def register():
       flash('Server error adding new user to DB')
       return redirect('/')
 
-    
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+  if request.method == 'GET':
+    return render_template('/login.html')
+  else:
+    # 1. get form data
+    username = request.form.get('username').lower()
+    password = request.form.get('password')
+
+    # 2. validate
+    flash_message = check_registration_valid(username,password)
+    if flash_message:
+      flash(flash_message)
+      return redirect(request.url)
+    return f'username: {username} and password: {password}'
+
+
+
+
+  
