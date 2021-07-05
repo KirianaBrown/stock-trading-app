@@ -29,7 +29,34 @@ def register():
   else:
     # 1. get form data
     username = request.form.get('username')
+    username.lower()
     password = request.form.get('password')
+    confirmation = request.form.get('confirmation')
 
-    flash(check_registration_valid(username, password))
-    return redirect(request.url)
+    # 2. init validation & generate a flash message
+    flash_message = check_registration_valid(username,password, confirmation)
+    if flash_message:
+      flash(flash_message)
+      return redirect(request.url)
+
+    # 3. Check if username already exists in DB
+    if db.session.query(User).filter(User.username == username).count() == 1:
+      flash('Oops username is already taken please try again')
+      return redirect(request.url)
+    
+    # 4. hash password
+    hash = generate_password_hash(password, salt_length=16)
+
+    # 4. Create new user in the db
+    new_user = User(username=username, password=hash)
+
+    try:
+      db.session.add(new_user)
+      db.session.commit()
+      flash('Successfully Registered')
+      return redirect('/')
+    except:
+      flash('Server error adding new user to DB')
+      return redirect('/')
+
+    

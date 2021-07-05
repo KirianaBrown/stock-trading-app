@@ -21,10 +21,7 @@ a {
 
 .body-wrapper {
   min-height: 88vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  width: 100%; }
 
 .color-blue {
   color: #2E75DF;
@@ -76,6 +73,11 @@ a {
 
 .btn-tertiary {
   color: #2E75DF; }
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 .registration {
   width: 80%;
