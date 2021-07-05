@@ -21,6 +21,13 @@
         </div>
         <nav class="header-nav">
             <ul class="header-nav--items">
+                {% if session.user_id %}
+                <li class="header-nav--item">
+                    <a href="/logout" class="header-nav--item_link btn-tertiary">
+                     Logout
+                    </a>
+                </li>
+                {% else %}
                 <li class="header-nav--item">
                     <a href="/register" class="header-nav--item_link btn-tertiary">
                      Register
@@ -31,6 +38,7 @@
                      Login
                     </a>
                 </li>
+                {% endif %}
             </ul>
         </nav>
     </header>

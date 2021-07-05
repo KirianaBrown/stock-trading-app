@@ -61,6 +61,7 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
   if request.method == 'GET':
+    session.clear()
     return render_template('/login.html')
   else:
     # 1. get form data
@@ -72,9 +73,31 @@ def login():
     if flash_message:
       flash(flash_message)
       return redirect(request.url)
-    return f'username: {username} and password: {password}'
 
+    # 3. check user from DB
+    user = User.query.filter_by(username=username).first()
+    if not user:
+      flash('Oops please check your username and try again')
+      return redirect(request.url)
+    
+    if not check_password_hash(user.password, password):
+      flash('Oops wrong password - please try again')
+      return redirect(request.url)
+    
+    session['user_id'] = user.id
+    session['username'] = user.username
 
+    print('successfully logged in - all credentials match!')
+    return redirect('/dashboard')
+
+@app.route('/dashboard')
+def dashboard():
+  return render_template('/dashboard.html')
+
+@app.route('/logout')
+def logout():
+  session.clear()
+  return redirect('/')
 
 
   
