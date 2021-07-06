@@ -117,6 +117,11 @@ def portfolio():
   if request.method == 'GET':
     return render_template('/portfolio.html')
 
+@app.route('/account', methods=['GET', 'POST'])
+def account():
+  if request.method == 'GET':
+    return render_template('/account.html')
+
 
 @app.route('/logout')
 def logout():

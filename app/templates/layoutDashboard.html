@@ -18,6 +18,11 @@
                         <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='portfolio' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
                     </a>
                 </li>
+                <li class="dashboard-list--item">
+                    <a href="/account" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='account' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="dashboard-content">
