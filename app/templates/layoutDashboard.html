@@ -6,21 +6,26 @@
                 <li class="dashboard-list--item">
                     <a href="/dashboard" class='dashboard-list--link'>
                         <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='dashboard' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+
+                        <p {% if active_page=='dashboard' %} class='dashboard-list--text active-link' {% else %} class='dashboard-list--text' {% endif %}>explore</p>
                     </a>
                 </li>
                 <li class="dashboard-list--item">
                     <a href="/quote" class='dashboard-list--link'>
                         <img src="{{url_for('static', filename='/img/dashboard/buy.svg')}}" alt="Dashboard Icon" {% if active_page=='quote' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                        <p {% if active_page=='quote' %} class='dashboard-list--text active-link' {% else %} class='dashboard-list--text' {% endif %}>quote/buy</p>
                     </a>
                 </li>
                 <li class="dashboard-list--item">
                     <a href="/portfolio" class='dashboard-list--link'>
                         <img src="{{url_for('static', filename='/img/dashboard/wallet.svg')}}" alt="Dashboard Icon" {% if active_page=='portfolio' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                        <p {% if active_page=='portfolio' %} class='dashboard-list--text active-link' {% else %} class='dashboard-list--text' {% endif %}>portfolio</p>
                     </a>
                 </li>
                 <li class="dashboard-list--item">
                     <a href="/account" class='dashboard-list--link'>
                         <img src="{{url_for('static', filename='/img/dashboard/account.svg')}}" alt="Dashboard Icon" {% if active_page=='account' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                        <p {% if active_page=='account' %} class='dashboard-list--text active-link' {% else %} class='dashboard-list--text' {% endif %}>account</p>
                     </a>
                 </li>
             </ul>

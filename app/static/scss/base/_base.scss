@@ -13,7 +13,7 @@ body {
     background-color: #0A0A13;
     font-family: Arial, Helvetica, sans-serif;
     color: $color-white-light;
-    min-height: 100vh;
+    height: 100vh;
     letter-spacing: 1.1px;
 }
 
@@ -44,7 +44,10 @@ a {
 }
 
 .active {
-    background-color: $color-blue-main;
-    padding: 1rem;
-    border-radius: $border-radius;
+    border-left: 5px solid $color-blue-main!important;
+}
+
+.active-link {
+    color: $color-blue-main!important;
+    font-weight: 700;
 }

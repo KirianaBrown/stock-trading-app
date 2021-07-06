@@ -12,7 +12,7 @@ body {
   background-color: #0A0A13;
   font-family: Arial, Helvetica, sans-serif;
   color: #D7DBEA;
-  min-height: 100vh;
+  height: 100vh;
   letter-spacing: 1.1px; }
 
 a {
@@ -37,9 +37,11 @@ a {
   align-items: center; }
 
 .active {
-  background-color: #2E75DF;
-  padding: 1rem;
-  border-radius: 5px; }
+  border-left: 5px solid #2E75DF !important; }
+
+.active-link {
+  color: #2E75DF !important;
+  font-weight: 700; }
 
 .animate-float {
   animation-name: float;
@@ -160,7 +162,8 @@ a {
       padding: .5rem; }
     .header-logo--name {
       margin-left: 1rem;
-      font-size: 1rem; }
+      font-size: 1rem;
+      color: #2E75DF; }
   .header-nav {
     padding: 1rem; }
     .header-nav--items {
@@ -181,8 +184,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  display: none; }
+  text-align: center; }
   .footer-image {
     height: 10rem; }
   .footer-name {
@@ -208,31 +210,44 @@ a {
       margin: 0rem 1rem; }
 
 .dashboard {
-  height: 90vh;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   display: grid;
   align-items: center;
   justify-content: center; }
   .dashboard-wrapper {
     height: 100%;
-    overflow: scroll;
-    min-width: 98vw;
+    min-width: 100vw;
     border-radius: 5px;
     display: grid;
-    grid-template-columns: 5% 95%; }
+    grid-template-columns: 8% 92%; }
   .dashboard-nav {
-    border-radius: 5px;
+    border-top-right-radius: 5px;
     text-align: center;
     display: flex;
     flex-direction: column;
     background-color: #0A0A13; }
   .dashboard-list {
-    list-style-type: none; }
+    list-style-type: none;
+    margin-top: 10rem; }
     .dashboard-list--item {
-      margin-top: 4rem; }
+      margin-top: 4rem;
+      opacity: .8; }
+    .dashboard-list--link {
+      font-size: .8rem;
+      display: flex;
+      align-items: center; }
+    .dashboard-list--icon {
+      height: 3.2rem;
+      width: 3.2rem;
+      border-left: 5px solid #0A0A13;
+      padding-left: 10px; }
+    .dashboard-list--text {
+      margin-left: .8rem; }
   .dashboard-content {
-    border-radius: 2rem;
-    background-color: black;
+    border-radius: 5px;
+    background-color: #D7DBEA;
+    color: #20263a;
     padding: 2rem; }
     .dashboard-content--title {
       margin: .5rem 1.2rem; }

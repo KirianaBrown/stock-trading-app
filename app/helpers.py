@@ -25,6 +25,7 @@ def getLogo(symbol):
     api_key_test = os.environ.get('API_KEY_TEST')
     # url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
     url = f'https://sandbox.iexapis.com/stable/stock/market/list/mostactive/?token={api_key_test}'
+    response = requests.get(url)
   except requests.RequestException:
         return None
 
