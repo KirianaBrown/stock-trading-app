@@ -1,0 +1,30 @@
+{% extends '/layout.html' %} {% block main %}
+<div class="dashboard">
+    <div class="dashboard-wrapper">
+        <div class="dashboard-nav">
+            <ul class='dashboard-list'>
+                <li class="dashboard-list--item">
+                    <a href="/dashboard" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='dashboard' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                    </a>
+                </li>
+                <li class="dashboard-list--item">
+                    <a href="/quote" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='quote' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                    </a>
+                </li>
+                <li class="dashboard-list--item">
+                    <a href="#" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" class='dashboard-list--icon'>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="dashboard-content">
+            {% block dashboard%} {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

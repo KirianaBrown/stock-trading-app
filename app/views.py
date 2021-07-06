@@ -105,7 +105,7 @@ def dashboard():
   top8 = session['top10'][2:]
 
 
-  return render_template('/dashboard.html', top8=top8, top2=top2)
+  return render_template('/dashboard-copy.html', top8=top8, top2=top2)
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():
