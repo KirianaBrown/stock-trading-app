@@ -1,3 +1,7 @@
+import os
+import requests
+
+
 def check_registration_valid(username, password, confirmation='none'):
 
   if not username and not password:
@@ -16,3 +20,27 @@ def check_registration_valid(username, password, confirmation='none'):
     if not password == confirmation:
       return 'Oops your confirmation password does not match - please try again'
 
+
+def getTop10():
+  # cloud.iexapis.com
+    # Contact API and convert into python dictionary
+    try:
+        api_key= os.environ.get('API_KEY')
+        url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
+        response = requests.get(url)
+        response.raise_for_staus()
+    except requests.RequestException:
+        return None
+
+    # Parse response
+    try:
+        list = response.json()
+        return {
+            "name": list["companyName"],
+            "price": float(list["latestPrice"]),
+            "symbol": list["symbol"],
+            "changePercentage": float(list['changePercent']),
+            "changeValue": float(list['change'])
+        }
+    except (KeyError, TypeError, ValueError):
+        return None
