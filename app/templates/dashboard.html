@@ -8,13 +8,75 @@
 <div class="dashboard">
     <div class="dashboard-wrapper">
         <div class="dashboard-nav">
-            <h1>nav</h1>
+            <ul class='dashboard-list'>
+                <li class="dashboard-list--item">
+                    <a href="#" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore.svg')}}" alt="Dashboard Icon" class='dashboard-list--icon'>
+                    </a>
+                </li>
+                <li class="dashboard-list--item">
+                    <a href="#" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore.svg')}}" alt="Dashboard Icon" class='dashboard-list--icon'>
+                    </a>
+                </li>
+                <li class="dashboard-list--item">
+                    <a href="#" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore.svg')}}" alt="Dashboard Icon" class='dashboard-list--icon'>
+                    </a>
+                </li>
+            </ul>
         </div>
         <div class="dashboard-content">
-            <h1>content</h1>
+            <h1 class='dashboard-content--title'> Explore </h1>
+            <div class="dashboard-row--top">
+                <div class="card card-large">
+                    <p>card large</p>
+                </div>
+                <div class="card card-med">
+                    <p>card med</p>
+                </div>
+            </div>
+            <div class="dashboard-row--content">
+                <div class="dashboard-cards">
+                    <div class="card card-small">
+                        <img src="{{url_for('static', filename='img/dashboard/explore.svg')}}" alt='symbol'>
+                        <h4>Name of company</h4>
+                        <p>some other information about it</p>
+                        <br>
+                        <div class="card-small--cost">
+                            <div class="card-small--cost_details">
+                                <p>Price</p>
+                                <h6>$38.00</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-small">
+                        <p>card small</p>
+                    </div>
+                    <div class="card card-small">
+                        <p>card small</p>
+                    </div>
+                    <div class="card card-small">
+                        <p>card small</p>
+                    </div>
+                    <div class="card card-small">
+                        <p>card small</p>
+                    </div>
+                    <div class="card card-small">
+                        <p>card small</p>
+                    </div>
+                </div>
+                <div class="dashboard-news">
+                    <h6> Latest News </h6>
+                    <ul class='dashboard-news--list'>
+                        <li class='dashboard-news--item'>news item</li>
+                        <li class='dashboard-news--item'>news item</li>
+                        <li class='dashboard-news--item'>news item</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 
 {% endblock %}

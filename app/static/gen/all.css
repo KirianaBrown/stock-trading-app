@@ -9,7 +9,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #212841;
+  background-color: #101322;
   font-family: Arial, Helvetica, sans-serif;
   color: #E8E8E8;
   min-height: 100vh;
@@ -130,6 +130,31 @@ a {
       margin-top: 2rem;
       margin-bottom: .5rem; }
 
+.card {
+  border-radius: 5px;
+  background-color: orange;
+  padding: 1rem;
+  width: 100%;
+  min-height: 150px;
+  margin: 1rem; }
+  .card-small {
+    max-width: 30%;
+    position: relative; }
+    .card-small--cost {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 1rem;
+      width: 90%; }
+      .card-small--cost_details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+  .card-large {
+    max-width: 65%; }
+  .card-med {
+    max-width: 35%; }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -189,6 +214,64 @@ a {
     display: flex; }
     .footer-list li {
       margin: 0rem 1rem; }
+
+.dashboard {
+  height: 90vh;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center; }
+  .dashboard-wrapper {
+    background-color: #212841;
+    height: 100%;
+    overflow: scroll;
+    min-width: 98vw;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 5% 95%; }
+  .dashboard-nav {
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #101322; }
+  .dashboard-list {
+    list-style-type: none; }
+    .dashboard-list--item {
+      margin-top: 4rem; }
+  .dashboard-content {
+    border-radius: 5px;
+    background-color: #212841;
+    border-left: 1px solid #E8E8E8;
+    border-top: 1px solid #E8E8E8;
+    padding: 2rem; }
+    .dashboard-content--title {
+      margin: .5rem 1.2rem; }
+  .dashboard-row--top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly; }
+  .dashboard-row--content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    width: 100%; }
+  .dashboard-cards {
+    display: flex;
+    flex-wrap: wrap; }
+  .dashboard-news {
+    background-color: olive;
+    margin: 1rem;
+    height: 100%;
+    padding: 1rem; }
+    .dashboard-news--list {
+      list-style-type: none; }
+    .dashboard-news--item {
+      border-radius: 5px;
+      background-color: cadetblue;
+      margin: 1rem 0;
+      padding: 1rem; }
 
 #indexBackground {
   object-fit: cover;
