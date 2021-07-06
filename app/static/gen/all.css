@@ -36,6 +36,11 @@ a {
   display: flex;
   align-items: center; }
 
+.active {
+  background-color: #2E75DF;
+  padding: 1rem;
+  border-radius: 5px; }
+
 .animate-float {
   animation-name: float;
   animation-timing-function: ease;
@@ -140,10 +145,6 @@ a {
   margin: 1rem; }
   .card-small {
     max-width: 30%; }
-  .card-large {
-    max-width: 75%; }
-  .card-med {
-    max-width: 35%; }
 
 .header {
   display: flex;
@@ -228,8 +229,7 @@ a {
   .dashboard-list {
     list-style-type: none; }
     .dashboard-list--item {
-      margin-top: 4rem;
-      opacity: .6; }
+      margin-top: 4rem; }
   .dashboard-content {
     border-radius: 2rem;
     background-color: black;
@@ -258,7 +258,6 @@ a {
       list-style-type: none; }
     .dashboard-news--item {
       border-radius: 5px;
-      background-color: cadetblue;
       margin: 1rem 0;
       padding: 1rem; }
   .dashboard-section-title {
@@ -310,30 +309,35 @@ a {
     box-shadow: 2px 2px 5px 0px #151928;
     display: flex;
     justify-content: space-between;
-    min-height: 200px; }
+    min-height: 200px;
+    background-color: white;
+    padding: 0; }
     .dashboard-card-large--display {
-      background: linear-gradient(to right bottom, #26C7F2, #ED68BD);
+      background-color: #151928;
+      border-left: 10px solid #67CDE4;
       width: 38%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: "Roboto Slab", serif;
-      font-size: 3rem;
+      font-family: inherit;
+      font-size: 3.4rem;
       text-align: center;
-      padding: .5rem;
-      font-weight: bold; }
+      font-weight: bold;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px; }
     .dashboard-card-large--content {
-      width: 60%; }
+      width: 60%;
+      padding: 1rem; }
     .dashboard-card-large--img {
       height: 4rem;
       width: 4rem; }
     .dashboard-card-large--symbol {
-      color: #D7DBEA;
+      color: #151928;
       font-size: 2rem;
       font-weight: 700;
       margin-top: 1rem; }
     .dashboard-card-large--name {
-      color: #c7c7c7a4;
+      color: #211557a4;
       font-weight: 300;
       font-size: 1.6rem;
       margin: 1rem 0rem; }
@@ -366,6 +370,12 @@ a {
 
 .red {
   color: rgba(255, 0, 0, 0.7); }
+
+.med {
+  width: 40%;
+  display: inline-block; }
+  .med-full {
+    width: 90%; }
 
 #indexBackground {
   object-fit: cover;

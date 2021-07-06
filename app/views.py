@@ -107,6 +107,12 @@ def dashboard():
 
   return render_template('/dashboard.html', top8=top8, top2=top2)
 
+@app.route('/quote', methods=['GET', 'POST'])
+def quote():
+  if request.method == 'GET':
+    return render_template('/quote.html')
+
+
 @app.route('/logout')
 def logout():
   session.clear()

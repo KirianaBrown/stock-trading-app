@@ -26,7 +26,7 @@
         list-style-type: none;
         &--item {
             margin-top: 4rem;
-            opacity: .6;
+            // opacity: .6;
         }
     }
     &-content {
@@ -71,7 +71,7 @@
         }
         &--item {
             border-radius: $border-radius;
-            background-color: cadetblue;
+            // background-color: cadetblue;
             margin: 1rem 0;
             padding: 1rem;
         }
@@ -137,33 +137,40 @@
             display: flex;
             justify-content: space-between;
             min-height: 200px;
+            background-color: white;
+            padding: 0;
             &--display {
-                background: linear-gradient(to right bottom, $color-gradient-left, $color-gradient-right);
+                // background: linear-gradient(to right bottom, $color-gradient-left, $color-gradient-right);
+                background-color: $color-black-darkest;
+                border-left: 10px solid $color-blue-highlight;
                 width: 38%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-family: $font-roboto-slab;
-                font-size: 3rem;
+                font-family: inherit;
+                font-size: 3.4rem;
                 text-align: center;
-                padding: .5rem;
                 font-weight: bold;
+                border-top-left-radius: $border-radius;
+                border-bottom-left-radius: $border-radius;
             }
             &--content {
                 width: 60%;
+                padding: 1rem;
             }
             &--img {
                 height: 4rem;
                 width: 4rem;
             }
             &--symbol {
-                color: $color-white-light;
+                // color: $color-white-light;
+                color: $color-black-darkest;
                 font-size: 2rem;
                 font-weight: 700;
                 margin-top: 1rem;
             }
             &--name {
-                color: #c7c7c7a4;
+                color: #211557a4;
                 font-weight: 300;
                 font-size: 1.6rem;
                 margin: 1rem 0rem;
@@ -206,4 +213,12 @@
 
 .red {
     color: rgba(255, 0, 0, .7);
+}
+
+.med {
+    width: 40%;
+    display: inline-block;
+    &-full {
+        width: 90%;
+    }
 }

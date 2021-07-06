@@ -42,3 +42,9 @@ a {
     display: flex;
     align-items: center;
 }
+
+.active {
+    background-color: $color-blue-main;
+    padding: 1rem;
+    border-radius: $border-radius;
+}

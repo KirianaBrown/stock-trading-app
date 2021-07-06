@@ -22,9 +22,9 @@ def check_registration_valid(username, password, confirmation='none'):
 
 def getLogo(symbol):
   try:
-    api_key = os.environ.get('API_KEY')
-    url=f'https://cloud.iexapis.com/stable/stock/{symbol}/logo/?token={api_key}'
-    response = requests.get(url)
+    api_key_test = os.environ.get('API_KEY_TEST')
+    # url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
+    url = f'https://sandbox.iexapis.com/stable/stock/market/list/mostactive/?token={api_key_test}'
   except requests.RequestException:
         return None
 
@@ -40,8 +40,9 @@ def getTop10():
   # cloud.iexapis.com ~ MOST ACTIVE ~
     # Contact API and convert into python dictionary
     try:
-        api_key= os.environ.get('API_KEY')
-        url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
+        api_key_test = os.environ.get('API_KEY_TEST')
+        # url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
+        url = f'https://sandbox.iexapis.com/stable/stock/market/list/mostactive/?token={api_key_test}'
         response = requests.get(url)
         # response.raise_for_status()
     except requests.RequestException:
@@ -51,7 +52,6 @@ def getTop10():
     try:
         list = response.json()
         data = []
-        print(len(list))
 
         for item in range(len(list)):
           data.append({
@@ -60,7 +60,7 @@ def getTop10():
             "img_url": getLogo(list[item]["symbol"]),
             "price": list[item]["latestPrice"],
             "changePercentage": (list[item]["changePercent"] * 100),
-            "changePrice": list[item]["change"]
+            "changePrice": list[item]["change"],
           })
         
         return data
