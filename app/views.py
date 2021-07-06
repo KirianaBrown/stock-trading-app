@@ -8,18 +8,19 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from .models import db, User
 # Helper Functions
-from .helpers import check_registration_valid
+from .helpers import check_registration_valid, getTop10
 
 
 from dotenv import load_dotenv
 load_dotenv()
 
-# Make sure API key is set
-# if not os.environ.get("API_KEY"):
-#     raise RuntimeError("API_KEY not set")
+#Make sure API key is set
+if not os.environ.get("API_KEY"):
+    raise RuntimeError("API_KEY not set")
 
 @app.route("/")
 def index():
+  session.clear()
   return render_template('/index.html')
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -92,7 +93,19 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-  return render_template('/dashboard.html')
+
+  if not session.get('top10'):
+    session['top10'] = getTop10()
+    print('no top10 stored in session')
+  else:
+    print('top 10 was already stored in the session')
+
+  # get top10 "MOST ACTIVE"
+  top2 = session['top10'][:2]
+  top8 = session['top10'][2:]
+
+
+  return render_template('/dashboard.html', top8=top8, top2=top2)
 
 @app.route('/logout')
 def logout():

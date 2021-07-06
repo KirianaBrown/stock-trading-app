@@ -1,25 +1,14 @@
 .card {
     border-radius: $border-radius;
-    background-color: orange;
+    background-color: $color-black-darkest;
+    box-shadow: 5px 5px 10px 0px $color-black-darkest;
     padding: 1rem;
     width: 100%;
     min-height: 150px;
     margin: 1rem;
+    // border-left: 5px solid $color-blue-highlight;
     &-small {
         max-width: 30%;
-        position: relative;
-        &--cost {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            margin: 1rem;
-            width: 90%;
-            &_details {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
     }
     &-large {
         max-width: 65%;

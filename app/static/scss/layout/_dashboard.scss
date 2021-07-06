@@ -56,7 +56,8 @@
         // background-color: violet;
     }
     &-news {
-        background-color: olive;
+        // background-color: olive;
+        border: 1px solid white;
         margin: 1rem;
         height: 100%;
         padding: 1rem;
@@ -70,4 +71,65 @@
             padding: 1rem;
         }
     }
+    &-card {
+        &-small {
+            position: relative;
+            box-shadow: 2px 2px 5px 0px $color-black-darkest;
+            &--img {
+                height: 3rem;
+                width: 3rem;
+            }
+            &--symbol {
+                color: $color-white-light;
+                font-size: 1.4rem;
+                font-weight: 700;
+                margin-top: 1rem;
+            }
+            &--name {
+                color: #c4c4c4;
+                font-weight: 300;
+                font-size: 1rem;
+                margin-top: 1rem;
+            }
+            &--price {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 90%;
+                position: absolute;
+                bottom: 5px;
+                border-top: solid 1px #2b2b5f;
+                padding-top: .5rem;
+                &_title {
+                    font-weight: .8rem;
+                }
+                &_value {
+                    color: $color-blue-highlight;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                }
+            }
+        }
+        &-image {
+            height: 10rem;
+            width: 10rem;
+            &--img {
+                height: 100%;
+                width: 100%
+            }
+        }
+        &-info {
+            &--img {
+                height: 1rem;
+            }
+        }
+    }
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
 }

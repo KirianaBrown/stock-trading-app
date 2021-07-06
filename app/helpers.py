@@ -20,27 +20,49 @@ def check_registration_valid(username, password, confirmation='none'):
     if not password == confirmation:
       return 'Oops your confirmation password does not match - please try again'
 
+def getLogo(symbol):
+  try:
+    api_key = os.environ.get('API_KEY')
+    url=f'https://cloud.iexapis.com/stable/stock/{symbol}/logo/?token={api_key}'
+    response = requests.get(url)
+  except requests.RequestException:
+        return None
+
+  #parse data
+  try:
+    img_url = response.json()
+    return img_url
+  except (KeyError, TypeError, ValueError):
+        return None
+
 
 def getTop10():
-  # cloud.iexapis.com
+  # cloud.iexapis.com ~ MOST ACTIVE ~
     # Contact API and convert into python dictionary
     try:
         api_key= os.environ.get('API_KEY')
         url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
         response = requests.get(url)
-        response.raise_for_staus()
+        # response.raise_for_status()
     except requests.RequestException:
         return None
 
     # Parse response
     try:
         list = response.json()
-        return {
-            "name": list["companyName"],
-            "price": float(list["latestPrice"]),
-            "symbol": list["symbol"],
-            "changePercentage": float(list['changePercent']),
-            "changeValue": float(list['change'])
-        }
+        data = []
+        print(len(list))
+
+        for item in range(len(list)):
+          data.append({
+            "name": list[item]["companyName"],
+            "symbol": list[item]["symbol"],
+            "img_url": getLogo(list[item]["symbol"]),
+            "price": list[item]["latestPrice"],
+            "changePercentage": (list[item]["changePercent"] * 100),
+            "changePrice": list[item]["change"]
+          })
+        
+        return data
     except (KeyError, TypeError, ValueError):
         return None
