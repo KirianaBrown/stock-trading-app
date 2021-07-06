@@ -6,4 +6,50 @@
 {% block title %} Dashboard {% endblock %}
 
 <!-- main content -->
-{% block dashboard %} {% endblock %}
+{% block dashboard %}
+<div class="dash">
+    <div class="dash-row">
+        <div class="dash-left">
+            <div class="dash-summary">
+                <h3 class="dash-heading">Portfolio Summary</h3>
+            </div>
+        </div>
+        <div class="dash-right">
+            <div class="dash-trending">
+                <div class="dash-trending--header">
+                    <h3 class="dash-heading">Trending Stock</h3>
+                    <a href='/explore'><button class='btn-tertiary'>view all</button></a>
+                </div>
+                <table class="dash-trending--table">
+                    <tr class="dash-trending--table_header">
+                        <th class="dash-trending--table_head">#</th>
+                        <th class="dash-trending--table_head">name</th>
+                        <th class="dash-trending--table_head">price/unit</th>
+                        <th class="dash-trending--table_head">change</th>
+                    </tr>
+                    <tr>
+                        <td class="dash-trending--table_data">1</td>
+                        <td class="dash-trending--table_data">MINX version control</td>
+                        <td class="dash-trending--table_data">$109.92</td>
+                        <td class="dash-trending--table_data">+49.00%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="dash-row">
+        <div class="dash-left">
+            <div class="dash-portfolio">
+                <h3 class="dash-heading">Your Portfolio</h3>
+            </div>
+        </div>
+        <div class="dash-right">
+            <div class="dash-chart">
+                <h3 class="dash-heading">Portfolio Summary</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

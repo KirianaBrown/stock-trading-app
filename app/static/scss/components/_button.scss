@@ -30,6 +30,7 @@
     }
     &-tertiary {
         @extend %button;
+        background-color: transparent;
         color: $color-blue-main;
     }
 }

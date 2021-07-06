@@ -89,6 +89,7 @@ a {
   border: 4px solid #2E75DF; }
 
 .btn-tertiary {
+  background-color: transparent;
   color: #2E75DF; }
 
 .wrapper {
@@ -391,3 +392,41 @@ a {
         color: #bbbec2;
         font-style: italic;
         margin-top: 2rem; }
+
+.dash-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  min-height: 40vh;
+  margin-top: 2rem; }
+
+.dash-left {
+  border: solid 1px green; }
+
+.dash-right {
+  border: solid 1px blue; }
+
+.dash-heading {
+  font-weight: 300; }
+
+.dash-trending {
+  height: 100%;
+  width: 100%; }
+  .dash-trending--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2rem; }
+  .dash-trending--table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    border-radius: 5px; }
+    .dash-trending--table_header {
+      background-color: #e9ecef; }
+    .dash-trending--table_head {
+      padding: 1rem; }
+    .dash-trending--table_data {
+      color: inherit;
+      padding: 1rem; }
