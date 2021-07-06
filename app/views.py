@@ -91,8 +91,13 @@ def login():
     print('successfully logged in - all credentials match!')
     return redirect('/dashboard')
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
+  if request.method == 'GET':
+    return render_template('/dashboard-copy.html')
+
+@app.route('/explore')
+def explore():
 
   if not session.get('top10'):
     session['top10'] = getTop10()
@@ -105,7 +110,7 @@ def dashboard():
   top8 = session['top10'][2:]
 
 
-  return render_template('/dashboard-copy.html', top8=top8, top2=top2)
+  return render_template('/explore.html')
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():

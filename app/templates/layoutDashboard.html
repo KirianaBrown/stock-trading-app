@@ -5,9 +5,14 @@
             <ul class='dashboard-list'>
                 <li class="dashboard-list--item">
                     <a href="/dashboard" class='dashboard-list--link'>
-                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='dashboard' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
-
-                        <p {% if active_page=='dashboard' %} class='dashboard-list--text active-link' {% else %} class='dashboard-list--text' {% endif %}>explore</p>
+                        <img src="{{url_for('static', filename='/img/dashboard/dashboard.svg')}}" alt="Dashboard Icon" {% if active_page=='dashboard' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                        <p {% if active_page=='dashboard' %} class='dashboard-list--text active-link' {% else %} class='dashboard-list--text' {% endif %}>dashboard</p>
+                    </a>
+                </li>
+                <li class="dashboard-list--item">
+                    <a href="/explore" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='explore' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
+                        <p {% if active_page=='explore' %} class='dashboard-list--text active-link' {% else %} class='dashboard-list--text' {% endif %}>explore</p>
                     </a>
                 </li>
                 <li class="dashboard-list--item">
