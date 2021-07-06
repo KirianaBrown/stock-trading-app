@@ -1,6 +1,7 @@
 .card {
     border-radius: $border-radius;
     background-color: $color-black-darkest;
+    // background-color: #1F1F33;
     box-shadow: 5px 5px 10px 0px $color-black-darkest;
     padding: 1rem;
     width: 100%;
@@ -11,7 +12,7 @@
         max-width: 30%;
     }
     &-large {
-        max-width: 65%;
+        max-width: 75%;
     }
     &-med {
         max-width: 35%;

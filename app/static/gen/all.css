@@ -9,7 +9,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  background-color: #151928;
+  background-color: #0A0A13;
   font-family: Arial, Helvetica, sans-serif;
   color: #D7DBEA;
   min-height: 100vh;
@@ -141,7 +141,7 @@ a {
   .card-small {
     max-width: 30%; }
   .card-large {
-    max-width: 65%; }
+    max-width: 75%; }
   .card-med {
     max-width: 35%; }
 
@@ -213,7 +213,6 @@ a {
   align-items: center;
   justify-content: center; }
   .dashboard-wrapper {
-    background-color: #1B2136;
     height: 100%;
     overflow: scroll;
     min-width: 98vw;
@@ -225,16 +224,15 @@ a {
     text-align: center;
     display: flex;
     flex-direction: column;
-    background-color: #151928; }
+    background-color: #0A0A13; }
   .dashboard-list {
     list-style-type: none; }
     .dashboard-list--item {
-      margin-top: 4rem; }
+      margin-top: 4rem;
+      opacity: .6; }
   .dashboard-content {
-    border-radius: 5px;
-    background-color: #1B2136;
-    border-left: 1px solid #D7DBEA;
-    border-top: 1px solid #D7DBEA;
+    border-radius: 2rem;
+    background-color: black;
     padding: 2rem; }
     .dashboard-content--title {
       margin: .5rem 1.2rem; }
@@ -263,6 +261,11 @@ a {
       background-color: cadetblue;
       margin: 1rem 0;
       padding: 1rem; }
+  .dashboard-section-title {
+    padding: .5rem;
+    width: 90%;
+    margin-left: 1rem;
+    color: #2E75DF; }
   .dashboard-card-small {
     position: relative;
     box-shadow: 2px 2px 5px 0px #151928; }
@@ -278,7 +281,15 @@ a {
       color: #c4c4c4;
       font-weight: 300;
       font-size: 1rem;
-      margin-top: 1rem; }
+      margin: 1rem 0rem; }
+    .dashboard-card-small--info {
+      padding: .5rem 0rem;
+      font-size: 10px;
+      position: absolute;
+      bottom: 30px; }
+    .dashboard-card-small--icon {
+      height: 1rem;
+      opacity: .7; }
     .dashboard-card-small--price {
       display: flex;
       justify-content: space-between;
@@ -294,20 +305,67 @@ a {
         color: #67CDE4;
         font-size: 1.4rem;
         font-weight: 700; }
-  .dashboard-card-image {
-    height: 10rem;
-    width: 10rem; }
-    .dashboard-card-image--img {
-      height: 100%;
-      width: 100%; }
-  .dashboard-card-info--img {
-    height: 1rem; }
+  .dashboard-card-large {
+    position: relative;
+    box-shadow: 2px 2px 5px 0px #151928;
+    display: flex;
+    justify-content: space-between;
+    min-height: 200px; }
+    .dashboard-card-large--display {
+      background: linear-gradient(to right bottom, #26C7F2, #ED68BD);
+      width: 38%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Roboto Slab", serif;
+      font-size: 3rem;
+      text-align: center;
+      padding: .5rem;
+      font-weight: bold; }
+    .dashboard-card-large--content {
+      width: 60%; }
+    .dashboard-card-large--img {
+      height: 4rem;
+      width: 4rem; }
+    .dashboard-card-large--symbol {
+      color: #D7DBEA;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 1rem; }
+    .dashboard-card-large--name {
+      color: #c7c7c7a4;
+      font-weight: 300;
+      font-size: 1.6rem;
+      margin: 1rem 0rem; }
+    .dashboard-card-large--info {
+      padding: .5rem 0rem;
+      font-size: 16px;
+      position: absolute;
+      bottom: 30px; }
+    .dashboard-card-large--icon {
+      height: 1rem;
+      opacity: .7; }
+    .dashboard-card-large--price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 55%;
+      position: absolute;
+      bottom: 5px;
+      border-top: solid 1px #2b2b5f;
+      padding-top: .5rem; }
+      .dashboard-card-large--price_title {
+        font-weight: 1rem; }
+      .dashboard-card-large--price_value {
+        color: #67CDE4;
+        font-size: 1.4rem;
+        font-weight: 700; }
 
 .green {
-  color: green; }
+  color: rgba(0, 128, 0, 0.7); }
 
 .red {
-  color: red; }
+  color: rgba(255, 0, 0, 0.7); }
 
 #indexBackground {
   object-fit: cover;

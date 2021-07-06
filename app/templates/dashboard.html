@@ -28,31 +28,28 @@
         </div>
         <div class="dashboard-content">
             <h1 class='dashboard-content--title'> Explore </h1>
-            <h5>Featured</h5>
+            <h5 class='dashboard-section-title'>Featured</h5>
             <div class="dashboard-row--top">
                 {% if top2 %}
-                <div class="card card-large">
-                    <div class="dashboard-card-image">
-                        <img src="{{top2[0]['img_url']['url']}}" class='dashboard-card-image--img'>
-                    </div>
-                    <h1>{{top2[0].symbol}}</h1>
-                    <h1>{{top2[0].name}}</h1>
+                <div class="card dashboard-card-large">
+                    <div class="dashboard-card-large--display">Biggest Mover Today</div>
+                    <div class="dashboard-card-large--content">
+                        <img src="{{top2[0]['img_url']['url']}}" class='dashboard-card-large--img'>
+                        <h1 class="dashboard-card-large--symbol">
+                            {{top2[0].symbol}}
+                        </h1>
+                        <h2 class="dashboard-card-large--name">
+                            {{top2[0].name}}
+                        </h2>
+                        {% if top2[0].changePrice > 0.00 %}
+                        <h5 class='green dashboard-card-large--info'>{{top2[0].changePrice}} usd ({{top2[0].changePercentage}}) % <img src="{{url_for('static', filename='img/dashboard/up.svg')}}" alt="up arrow" class='dashboard-card-large--icon'></h5>
+                        {% else %}
+                        <h5 class='red dashboard-card-large--info'>{{top2[0].changePrice}} usd ({{top2[0].changePercentage}}) % <img src="{{url_for('static', filename='img/dashboard/down.svg')}}" alt="down arrow" class='dashboard-card-large--icon'></h5>
+                        {% endif %}
 
-                    <h5>{{top2[0].changePrice}} ({{top2[0].changePercentage}}%)</h5>
-
-
-                    {% if top2[0].changePrice > 0.00 %}
-                    <p>UP</p>
-                    {% else %}
-                    <p>DOWN</p>
-                    {% endif %}
-
-
-                    <br>
-                    <div class="">
-                        <div class="">
-                            <p>Price</p>
-                            <h6>{{top2[0].price}} usd</h6>
+                        <div class="dashboard-card-large--price">
+                            <p class="dashboard-card-large--price_title">Price</p>
+                            <p class="dashboard-card-large--price_value">${{top2[0].price}}</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +76,7 @@
                 </div>
                 {% endif %}
             </div>
-            <h5>Most Active</h5>
+            <h5 class='dashboard-section-title'>Most Active</h5>
             <div class="dashboard-row--content">
                 <div class="dashboard-cards">
                     {% if top8 %} {% for item in top8 %}
@@ -89,16 +86,15 @@
                         <h2 class='dashboard-card-small--name'>{{item.name}}</h2>
 
                         {% if item.changePrice > 0.00 %}
-                        <h5 class='green'>{{item.changePrice}} usd ({{item.changePercentage}}) % <img src="{{url_for('static', filename='img/dashboard/up.svg')}}" alt="up arrow" class='dashboard-card-info--img'></h5>
+                        <h5 class='green dashboard-card-small--info'>{{item.changePrice}} usd ({{item.changePercentage}}) % <img src="{{url_for('static', filename='img/dashboard/up.svg')}}" alt="up arrow" class='dashboard-card-small--icon'></h5>
 
                         {% else %}
-                        <h5 class='red'>{{item.changePrice}} usd ({{item.changePercentage}}) % <img src="{{url_for('static', filename='img/dashboard/down.svg')}}" alt="down arrow" class='dashboard-card-info--img'></h5>
+                        <h5 class='red dashboard-card-small--info'>{{item.changePrice}} usd ({{item.changePercentage}}) % <img src="{{url_for('static', filename='img/dashboard/down.svg')}}" alt="down arrow" class='dashboard-card-small--icon'></h5>
 
                         {% endif %}
                         <div class="dashboard-card-small--price">
                             <p class="dashboard-card-small--price_title">Price</p>
                             <p class="dashboard-card-small--price_value">${{item.price}}</p>
-
                         </div>
                     </div>
                     {% endfor %} {% endif %}

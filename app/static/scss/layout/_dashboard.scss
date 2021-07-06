@@ -5,7 +5,8 @@
     align-items: center;
     justify-content: center;
     &-wrapper {
-        background-color: $color-blue-darkest;
+        // background-color: $color-blue-darkest;
+        // background-color: #0F0F19;
         height: 100%;
         overflow: scroll;
         min-width: 98vw;
@@ -18,19 +19,23 @@
         text-align: center;
         display: flex;
         flex-direction: column;
-        background-color: $color-black-darkest;
+        // background-color: $color-black-darkest;
+        background-color: #0A0A13;
     }
     &-list {
         list-style-type: none;
         &--item {
             margin-top: 4rem;
+            opacity: .6;
         }
     }
     &-content {
-        border-radius: $border-radius;
-        background-color: $color-blue-darkest;
-        border-left: 1px solid $color-white-light;
-        border-top: 1px solid $color-white-light;
+        border-radius: 2rem;
+        // background-color: $color-blue-darkest;
+        // background-color: #0F0F19;
+        background-color: black;
+        // border-left: 1px solid $color-white-light;
+        // border-top: 1px solid $color-white-light;
         padding: 2rem;
         &--title {
             margin: .5rem 1.2rem;
@@ -71,6 +76,12 @@
             padding: 1rem;
         }
     }
+    &-section-title {
+        padding: .5rem;
+        width: 90%;
+        margin-left: 1rem;
+        color: $color-blue-main;
+    }
     &-card {
         &-small {
             position: relative;
@@ -89,7 +100,17 @@
                 color: #c4c4c4;
                 font-weight: 300;
                 font-size: 1rem;
-                margin-top: 1rem;
+                margin: 1rem 0rem;
+            }
+            &--info {
+                padding: .5rem 0rem;
+                font-size: 10px;
+                position: absolute;
+                bottom: 30px;
+            }
+            &--icon {
+                height: 1rem;
+                opacity: .7;
             }
             &--price {
                 display: flex;
@@ -110,26 +131,79 @@
                 }
             }
         }
-        &-image {
-            height: 10rem;
-            width: 10rem;
-            &--img {
-                height: 100%;
-                width: 100%
+        &-large {
+            position: relative;
+            box-shadow: 2px 2px 5px 0px $color-black-darkest;
+            display: flex;
+            justify-content: space-between;
+            min-height: 200px;
+            &--display {
+                background: linear-gradient(to right bottom, $color-gradient-left, $color-gradient-right);
+                width: 38%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $font-roboto-slab;
+                font-size: 3rem;
+                text-align: center;
+                padding: .5rem;
+                font-weight: bold;
             }
-        }
-        &-info {
+            &--content {
+                width: 60%;
+            }
             &--img {
+                height: 4rem;
+                width: 4rem;
+            }
+            &--symbol {
+                color: $color-white-light;
+                font-size: 2rem;
+                font-weight: 700;
+                margin-top: 1rem;
+            }
+            &--name {
+                color: #c7c7c7a4;
+                font-weight: 300;
+                font-size: 1.6rem;
+                margin: 1rem 0rem;
+            }
+            &--info {
+                padding: .5rem 0rem;
+                font-size: 16px;
+                position: absolute;
+                bottom: 30px;
+            }
+            &--icon {
                 height: 1rem;
+                opacity: .7;
+            }
+            &--price {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 55%;
+                position: absolute;
+                bottom: 5px;
+                border-top: solid 1px #2b2b5f;
+                padding-top: .5rem;
+                &_title {
+                    font-weight: 1rem;
+                }
+                &_value {
+                    color: $color-blue-highlight;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                }
             }
         }
     }
 }
 
 .green {
-    color: green;
+    color: rgba(0, 128, 0, .7);
 }
 
 .red {
-    color: red;
+    color: rgba(255, 0, 0, .7);
 }
