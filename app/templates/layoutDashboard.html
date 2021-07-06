@@ -14,8 +14,8 @@
                     </a>
                 </li>
                 <li class="dashboard-list--item">
-                    <a href="#" class='dashboard-list--link'>
-                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" class='dashboard-list--icon'>
+                    <a href="/portfolio" class='dashboard-list--link'>
+                        <img src="{{url_for('static', filename='/img/dashboard/explore-white.svg')}}" alt="Dashboard Icon" {% if active_page=='portfolio' %} class='dashboard-list--icon active' {% else %} class='dashboard-list--icon' {% endif %}>
                     </a>
                 </li>
             </ul>

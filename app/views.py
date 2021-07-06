@@ -112,6 +112,12 @@ def quote():
   if request.method == 'GET':
     return render_template('/quote.html')
 
+@app.route('/portfolio', methods=['GET', 'POST'])
+def quote():
+  if request.method == 'GET':
+    return render_template('/portfolio.html')
+
+
 
 @app.route('/logout')
 def logout():
