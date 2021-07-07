@@ -411,7 +411,7 @@ a {
     justify-content: space-between;
     margin-left: 2rem; }
   .dash-trending--table {
-    width: 90%;
+    width: 94%;
     margin: 0 auto;
     text-align: center;
     border: 1px solid #0a0a14;
@@ -426,6 +426,23 @@ a {
     .dash-trending--table_data {
       color: inherit;
       padding: 1rem; }
+  .dash-trending-assets {
+    margin-top: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+    .dash-trending-assets--item {
+      display: flex;
+      border: 1px solid #0a0a14;
+      box-shadow: 2px 2px 10px 0px #0a0a14;
+      margin: 1rem;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 5px; }
+    .dash-trending-assets_name {
+      margin: 0rem 0.8rem; }
 
 .dash-spotlight {
   height: 100%;
@@ -447,6 +464,7 @@ a {
     justify-content: space-evenly;
     margin-bottom: 4rem;
     margin-top: 1rem;
+    border-radius: 5px;
     box-shadow: 2px 2px 10px 0px #0a0a14; }
     .dash-spotlight--content_image {
       padding: 0rem;
@@ -465,7 +483,6 @@ a {
       height: 100%;
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px;
-      background-color: #1B2136;
       padding: 1rem; }
       .dash-spotlight--content_text-symbol {
         color: #67CDE4;
@@ -484,7 +501,6 @@ a {
         align-items: center;
         font-size: 1rem;
         margin-right: 1rem;
-        margin-top: 2rem;
         color: #b3bbd7; }
 
 .dash-portfolio {
@@ -524,3 +540,6 @@ a {
 
 .red {
   color: rgba(243, 42, 42, 0.952); }
+
+.margin {
+  margin: 2rem 0rem; }
