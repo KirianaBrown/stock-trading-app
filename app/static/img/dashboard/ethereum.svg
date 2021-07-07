@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>ethereum-eth</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-View-Copy-7" transform="translate(-201.000000, -203.000000)">
+            <g id="ethereum-eth" transform="translate(201.000000, 203.000000)">
+                <circle id="Oval" fill="#627EEA" cx="18.5" cy="18.5" r="18.5"></circle>
+                <g id="Group" transform="translate(11.000000, 4.000000)" fill="#FFFFFF">
+                    <polygon id="Path" fill-opacity="0.602" points="8.49773333 0 8.49773333 10.3483333 16.9943333 14.2566667"></polygon>
+                    <polygon id="Path" points="8.49773333 0 0 14.2566667 8.49773333 10.3483333"></polygon>
+                    <polygon id="Path" fill-opacity="0.602" points="8.49773333 20.9626667 8.49773333 27.9941667 17 15.8853333"></polygon>
+                    <polygon id="Path" points="8.49773333 27.9941667 8.49773333 20.9615 0 15.8853333"></polygon>
+                    <polygon id="Path" fill-opacity="0.2" points="8.49773333 19.3351667 16.9943333 14.2566667 8.49773333 10.3506667"></polygon>
+                    <polygon id="Path" fill-opacity="0.602" points="0 14.2566667 8.49773333 19.3351667 8.49773333 10.3506667"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

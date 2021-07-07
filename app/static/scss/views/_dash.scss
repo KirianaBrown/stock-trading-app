@@ -59,6 +59,9 @@
         &_name {
             margin: 0rem 0.8rem;
         }
+        &_img {
+            height: 2rem;
+        }
     }
 }
 
@@ -163,7 +166,8 @@
             color: $color-text-dark;
         }
         &-name {
-            color: $color-blue-highlight;
+            // color: $color-blue-highlight;
+            color: #aab4ff;
             font-size: 1.4rem;
         }
         &__minor {
@@ -172,6 +176,14 @@
             font-size: 1rem;
         }
     }
+}
+
+.dash-buy {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    border-radius: $border-radius;
+    background-color: white;
 }
 
 .green {

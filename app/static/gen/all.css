@@ -191,7 +191,8 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  display: none; }
   .footer-image {
     height: 10rem; }
   .footer-name {
@@ -443,6 +444,8 @@ a {
       border-radius: 5px; }
     .dash-trending-assets_name {
       margin: 0rem 0.8rem; }
+    .dash-trending-assets_img {
+      height: 2rem; }
 
 .dash-spotlight {
   height: 100%;
@@ -528,12 +531,19 @@ a {
     .dash-portfolio-table_data {
       color: #3e4975; }
     .dash-portfolio-table-name {
-      color: #67CDE4;
+      color: #aab4ff;
       font-size: 1.4rem; }
     .dash-portfolio-table__minor {
       color: #b3bbd7;
       margin-top: .5rem;
       font-size: 1rem; }
+
+.dash-buy {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: white; }
 
 .green {
   color: rgba(13, 206, 13, 0.7); }
