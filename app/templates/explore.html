@@ -109,136 +109,16 @@
             </div>
         </div>
     </div>
-    <div class="dash-row">
-        <div class="dash-left ">
-            <div class="dash-portfolio ">
-                <div class="dash-trending--header ">
-                    <h3 class="dash-heading ">Your portfolio</h3>
-                    <a href='/explore'><button class='btn-tertiary'>view all</button></a>
-                </div>
-                <div class="dash-portfolio--content ">
-                    <table class='dash-portfolio-table'>
-                        <tr class='dash-portfolio-table__item'>
-                            <td>
-                                <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                            </td>
-                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">MINX version control <br>
-                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data green ">$109.92 <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data green ">+49.00% <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                        </tr>
-                        <tr class='dash-portfolio-table__item'>
-                            <td>
-                                <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                            </td>
-                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">MINX version control <br>
-                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data red ">$109.92 <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data red ">-49.00% <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                        </tr>
-                        <tr class='dash-portfolio-table__item'>
-                            <td>
-                                <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                            </td>
-                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">MINX version control <br>
-                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data green ">$109.92 <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data green ">+49.00% <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
+    <div class="explore-row-full">
+        <div class="explore-section">
+            <div class="explore-section-header">
+                Most Active
             </div>
-        </div>
-        <div class="dash-right">
-            <div class="dash-trending">
-                <div class="dash-trending--header">
-                    <h3 class="dash-heading">Assets</h3>
-                </div>
-                <div class="dash-trending-assets explore-assets">
-                    <div class="dash-trending-assets--item">
-                        <div class="dash-trending-assets_image">
-                            <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
-                        </div>
-                        <div class=" dash-trending-assets_name ">
-                            Bitcoin
-                        </div>
-                        <div class="dash-trending-assets_cost ">
-                            $2000
-                        </div>
-                    </div>
-                    <div class="dash-trending-assets--item">
-                        <div class="dash-trending-assets_image">
-                            <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
-                        </div>
-                        <div class=" dash-trending-assets_name ">
-                            Bitcoin
-                        </div>
-                        <div class="dash-trending-assets_cost ">
-                            $2000
-                        </div>
-                    </div>
-                    <div class="dash-trending-assets--item">
-                        <div class="dash-trending-assets_image">
-                            <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
-                        </div>
-                        <div class=" dash-trending-assets_name ">
-                            Bitcoin
-                        </div>
-                        <div class="dash-trending-assets_cost ">
-                            $2000
-                        </div>
-                    </div>
-                </div>
-                <div class="dash-trending-assets explore-assets">
-                    <div class="dash-trending-assets--item">
-                        <div class="dash-trending-assets_image">
-                            <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
-                        </div>
-                        <div class=" dash-trending-assets_name ">
-                            Bitcoin
-                        </div>
-                        <div class="dash-trending-assets_cost ">
-                            $2000
-                        </div>
-                    </div>
-                    <div class="dash-trending-assets--item">
-                        <div class="dash-trending-assets_image">
-                            <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
-                        </div>
-                        <div class=" dash-trending-assets_name ">
-                            Bitcoin
-                        </div>
-                        <div class="dash-trending-assets_cost ">
-                            $2000
-                        </div>
-                    </div>
-                    <div class="dash-trending-assets--item">
-                        <div class="dash-trending-assets_image">
-                            <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
-                        </div>
-                        <div class=" dash-trending-assets_name ">
-                            Bitcoin
-                        </div>
-                        <div class="dash-trending-assets_cost ">
-                            $2000
-                        </div>
-                    </div>
-                </div>
+            <div class="explore-section-list">
+                <div class="explore-section-list_item">item 1</div>
+                <div class="explore-section-list_item">item 2</div>
+                <div class="explore-section-list_item">item 2</div>
+                <div class="explore-section-list_item">item 2</div>
             </div>
         </div>
     </div>

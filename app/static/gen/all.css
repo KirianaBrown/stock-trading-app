@@ -486,6 +486,8 @@ a {
       height: 100%;
       border-bottom-right-radius: 5px;
       border-top-right-radius: 5px;
+      display: grid;
+      align-items: center;
       padding: 1rem; }
       .dash-spotlight--content_text-symbol {
         color: #67CDE4;
@@ -580,3 +582,26 @@ a {
 
 .margin {
   margin: 2rem 0rem; }
+
+.explore-row-full {
+  width: 98%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 1rem; }
+
+.explore-section {
+  border: 1px solid black;
+  padding: 1rem; }
+  .explore-section-header {
+    font-size: 1.4rem; }
+  .explore-section-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    grid-gap: 1rem;
+    flex-wrap: wrap; }
+    .explore-section-list_item {
+      padding: 1rem;
+      border: 1px solid grey;
+      border-radius: 5px; }

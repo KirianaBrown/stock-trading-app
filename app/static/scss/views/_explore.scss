@@ -1,0 +1,28 @@
+.explore {
+    &-row-full {
+        width: 98%;
+        margin: 0 auto;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+    &-section {
+        border: 1px solid black;
+        padding: 1rem;
+        &-header {
+            font-size: 1.4rem;
+        }
+        &-list {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            align-items: center;
+            grid-gap: 1rem;
+            flex-wrap: wrap;
+            &_item {
+                padding: 1rem;
+                border: 1px solid grey;
+                border-radius: $border-radius;
+            }
+        }
+    }
+}
