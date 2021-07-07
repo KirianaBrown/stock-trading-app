@@ -7,14 +7,24 @@
 
 <!-- main content -->
 {% block dashboard %}
+
 <div class="dash">
     <div class="dash-row">
         <div class="dash-left">
             <div class="dash-summary">
-                <h3 class="dash-heading">Portfolio Summary</h3>
+                <div class="dash-trending--header">
+                    <h3 class="dash-heading">Your Wallet</h3>
+                </div>
+                <div class="dash-summary-container">
+                    <div class="dash-summary-content">
+                        <div class="dash-summary-content_money">$100</div>
+                        <div class="dash-summary-content_title">Your wallet value</div>
+                    </div>
+                    <a href="/account" class='dash-summary-content_action'><button class='btn-primary dash-summary-content_btn'>INVEST NOW</button></a>
+                </div>
             </div>
         </div>
-        <div class="dash-right">
+        <div class="dash-right dash-long">
             <div class="dash-trending">
                 <div class="dash-trending--header">
                     <h3 class="dash-heading">Trending Stock</h3>
@@ -37,7 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="dash-row">
+    <div class="dash-row dash-long">
         <div class="dash-left">
             <div class="dash-portfolio">
                 <div class="dash-trending--header">
@@ -64,13 +74,14 @@
                 </div>
             </div>
         </div>
-        <div class="dash-right">
+        <div class="dash-right  dash-short">
             <div class="dash-chart">
-                <h3 class="dash-heading">Portfolio Summary</h3>
+                <div class="dash-trending--header">
+                    <h3 class="dash-heading">Portfolio Summary</h3>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock %}

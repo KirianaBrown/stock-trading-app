@@ -397,14 +397,8 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  min-height: 40vh;
-  margin-top: 2rem; }
-
-.dash-left {
-  border: solid 1px green; }
-
-.dash-right {
-  border: solid 1px blue; }
+  margin-top: 2rem;
+  min-height: 40vh; }
 
 .dash-heading {
   font-weight: 300; }
@@ -431,6 +425,38 @@ a {
     .dash-trending--table_data {
       color: inherit;
       padding: 1rem; }
+
+.dash-summary {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  min-height: 20vh; }
+  .dash-summary-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; }
+  .dash-summary-content {
+    width: 94%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 4rem; }
+    .dash-summary-content_money {
+      border: 1px solid lemonchiffon;
+      border-radius: 5px;
+      padding: 1rem;
+      font-size: 4rem; }
+    .dash-summary-content_title {
+      font-size: 2rem; }
+    .dash-summary-content_action {
+      width: 94%;
+      margin: 0 auto;
+      text-align: center; }
+    .dash-summary-content_btn {
+      width: 70%; }
 
 .dash-portfolio {
   height: 100%;

@@ -2,7 +2,7 @@ import os
 
 from flask.helpers import url_for
 from app import app
-from flask import Flask, redirect, render_template, request, session, flash, abort
+from flask import Flask, redirect, render_template, request, session, flash, abort, Markup
 from flask_session import Session
 # Werkzeug security
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -94,6 +94,7 @@ def login():
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
   if request.method == 'GET':
+
     return render_template('/dashboard-copy.html')
 
 @app.route('/explore')
