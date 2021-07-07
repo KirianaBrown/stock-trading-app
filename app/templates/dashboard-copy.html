@@ -40,7 +40,28 @@
     <div class="dash-row">
         <div class="dash-left">
             <div class="dash-portfolio">
-                <h3 class="dash-heading">Your Portfolio</h3>
+                <div class="dash-trending--header">
+                    <h3 class="dash-heading">Your portfolio</h3>
+                    <a href='/explore'><button class='btn-tertiary'>view all</button></a>
+                </div>
+                <div class="dash-portfolio--content">
+                    <table class='dash-portfolio-table'>
+                        <tr class='dash-portfolio-table__item'>
+                            <td>
+                                <img src="{{url_for('static', filename='/img/dashboard/buy.svg')}}" alt='stock symbol' class='dash-portfolio-table_img'>
+                            </td>
+                            <td class="dash-portfolio-table_data dash-portfolio-table-name">MINX version control <br>
+                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                            <td class="dash-portfolio-table_data">$109.92 <br>
+                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                            <td class="dash-portfolio-table_data">+49.00% <br>
+                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="dash-right">

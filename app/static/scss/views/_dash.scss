@@ -27,10 +27,11 @@
         margin-left: 2rem;
     }
     &--table {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         text-align: center;
         border: 1px solid #e9ecef;
+        padding: 1rem;
         border-radius: $border-radius;
         &_header {
             background-color: #e9ecef;
@@ -41,6 +42,45 @@
         &_data {
             color: inherit;
             padding: 1rem;
+        }
+    }
+}
+
+.dash-portfolio {
+    height: 100%;
+    width: 100%;
+    &--content {
+        width: 94%;
+        margin: 0 auto;
+    }
+    &-table {
+        width: 100%;
+        &__item {
+            border: 1px solid #e9ecef;
+            border-radius: $border-radius;
+            padding: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 1rem;
+        }
+        &_img {
+            background-color: lemonchiffon;
+            border-radius: 50%;
+            height: 5rem;
+            padding: .5rem;
+        }
+        &_data {
+            color: $color-black-lighter;
+        }
+        &-name {
+            color: $color-blue-darkest;
+            font-size: 1.6rem;
+        }
+        &__minor {
+            color: #e9ecef;
+            margin-top: .5rem;
+            font-size: 1rem;
         }
     }
 }
