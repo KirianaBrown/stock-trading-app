@@ -1,7 +1,7 @@
 .dash {
     &-row {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
         grid-gap: 1rem;
         margin-top: 2rem;
         min-height: 40vh;
@@ -24,11 +24,13 @@
         width: 90%;
         margin: 0 auto;
         text-align: center;
-        border: 1px solid #e9ecef;
+        border: 1px solid #0a0a14;
         padding: 1rem;
         border-radius: $border-radius;
+        box-shadow: 2px 2px 10px 0px #0a0a14;
         &_header {
-            background-color: #e9ecef;
+            background-color: $color-text;
+            color: $color-text-dark;
         }
         &_head {
             padding: 1rem;
@@ -40,7 +42,7 @@
     }
 }
 
-.dash-summary {
+.dash-spotlight {
     height: 100%;
     width: 100%;
     padding: 1rem;
@@ -52,29 +54,60 @@
         justify-content: center;
         height: 100%;
     }
-    &-content {
-        width: 94%;
+    &--content {
+        width: 98%;
+        height: 90%;
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
         margin-bottom: 4rem;
-        &_money {
-            border: 1px solid lemonchiffon;
-            border-radius: $border-radius;
+        margin-top: 1rem;
+        box-shadow: 2px 2px 10px 0px #0a0a14;
+        &_image {
+            padding: 0rem;
+            height: 18rem;
+        }
+        &_img {
+            height: 100%;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom-left-radius: $border-radius;
+            border-top-left-radius: $border-radius;
+        }
+        &_text {
+            color: white;
+            width: 60%;
+            height: 100%;
+            border-bottom-right-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+            background-color: $color-blue-darkest;
             padding: 1rem;
-            font-size: 4rem;
-        }
-        &_title {
-            font-size: 2rem;
-        }
-        &_action {
-            width: 94%;
-            margin: 0 auto;
-            text-align: center;
-        }
-        &_btn {
-            width: 70%;
+            &-symbol {
+                color: $color-blue-highlight;
+                font-size: 2.4rem;
+            }
+            &-name {
+                color: $color-text;
+                font-size: 2rem;
+            }
+            &-description {
+                font-size: 1rem;
+                margin: 1rem 0;
+                color: $color-text;
+                line-height: 1.7;
+            }
+            &-price {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 1rem;
+                margin-right: 1rem;
+                margin-top: 2rem;
+                color: $color-text;
+            }
         }
     }
 }
@@ -85,35 +118,45 @@
     &--content {
         width: 94%;
         margin: 0 auto;
+        padding-top: 1.4rem;
     }
     &-table {
         width: 100%;
         &__item {
-            border: 1px solid #e9ecef;
+            // border: 1px solid $color-text-dark;
             border-radius: $border-radius;
             padding: 1.4rem;
             display: flex;
             align-items: center;
             justify-content: space-around;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 2px 2px 10px 0px #0a0a14;
         }
         &_img {
-            background-color: lemonchiffon;
+            background-color: $color-text;
             border-radius: 50%;
             height: 5rem;
             padding: .5rem;
         }
         &_data {
-            color: $color-black-lighter;
+            color: $color-text-dark;
         }
         &-name {
-            color: $color-blue-darkest;
-            font-size: 1.6rem;
+            color: $color-blue-highlight;
+            font-size: 1.4rem;
         }
         &__minor {
-            color: #e9ecef;
+            color: $color-text;
             margin-top: .5rem;
             font-size: 1rem;
         }
     }
+}
+
+.green {
+    color: rgba(13, 206, 13, 0.7);
+}
+
+.red {
+    color: rgba(243, 42, 42, 0.952);
 }

@@ -11,17 +11,28 @@
 <div class="dash">
     <div class="dash-row">
         <div class="dash-left">
-            <div class="dash-summary">
+            <div class="dash-spotlight">
                 <div class="dash-trending--header">
-                    <h3 class="dash-heading">Your Wallet</h3>
+                    <h3 class="dash-heading">Spotlight Stock</h3>
                 </div>
-                <div class="dash-summary-container">
-                    <div class="dash-summary-content">
-                        <div class="dash-summary-content_money">$100</div>
-                        <div class="dash-summary-content_title">Your wallet value</div>
+                <div class="dash-spotlight--content">
+                    <div class="dash-spotlight--content_img">
+                        <img src="{{url_for('static', filename='/img/dashboard/spotlight.svg')}}" class='dash-spotlight--content_image'>
                     </div>
-                    <a href="/account" class='dash-summary-content_action'><button class='btn-primary dash-summary-content_btn'>INVEST NOW</button></a>
+                    <div class="dash-spotlight--content_text">
+                        <div class="dash-spotlight--content_text-symbol">AAPL</div>
+                        <div class="dash-spotlight--content_text-name">Apple</div>
+                        <p class="dash-spotlight--content_text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nisi amet cupiditate quam, natus ea ipsum corporis sed asperiores, ut id laborum magnam similique modi molestias quae eum labore rerum. Lorem, ipsum dolor sit amet
+                            consectetur adipisicing elit. Earum aut corrupti tempora, ex aperiam quod placeat, facilis asperiores, eius vel non dicta! Ut asperiores id iste minus? Deleniti, nemo aliquid.</p>
+                        <div class="dash-spotlight--content_text-price">
+                            <div class="dash-spotlight--content_text-price">price</div>
+                            <div class="dash-spotlight--content_text-details green">$50 usd (up 20%)</div>
+                        </div>
+
+                    </div>
                 </div>
+
+
             </div>
         </div>
         <div class="dash-right dash-long">
@@ -41,7 +52,31 @@
                         <td class="dash-trending--table_data">1</td>
                         <td class="dash-trending--table_data">MINX version control</td>
                         <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data">+49.00%</td>
+                        <td class="dash-trending--table_data green">+49.00%</td>
+                    </tr>
+                    <tr>
+                        <td class="dash-trending--table_data">1</td>
+                        <td class="dash-trending--table_data">MINX version control</td>
+                        <td class="dash-trending--table_data">$109.92</td>
+                        <td class="dash-trending--table_data red">+49.00%</td>
+                    </tr>
+                    <tr>
+                        <td class="dash-trending--table_data">1</td>
+                        <td class="dash-trending--table_data">MINX version control</td>
+                        <td class="dash-trending--table_data">$109.92</td>
+                        <td class="dash-trending--table_data red">+49.00%</td>
+                    </tr>
+                    <tr>
+                        <td class="dash-trending--table_data">1</td>
+                        <td class="dash-trending--table_data">MINX version control</td>
+                        <td class="dash-trending--table_data">$109.92</td>
+                        <td class="dash-trending--table_data green">+49.00%</td>
+                    </tr>
+                    <tr>
+                        <td class="dash-trending--table_data">1</td>
+                        <td class="dash-trending--table_data">MINX version control</td>
+                        <td class="dash-trending--table_data">$109.92</td>
+                        <td class="dash-trending--table_data green">+49.00%</td>
                     </tr>
                 </table>
             </div>
@@ -63,10 +98,38 @@
                             <td class="dash-portfolio-table_data dash-portfolio-table-name">MINX version control <br>
                                 <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
                             </td>
-                            <td class="dash-portfolio-table_data">$109.92 <br>
+                            <td class="dash-portfolio-table_data green">$109.92 <br>
                                 <p class='dash-portfolio-table__minor '>sdlfksmds</p>
                             </td>
-                            <td class="dash-portfolio-table_data">+49.00% <br>
+                            <td class="dash-portfolio-table_data green">+49.00% <br>
+                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                        </tr>
+                        <tr class='dash-portfolio-table__item'>
+                            <td>
+                                <img src="{{url_for('static', filename='/img/dashboard/buy.svg')}}" alt='stock symbol' class='dash-portfolio-table_img'>
+                            </td>
+                            <td class="dash-portfolio-table_data dash-portfolio-table-name">MINX version control <br>
+                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                            <td class="dash-portfolio-table_data red">$109.92 <br>
+                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                            <td class="dash-portfolio-table_data red">-49.00% <br>
+                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                        </tr>
+                        <tr class='dash-portfolio-table__item'>
+                            <td>
+                                <img src="{{url_for('static', filename='/img/dashboard/buy.svg')}}" alt='stock symbol' class='dash-portfolio-table_img'>
+                            </td>
+                            <td class="dash-portfolio-table_data dash-portfolio-table-name">MINX version control <br>
+                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                            <td class="dash-portfolio-table_data green">$109.92 <br>
+                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            </td>
+                            <td class="dash-portfolio-table_data green">+49.00% <br>
                                 <p class='dash-portfolio-table__minor '>sdlfksmds</p>
                             </td>
                         </tr>

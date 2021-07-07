@@ -191,8 +191,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  display: none; }
+  text-align: center; }
   .footer-image {
     height: 10rem; }
   .footer-name {
@@ -254,8 +253,8 @@ a {
       margin-left: .8rem; }
   .dashboard-content {
     border-radius: 5px;
-    background-color: rgba(215, 219, 234, 0.95);
-    color: #20263a;
+    background-color: #151928;
+    color: #b3bbd7;
     padding: 2rem; }
   .dashboard-title {
     font-size: 1.4rem; }
@@ -395,7 +394,7 @@ a {
 
 .dash-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   grid-gap: 1rem;
   margin-top: 2rem;
   min-height: 40vh; }
@@ -415,76 +414,113 @@ a {
     width: 90%;
     margin: 0 auto;
     text-align: center;
-    border: 1px solid #e9ecef;
+    border: 1px solid #0a0a14;
     padding: 1rem;
-    border-radius: 5px; }
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 0px #0a0a14; }
     .dash-trending--table_header {
-      background-color: #e9ecef; }
+      background-color: #b3bbd7;
+      color: #3e4975; }
     .dash-trending--table_head {
       padding: 1rem; }
     .dash-trending--table_data {
       color: inherit;
       padding: 1rem; }
 
-.dash-summary {
+.dash-spotlight {
   height: 100%;
   width: 100%;
   padding: 1rem;
   min-height: 20vh; }
-  .dash-summary-container {
+  .dash-spotlight-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%; }
-  .dash-summary-content {
-    width: 94%;
+  .dash-spotlight--content {
+    width: 98%;
+    height: 90%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 4rem; }
-    .dash-summary-content_money {
-      border: 1px solid lemonchiffon;
-      border-radius: 5px;
-      padding: 1rem;
-      font-size: 4rem; }
-    .dash-summary-content_title {
-      font-size: 2rem; }
-    .dash-summary-content_action {
-      width: 94%;
-      margin: 0 auto;
-      text-align: center; }
-    .dash-summary-content_btn {
-      width: 70%; }
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    box-shadow: 2px 2px 10px 0px #0a0a14; }
+    .dash-spotlight--content_image {
+      padding: 0rem;
+      height: 18rem; }
+    .dash-spotlight--content_img {
+      height: 100%;
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px; }
+    .dash-spotlight--content_text {
+      color: white;
+      width: 60%;
+      height: 100%;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      background-color: #1B2136;
+      padding: 1rem; }
+      .dash-spotlight--content_text-symbol {
+        color: #67CDE4;
+        font-size: 2.4rem; }
+      .dash-spotlight--content_text-name {
+        color: #b3bbd7;
+        font-size: 2rem; }
+      .dash-spotlight--content_text-description {
+        font-size: 1rem;
+        margin: 1rem 0;
+        color: #b3bbd7;
+        line-height: 1.7; }
+      .dash-spotlight--content_text-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        margin-right: 1rem;
+        margin-top: 2rem;
+        color: #b3bbd7; }
 
 .dash-portfolio {
   height: 100%;
   width: 100%; }
   .dash-portfolio--content {
     width: 94%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding-top: 1.4rem; }
   .dash-portfolio-table {
     width: 100%; }
     .dash-portfolio-table__item {
-      border: 1px solid #e9ecef;
       border-radius: 5px;
       padding: 1.4rem;
       display: flex;
       align-items: center;
       justify-content: space-around;
-      margin-bottom: 1rem; }
+      margin-bottom: 2rem;
+      box-shadow: 2px 2px 10px 0px #0a0a14; }
     .dash-portfolio-table_img {
-      background-color: lemonchiffon;
+      background-color: #b3bbd7;
       border-radius: 50%;
       height: 5rem;
       padding: .5rem; }
     .dash-portfolio-table_data {
-      color: #20263a; }
+      color: #3e4975; }
     .dash-portfolio-table-name {
-      color: #1B2136;
-      font-size: 1.6rem; }
+      color: #67CDE4;
+      font-size: 1.4rem; }
     .dash-portfolio-table__minor {
-      color: #e9ecef;
+      color: #b3bbd7;
       margin-top: .5rem;
       font-size: 1rem; }
+
+.green {
+  color: rgba(13, 206, 13, 0.7); }
+
+.red {
+  color: rgba(243, 42, 42, 0.952); }

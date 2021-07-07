@@ -12,7 +12,6 @@ bundles = {
   ),
   'all_js': Bundle(
     'js/script.js',
-    'js/Chart.min.js',
     depends='**/*.js',
     output='gen/all.js',
     extra={'rel': 'script/js'}
