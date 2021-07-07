@@ -113,7 +113,6 @@
                             $2000
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -174,11 +173,42 @@
             </div>
         </div>
         <div class="dash-right ">
-            <div class="dash-buy ">
-                <div class="dash-trending--header ">
-                    <h3 class="dash-heading ">Quick Buy</h3>
+            <div class="dash-returns">
+                <div class="dash-trending--header">
+                    <h3 class="dash-heading">Your Returns</h3>
+                    <a href='/portfolio'><button class='btn-tertiary'>view all</button></a>
                 </div>
+                <div class="dash-returns-content">
+                    <div class="dash-returns-value">
+                        <div class="dash-returns-value--text">Your Portfolio Returns</div>
+                        <div class="dash-returns-value--price">$122.05</div>
+                    </div>
+                    <div class="dash-trending-assets">
+                        <div class="dash-trending-assets--item">
+                            <div class="dash-trending-assets_image">
+                                <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
+                            </div>
+                            <div class=" dash-trending-assets_name ">
+                                Bitcoin
+                            </div>
+                            <div class="dash-trending-assets_cost ">
+                                $2000
+                            </div>
+                        </div>
+                        <div class="dash-trending-assets--item ">
+                            <div class="dash-trending-assets_image ">
+                                <img src="{{url_for( 'static', filename='/img/dashboard/gold.svg' )}} " alt="Gold" class="dash-trending-assets_img">
+                            </div>
+                            <div class="dash-trending-assets_name ">
+                                Gold
+                            </div>
+                            <div class="dash-trending-assets_cost ">
+                                $2000
+                            </div>
+                        </div>
 
+                    </div>
+                </div>
             </div>
         </div>
     </div>

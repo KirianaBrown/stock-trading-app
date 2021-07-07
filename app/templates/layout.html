@@ -15,8 +15,8 @@
     <header class="header">
         <div class="header-logo">
             <a href="/" class='flex'>
-                <!-- <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Kb Trader Logo" class="header-logo--img"> -->
-                <h1 class="header-logo--name">KB Trader</h1>
+                <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Kb Trader Logo" class="header-logo--img">
+                <!-- <h1 class="header-logo--name">KB Trader</h1> -->
             </a>
         </div>
         <nav class="header-nav">
@@ -24,7 +24,7 @@
                 {% if session.user_id %}
 
                 <li class="header-nav--item">
-                    <a href="/logout" class="header-nav--item_link btn">
+                    <a href="/logout" class="header-nav--item_link btn-tertiary">
                      Logout
                     </a>
                 </li>
