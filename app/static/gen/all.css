@@ -173,10 +173,6 @@ a {
     padding: 14px 16px;
     transition: 0.3s;
     width: 50%; }
-    .tab-links:hover {
-      background-color: #1B2136;
-      color: #b3bbd7;
-      opacity: .7; }
   .tab-content {
     width: 90%;
     margin: 0 auto;
@@ -604,6 +600,10 @@ a {
   height: 100%;
   width: 100%;
   padding: 1rem; }
+  .dash-actions-content {
+    padding: 2rem;
+    height: 100%;
+    width: 100%; }
 
 .green {
   color: rgba(13, 206, 13, 0.7); }
@@ -624,30 +624,16 @@ a {
   padding: 1rem; }
   .explore-section-header {
     font-size: 1.4rem; }
-  .explore-section-list {
-    width: 100%;
+  .explore-section-content {
+    margin-top: 1rem;
     display: grid;
     grid-template-columns: auto auto auto;
-    align-items: center;
-    grid-gap: 1rem;
-    flex-wrap: wrap;
-    margin-top: 1rem; }
-    .explore-section-list_item {
-      padding: 1rem;
-      border-left: 1px solid #aab4ff;
-      border-top: 1px solid #0a0a14;
-      border-right: 1px solid #0a0a14;
-      border-bottom: 1px solid #0a0a14;
-      border-radius: 5px;
+    grid-gap: 1rem; }
+    .explore-section-content_item {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      padding: 1rem;
+      border-radius: 5px;
+      border: solid 1px #0a0a14;
       box-shadow: 2px 2px 10px 0px #0a0a14; }
-      .explore-section-list_item-icon {
-        color: orange; }
-
-.explore-symbol {
-  font-size: 1.4rem; }
-
-.explore-name {
-  font-size: 1rem; }

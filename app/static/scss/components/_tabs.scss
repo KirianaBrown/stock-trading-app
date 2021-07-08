@@ -16,11 +16,6 @@
         padding: 14px 16px;
         transition: 0.3s;
         width: 50%;
-        &:hover {
-            background-color: $color-blue-darkest;
-            color: $color-text;
-            opacity: .7;
-        }
     }
     &-content {
         width: 90%;

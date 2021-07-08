@@ -114,19 +114,21 @@
             <div class="explore-section-header">
                 Most Active
             </div>
-            <div class="explore-section-list">
-                <div class="explore-section-list_item">
-                    <div class='explore-section-list_item-icon'>SYM</div>
-                    <div class="dash-section--content">
-                        <div class="dash-spotlight--content_text-symbol explore-symbol">AAPL</div>
-                        <div class="dash-spotlight--content_text-name explore-name">Apple</div>
-
-                        <div class="dash-spotlight--content_text-details green">$50 usd (up 20%)</div>
+            <div class="explore-section-content">
+                <div class="explore-section-content_item">
+                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">MINX<br>
+                        <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
+                    </div>
+                    <div class="dash-portfolio-table_data green ">$109.92 <br>
+                        <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                    </div>
+                    <div class="dash-portfolio-table_data green ">+49.00% <br>
+                        <p class='dash-portfolio-table__minor '>sdlfksmds</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-{% endblock %}
+    {% endblock %}
