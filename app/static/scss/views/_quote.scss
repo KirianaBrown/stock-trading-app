@@ -80,4 +80,15 @@
             flex-direction: column;
         }
     }
+    &-table {
+        width: 100%;
+        padding: 1rem;
+        margin: 2rem 0rem;
+        border-radius: $border-radius;
+        border: 1px solid $color-text;
+        &_data {
+            font-size: 1rem;
+            padding: 1rem;
+        }
+    }
 }
