@@ -1,0 +1,13 @@
+.account {
+    background-color: crimson;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    &-wallet {
+        background-color: darkcyan;
+    }
+    &-password {
+        background-color: lemonchiffon;
+    }
+}

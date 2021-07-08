@@ -7,10 +7,32 @@
 
 <!-- main content -->
 {% block dashboard %}
-<h1>account</h1>
-<ol>
-    <li>Password change</li>
-    <li>Top up wallet</li>
-</ol>
+<div class="account">
+    <div class="account-wallet">
+        <div class="dash-trending--header">
+            <h3 class="dash-heading portfolio-right-sell_heading">Wallet</h3>
+        </div>
+    </div>
+    <div class="account-password">
+        <div class="dash-trending--header">
+            <h3 class="dash-heading portfolio-right-sell_heading">Password Change</h3>
+        </div>
+        <form action="#" class="password-form">
+            <div class="password-form--formgroup">
+                <label class="password-form--label" for='current'>Current Password</label>
+                <input type="text" id='current' name='currentPassword' class="password-form--input" placeholder='current password'>
+            </div>
+            <div class="password-form--formgroup">
+                <label class="password-form--label" for='new'>New Password</label>
+                <input type="password" id='new' name='newPassword' class="password-form--input" placeholder='new password'>
+            </div>
+            <div class="password-form--formgroup">
+                <label class="password-form--label" for='confirm'>Confirm New Password</label>
+                <input type="password" id='confirm' name='confirmPassword' class="password-form--input" placeholder='confrim new password'>
+            </div>
+            <button type='submit' class='btn-primary'>Set new password</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}

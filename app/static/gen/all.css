@@ -740,3 +740,14 @@ a {
   .portfolio-right-transactions {
     padding: 1rem;
     margin-top: 1rem; }
+
+.account {
+  background-color: crimson;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto; }
+  .account-wallet {
+    background-color: darkcyan; }
+  .account-password {
+    background-color: lemonchiffon; }
