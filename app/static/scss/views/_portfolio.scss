@@ -3,11 +3,7 @@
     min-width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    &-left {
-        border: cornflowerblue 1px solid;
-    }
     &-right {
-        border: coral 1px solid;
         &-sell {
             padding: 1rem;
             &_heading {

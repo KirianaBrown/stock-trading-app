@@ -731,15 +731,11 @@ a {
   min-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr; }
-  .portfolio-left {
-    border: cornflowerblue 1px solid; }
-  .portfolio-right {
-    border: coral 1px solid; }
-    .portfolio-right-sell {
-      padding: 1rem; }
-      .portfolio-right-sell_heading {
-        margin-top: .5rem;
-        margin-bottom: 2.5rem; }
-    .portfolio-right-transactions {
-      padding: 1rem;
-      margin-top: 1rem; }
+  .portfolio-right-sell {
+    padding: 1rem; }
+    .portfolio-right-sell_heading {
+      margin-top: .5rem;
+      margin-bottom: 2.5rem; }
+  .portfolio-right-transactions {
+    padding: 1rem;
+    margin-top: 1rem; }
