@@ -716,10 +716,9 @@ a {
       flex-direction: column; }
   .quote-table {
     width: 100%;
-    padding: 1rem;
     margin: 2rem 0rem;
-    border-radius: 5px;
-    border: 1px solid #b3bbd7; }
+    border-radius: 5px; }
     .quote-table_data {
       font-size: 1rem;
-      padding: 1rem; }
+      padding: 1rem 1rem;
+      background-color: #20263a; }
