@@ -14,7 +14,7 @@
                 <!-- Tab links -->
                 <div class="tab">
                     <button class="tab-links tab-active" onclick="openCity(event, 'Quote')">Quote</button>
-                    <button class="tab-links" onclick="openCity(event, 'Buy')">Buy</button>
+                    <div class="tab-links-none"></div>
                 </div>
                 <!-- Tab content -->
                 <div id="Quote" class="tab-content first">
@@ -26,25 +26,46 @@
                         <button type='submit' class='tab-form-action btn-primary'>Quote</button>
                     </form>
                 </div>
-
-                <div id="Buy" class="tab-content">
-                    <form class='tab-form'>
-                        <div class="tab-form-group">
-                            <label for="symbol" class='tab-form-label'>symbol</label>
-                            <input id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
-                        </div>
-                        <div class="tab-form-group">
-                            <label for="quantity" class='tab-form-label'>quantity</label>
-                            <input id='quantity' type='number' placeholder='1' class='tab-form-input'>
-                        </div>
-                        <button type='submit' class='tab-form-action btn-primary'>Buy</button>
-                    </form>
-                </div>
             </div>
         </div>
     </div>
     <div class="quote-base">
-        company details
+        <div class="quote-company">
+            <div class="quote-company-symbol">
+                <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
+            </div>
+            <h2 class="quote-company-stock">APPL</h2>
+            <div class="quote-company-name">Apple corporation industry .inc</div>
+            <div class="quote-company-price">$535.96 usd <span class='green quote-company-price_stats'>$-5.68 (-1.05%)</span></div>
+            <hr>
+            <p class="quote-company-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum alias quod libero amet error non recusandae mollitia numquam. Vitae sapiente amet accusantium animi autem beatae nam numquam? Omnis, maiores nemo! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Harum alias quod libero amet error non recusandae mollitia numquam. Vitae sapiente amet accusantium animi autem beatae nam numquam? Omnis, maiores nemo!
+            </p>
+            <div class="quote-company-details">
+                <table>
+                    <tr>
+                        <td>Primary Exchange: NASDAQ</td>
+                        <td>Market Cap: 54Billion</td>
+                    </tr>
+                    <tr>
+                        <td>Week 52 High: 435</td>
+                        <td>Week 52 Low: 399</td>
+                    </tr>
+                    <tr>
+                        <td>Open: $356</td>
+                        <td>Close: $502</td>
+                    </tr>
+                </table>
+            </div>
+            <form class='quote-form'>
+                <div class="quote-form_group">
+                    <label for="quantity" class="quote-form_label">Quantity</label>
+                    <input type="number" class="quote-form_input" placeholder='1'>
+                </div>
+                <button type='submit' class="btn-primary quote-form_action">buy</button>
+            </form>
+        </div>
     </div>
 </div>
 
