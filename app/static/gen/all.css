@@ -732,7 +732,8 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr; }
   .portfolio-right-sell {
-    padding: 1rem; }
+    padding: 1rem;
+    width: 60%; }
     .portfolio-right-sell_heading {
       margin-top: .5rem;
       margin-bottom: 2.5rem; }

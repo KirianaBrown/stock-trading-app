@@ -9,6 +9,29 @@
 {% block dashboard %}
 <div class="portfolio">
     <div class="portfolio-left">
+        <div class="portfolio-right-sell">
+            <div class="dash-trending--header ">
+                <h3 class="dash-heading portfolio-right-sell_heading">Sell</h3>
+            </div>
+            <!-- Tab content -->
+            <div id="Sell" class="tab-content first">
+                <form class='tab-form'>
+                    <div class="tab-form-group">
+                        <label for="symbol" class='tab-form-label'>symbol</label>
+                        <select id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
+                          <option>one</option>
+                          <option>two</option>
+                          <option>three</option>
+                        </select>
+                    </div>
+                    <div class="tab-form-group">
+                        <label for="quantity" class='tab-form-label'>quantity</label>
+                        <input id='quanitity' type='number' placeholder='1' class='tab-form-input'>
+                    </div>
+                    <button type='submit' class='tab-form-action btn-primary'>Sell</button>
+                </form>
+            </div>
+        </div>
         <div class="dash-portfolio ">
             <div class="dash-trending--header ">
                 <h3 class="dash-heading ">Your portfolio</h3>
@@ -63,29 +86,6 @@
         </div>
     </div>
     <div class="portfolio-right">
-        <div class="portfolio-right-sell">
-            <div class="dash-trending--header ">
-                <h3 class="dash-heading portfolio-right-sell_heading">Sell</h3>
-            </div>
-            <!-- Tab content -->
-            <div id="Sell" class="tab-content first">
-                <form class='tab-form'>
-                    <div class="tab-form-group">
-                        <label for="symbol" class='tab-form-label'>symbol</label>
-                        <select id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
-                          <option>one</option>
-                          <option>two</option>
-                          <option>three</option>
-                        </select>
-                    </div>
-                    <div class="tab-form-group">
-                        <label for="quantity" class='tab-form-label'>quantity</label>
-                        <input id='quanitity' type='number' placeholder='1' class='tab-form-input'>
-                    </div>
-                    <button type='submit' class='tab-form-action btn-primary'>Sell</button>
-                </form>
-            </div>
-        </div>
         <div class="portfolio-right-transactions">
             <div class="dash-trending--header">
                 <h3 class="dash-heading portfolio-right-sell_heading">transaction history</h3>
