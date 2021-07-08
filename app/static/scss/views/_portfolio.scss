@@ -8,5 +8,9 @@
     }
     &-right {
         border: coral 1px solid;
+        &-sell {
+            background-color: cornsilk;
+            padding: 1rem;
+        }
     }
 }

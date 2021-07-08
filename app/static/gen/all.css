@@ -735,3 +735,6 @@ a {
     border: cornflowerblue 1px solid; }
   .portfolio-right {
     border: coral 1px solid; }
+    .portfolio-right-sell {
+      background-color: cornsilk;
+      padding: 1rem; }
