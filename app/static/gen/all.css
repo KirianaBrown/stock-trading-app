@@ -654,13 +654,16 @@ a {
   justify-content: center;
   align-items: center; }
   .quote-top {
-    padding: 1rem;
     min-height: 100%;
-    width: 40%; }
+    width: 25%; }
   .quote-base {
     padding: 1rem;
     min-height: 100%;
-    width: 60%; }
+    width: 75%; }
+  .quote-header {
+    width: 88%;
+    margin: 0 auto;
+    margin-bottom: 2rem; }
   .quote-company {
     padding: 1rem; }
     .quote-company-symbol {

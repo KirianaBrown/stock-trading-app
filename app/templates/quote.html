@@ -9,25 +9,21 @@
 {% block dashboard %}
 <div class="quote">
     <div class="quote-top">
-        <div class="quote-top_buy">
-            <div class="dash-actions-content">
-                <!-- Tab links -->
-                <div class="tab">
-                    <button class="tab-links tab-active" onclick="openCity(event, 'Quote')">Quote</button>
-                    <div class="tab-links-none"></div>
-                </div>
-                <!-- Tab content -->
-                <div id="Quote" class="tab-content first">
-                    <form class='tab-form'>
-                        <div class="tab-form-group">
-                            <label for="symbol" class='tab-form-label'>symbol</label>
-                            <input id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
-                        </div>
-                        <button type='submit' class='tab-form-action btn-primary'>Quote</button>
-                    </form>
-                </div>
+
+        <div class="dash-actions-content">
+            <h1 class='quote-header'>Quote</h1>
+            <!-- Tab content -->
+            <div id="Quote" class="tab-content first">
+                <form class='tab-form'>
+                    <div class="tab-form-group">
+                        <label for="symbol" class='tab-form-label'>symbol</label>
+                        <input id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
+                    </div>
+                    <button type='submit' class='tab-form-action btn-primary'>Quote</button>
+                </form>
             </div>
         </div>
+
     </div>
     <div class="quote-base">
         <div class="quote-company">

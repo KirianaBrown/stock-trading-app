@@ -6,14 +6,19 @@
     justify-content: center;
     align-items: center;
     &-top {
-        padding: 1rem;
+        // padding: 1rem;
         min-height: 100%;
-        width: 40%;
+        width: 25%;
     }
     &-base {
         padding: 1rem;
         min-height: 100%;
-        width: 60%;
+        width: 75%;
+    }
+    &-header {
+        width: 88%;
+        margin: 0 auto;
+        margin-bottom: 2rem;
     }
     &-company {
         padding: 1rem;
