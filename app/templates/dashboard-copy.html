@@ -179,31 +179,42 @@
                 <div class="dash-actions-content">
                     <!-- Tab links -->
                     <div class="tab">
-                        <button class="tablinks" onclick="openCity(event, 'Buy')">Buy</button>
-                        <button class="tablinks" onclick="openCity(event, 'Sell')">Sell</button>
+                        <button class="tab-links" onclick="openCity(event, 'Buy')">Buy</button>
+                        <button class="tab-links" onclick="openCity(event, 'Sell')">Sell</button>
                     </div>
 
                     <!-- Tab content -->
-                    <div id="Buy" class="tabcontent">
-                        <h3>Buy</h3>
-                        <form>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
+                    <div id="Buy" class="tab-content">
+                        <form class='tab-form'>
+                            <div class="tab-form-group">
+                                <label for="symbol" class='tab-form-label'>symbol</label>
+                                <input id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
+                            </div>
+                            <div class="tab-form-group">
+                                <label for="quantity" class='tab-form-label'>quantity</label>
+                                <input id='quantity' type='number' placeholder='1' class='tab-form-input'>
+                            </div>
+                            <button type='submit' class='tab-form-action btn-primary'>Buy</button>
                         </form>
                     </div>
 
-                    <div id="Sell" class="tabcontent">
-                        <h3>Sell</h3>
-                        <form>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
-                            <input type='text' placeholder='name'>
+                    <div id="Sell" class="tab-content">
+                        <form class='tab-form'>
+                            <div class="tab-form-group">
+                                <label for="symbol" class='tab-form-label'>symbol</label>
+                                <select id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
+                                    <option>hi</option>
+                                    <option>hello</option>
+                                    <option>bye</option>
+                                </select>
+                            </div>
+                            <div class="tab-form-group">
+                                <label for="quantity" class='tab-form-label'>quantity</label>
+                                <input id='quantity' type='number' placeholder='1' class='tab-form-input'>
+                            </div>
+                            <button type='submit' class='tab-form-action btn-primary'>Buy</button>
                         </form>
+
                     </div>
                 </div>
             </div>
