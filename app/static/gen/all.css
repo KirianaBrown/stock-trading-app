@@ -732,6 +732,6 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr; }
   .portfolio-left {
-    background-color: cornflowerblue; }
+    border: cornflowerblue 1px solid; }
   .portfolio-right {
-    background-color: coral; }
+    border: coral 1px solid; }
