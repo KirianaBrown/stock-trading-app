@@ -9,8 +9,11 @@
     &-right {
         border: coral 1px solid;
         &-sell {
-            background-color: cornsilk;
             padding: 1rem;
+            &_heading {
+                margin-top: .5rem;
+                margin-bottom: 2rem;
+            }
         }
     }
 }
