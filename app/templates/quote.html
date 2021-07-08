@@ -13,4 +13,35 @@
     <li>Buy stocks</li>
     <li>View company information</li>
 </ol>
+
+
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Buy')">Buy</button>
+    <button class="tablinks" onclick="openCity(event, 'Sell')">Sell</button>
+</div>
+
+<!-- Tab content -->
+<div id="Buy" class="tabcontent">
+    <h3>Buy</h3>
+    <form>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+    </form>
+</div>
+
+<div id="Sell" class="tabcontent">
+    <h3>Sell</h3>
+    <form>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+        <input type='text' placeholder='name'>
+    </form>
+</div>
+
 {% endblock %}

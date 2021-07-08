@@ -100,7 +100,6 @@
             justify-content: center;
             border-bottom-left-radius: $border-radius;
             border-top-left-radius: $border-radius;
-            // background-color: $color-text;
         }
         &_text {
             color: white;
@@ -148,7 +147,6 @@
     &-table {
         width: 100%;
         &__item {
-            // border: 1px solid $color-text-dark;
             border-radius: $border-radius;
             padding: 1.4rem;
             display: flex;
@@ -178,44 +176,10 @@
     }
 }
 
-.dash-returns {
+.dash-actions {
     height: 100%;
     width: 100%;
-    // padding: 2rem;
-    border-radius: $border-radius;
-    &-content {
-        height: 86%;
-        width: 90%;
-        margin: 0 auto;
-        padding: 2rem;
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    &-value {
-        border-radius: 50%;
-        height: 20rem;
-        width: 20rem;
-        margin: 1rem;
-        align-items: center;
-        padding: 2rem;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        &--text {
-            color: $color-text-highlight;
-            font-size: 2rem;
-        }
-        &--price {
-            color: $color-text;
-            font-size: 1.6rem;
-            margin: 1rem;
-        }
-    }
+    padding: 1rem;
 }
 
 .green {

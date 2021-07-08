@@ -31,8 +31,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
         <div class="dash-right dash-long">
@@ -173,40 +171,39 @@
             </div>
         </div>
         <div class="dash-right ">
-            <div class="dash-returns">
+            <div class="dash-actions">
                 <div class="dash-trending--header">
-                    <h3 class="dash-heading">Your Returns</h3>
-                    <a href='/portfolio'><button class='btn-tertiary'>view all</button></a>
+                    <h3 class="dash-heading">Quick Actions</h3>
+                    <a href='/quote'><button class='btn-tertiary'>view all</button></a>
                 </div>
-                <div class="dash-returns-content">
-                    <div class="dash-returns-value">
-                        <div class="dash-returns-value--text">Your Portfolio Returns</div>
-                        <div class="dash-returns-value--price">$122.05</div>
+                <div class="dash-actions-content">
+                    <!-- Tab links -->
+                    <div class="tab">
+                        <button class="tablinks" onclick="openCity(event, 'Buy')">Buy</button>
+                        <button class="tablinks" onclick="openCity(event, 'Sell')">Sell</button>
                     </div>
-                    <div class="dash-trending-assets">
-                        <div class="dash-trending-assets--item">
-                            <div class="dash-trending-assets_image">
-                                <img src="{{url_for('static', filename='/img/dashboard/bitcoin.svg')}}" alt="Bitcoin" class="dash-trending-assets_img">
-                            </div>
-                            <div class=" dash-trending-assets_name ">
-                                Bitcoin
-                            </div>
-                            <div class="dash-trending-assets_cost ">
-                                $2000
-                            </div>
-                        </div>
-                        <div class="dash-trending-assets--item ">
-                            <div class="dash-trending-assets_image ">
-                                <img src="{{url_for( 'static', filename='/img/dashboard/gold.svg' )}} " alt="Gold" class="dash-trending-assets_img">
-                            </div>
-                            <div class="dash-trending-assets_name ">
-                                Gold
-                            </div>
-                            <div class="dash-trending-assets_cost ">
-                                $2000
-                            </div>
-                        </div>
 
+                    <!-- Tab content -->
+                    <div id="Buy" class="tabcontent">
+                        <h3>Buy</h3>
+                        <form>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                        </form>
+                    </div>
+
+                    <div id="Sell" class="tabcontent">
+                        <h3>Sell</h3>
+                        <form>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                            <input type='text' placeholder='name'>
+                        </form>
                     </div>
                 </div>
             </div>
