@@ -1,0 +1,12 @@
+.portfolio {
+    min-height: 100%;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    &-left {
+        background-color: cornflowerblue;
+    }
+    &-right {
+        background-color: coral;
+    }
+}

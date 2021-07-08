@@ -7,11 +7,17 @@
 
 <!-- main content -->
 {% block dashboard %}
-<h1>portfolio</h1>
-<ol>
-    <li>portfolio - https://dribbble.com/shots/14045734-Stockit-Web-App</li>
-    <li>Pie chart of breakdown based on industry</li>
-    <li> Transaction history</li>
-    <li> Wallet</li>
-</ol>
+<div class="portfolio">
+    <div class="portfolio-left">
+        <h2>your portfolio</h2>
+    </div>
+    <div class="portfolio-right">
+        <div class="right-sell">
+            <h2>sell</h2>
+        </div>
+        <div class="right-transactions">
+            <h2>transaction history</h2>
+        </div>
+    </div>
+</div>
 {% endblock %}

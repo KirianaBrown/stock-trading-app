@@ -725,3 +725,13 @@ a {
       font-size: 1rem;
       padding: 1rem 1rem;
       background-color: #20263a; }
+
+.portfolio {
+  min-height: 100%;
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; }
+  .portfolio-left {
+    background-color: cornflowerblue; }
+  .portfolio-right {
+    background-color: coral; }
