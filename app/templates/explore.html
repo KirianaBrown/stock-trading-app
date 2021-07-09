@@ -20,17 +20,17 @@
                         <img src="{{url_for('static', filename='/img/dashboard/chart.svg')}}" class='dash-spotlight--content_image'>
                     </div>
                     <div class="dash-spotlight--content_text">
-                        <div class="dash-spotlight--content_text-symbol">{{top.symbol}}</div>
-                        <div class="dash-spotlight--content_text-name">{{top.name}}</div>
+                        <div class="dash-spotlight--content_text-symbol">{{topActive.symbol}}</div>
+                        <div class="dash-spotlight--content_text-name">{{topActive.name}}</div>
                         <p class="dash-spotlight--content_text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nisi amet cupiditate quam, natus ea ipsum corporis sed asperiores, ut id laborum magnam similique modi molestias quae eum labore rerum. Lorem, ipsum dolor sit amet
                             consectetur adipisicing elit. Earum aut corrupti tempora, ex aperiam quod placeat, facilis asperiores, eius vel non dicta! Ut asperiores id iste minus? Deleniti, nemo aliquid.</p>
                         <hr class='margin'>
                         <div class="dash-spotlight--content_text-price">
                             <div class="dash-spotlight--content_text-price">price</div>
-                            {% if top.changePrice > 0 %}
-                            <div class="dash-spotlight--content_text-details green">${{top.price}} usd (+{{top.changePercentage}})</div>
+                            {% if topActive.changePrice > 0 %}
+                            <div class="dash-spotlight--content_text-details green">${{topActive.price}} usd (+{{topActive.changePercentage}})</div>
                             {% else %}
-                            <div class="dash-spotlight--content_text-details red">${{top.price}} usd ({{top.changePercentage}})</div>
+                            <div class="dash-spotlight--content_text-details red">${{topActive.price}} usd ({{topActive.changePercentage}})</div>
                             {% endif %}
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         <th class="dash-trending--table_head">price/unit</th>
                         <th class="dash-trending--table_head">change</th>
                     </tr>
-                    {% for stock in top10 %}
+                    {% for stock in mostActive %}
                     <tr>
                         <td class="dash-trending--table_data">{{loop.index}}</td>
                         <td class="dash-trending--table_data">{{stock.name}}</td>
