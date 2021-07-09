@@ -33,4 +33,9 @@
         background-color: transparent;
         color: $color-blue-main;
     }
+    &-delete {
+        @extend %button;
+        background-color: crimson;
+        color: $color-white-light;
+    }
 }

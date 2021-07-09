@@ -63,7 +63,7 @@ a {
   100% {
     transform: translate3d(-10px, -10px, 0px); } }
 
-.btn-tertiary, .btn-secondary, .btn-primary {
+.btn-delete, .btn-tertiary, .btn-secondary, .btn-primary {
   border-radius: 5px;
   cursor: pointer;
   padding: 1rem 4rem;
@@ -76,7 +76,7 @@ a {
   font-family: "Roboto", sans-serif;
   transition: all 0.5s ease;
   border: none; }
-  .btn-tertiary:hover, .btn-secondary:hover, .btn-primary:hover {
+  .btn-delete:hover, .btn-tertiary:hover, .btn-secondary:hover, .btn-primary:hover {
     transform: translateY(2px); }
 
 .btn-primary {
@@ -91,6 +91,10 @@ a {
 .btn-tertiary {
   background-color: transparent;
   color: #2E75DF; }
+
+.btn-delete {
+  background-color: crimson;
+  color: rgba(215, 219, 234, 0.95); }
 
 .wrapper {
   display: flex;
@@ -745,7 +749,7 @@ a {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: auto auto; }
+  grid-template-columns: 1fr 2fr; }
   .account-wallet {
     margin-top: 2rem; }
     .account-wallet-value {
@@ -758,3 +762,17 @@ a {
     margin-top: 2rem; }
   .account-history {
     margin-top: 4rem; }
+  .account-remove {
+    padding: 2rem;
+    background-color: #3e4975;
+    border-radius: 5px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem; }
+    .account-remove-text {
+      font-size: 1.2rem;
+      color: #b3bbd7;
+      margin: .5rem 2rem;
+      margin-bottom: 2rem; }
+    .account-remove-action {
+      margin-left: 2rem; }

@@ -2,7 +2,7 @@
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 2fr;
     &-wallet {
         margin-top: 2rem;
         &-value {
@@ -19,5 +19,22 @@
     }
     &-history {
         margin-top: 4rem;
+    }
+    &-remove {
+        padding: 2rem;
+        background-color: $color-text-dark;
+        border-radius: $border-radius;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 2rem;
+        &-text {
+            font-size: 1.2rem;
+            color: $color-text;
+            margin: .5rem 2rem;
+            margin-bottom: 2rem;
+        }
+        &-action {
+            margin-left: 2rem;
+        }
     }
 }
