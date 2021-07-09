@@ -37,7 +37,7 @@ def getLogo(symbol):
         return None
 
 
-def getTop10():
+def getListMostActive():
   # cloud.iexapis.com ~ MOST ACTIVE ~
     # Contact API and convert into python dictionary
     try:
