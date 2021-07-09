@@ -650,6 +650,9 @@ a {
       border: solid 1px #0a0a14;
       box-shadow: 2px 2px 10px 0px #0a0a14; }
 
+.losers-header {
+  margin-top: 4rem; }
+
 .quote {
   height: 90%;
   width: 100%;
