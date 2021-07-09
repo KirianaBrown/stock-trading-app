@@ -103,9 +103,6 @@ def dashboard():
 @app.route('/explore')
 def explore():
 
-  val = 18.1829374
-  print(formatValues(val))
-
   # 1. Get most active
   if not session.get('listMostActive'):
     session['listMostActive'] = getListMostActive()
