@@ -68,21 +68,29 @@
     <div class="explore-row-full">
         <div class="explore-section">
             <div class="explore-section-header">
-                Most Active
+                Top Gainers
             </div>
             <div class="explore-section-content">
+                {% for stock in gainers %}
                 <div class="explore-section-content_item">
                     <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">MINX<br>
-                        <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
+                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
+                        <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
                     </div>
-                    <div class="dash-portfolio-table_data green ">$109.92 <br>
-                        <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                    <div class="dash-portfolio-table_data green ">${{stock.price}} usd <br>
+                        <p class='dash-portfolio-table__minor '>current</p>
                     </div>
+                    {% if stock.changePrice > 0 %}
                     <div class="dash-portfolio-table_data green ">+49.00% <br>
-                        <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                        <p class='dash-portfolio-table__minor '>change</p>
                     </div>
+                    {% else %}
+                    <div class="dash-portfolio-table_data red">49.00% <br>
+                        <p class='dash-portfolio-table__minor '>percentage change</p>
+                    </div>
+                    {% endif %}
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
