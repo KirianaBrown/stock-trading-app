@@ -105,12 +105,10 @@ def explore():
     print('no top10 stored in session')
   else:
     print('top 10 was already stored in the session')
+  
+  top10 = session['top10']
 
-  # get top10 "MOST ACTIVE"
-  top2 = session['top10'][:2]
-  top8 = session['top10'][2:]
-
-  return render_template('/explore.html', top2=top2)
+  return render_template('/explore.html', top10=top10)
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():

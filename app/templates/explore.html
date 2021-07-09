@@ -20,8 +20,8 @@
                         <img src="{{url_for('static', filename='/img/dashboard/chart.svg')}}" class='dash-spotlight--content_image'>
                     </div>
                     <div class="dash-spotlight--content_text">
-                        <div class="dash-spotlight--content_text-symbol">{{top2[0]['symbol']}}</div>
-                        <div class="dash-spotlight--content_text-name">{{top2[0]['name']}}</div>
+                        <div class="dash-spotlight--content_text-symbol">APPL</div>
+                        <div class="dash-spotlight--content_text-name">apple holdings</div>
                         <p class="dash-spotlight--content_text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nisi amet cupiditate quam, natus ea ipsum corporis sed asperiores, ut id laborum magnam similique modi molestias quae eum labore rerum. Lorem, ipsum dolor sit amet
                             consectetur adipisicing elit. Earum aut corrupti tempora, ex aperiam quod placeat, facilis asperiores, eius vel non dicta! Ut asperiores id iste minus? Deleniti, nemo aliquid.</p>
                         <hr class='margin'>
@@ -36,7 +36,7 @@
         <div class="dash-right">
             <div class="dash-trending">
                 <div class="dash-trending--header">
-                    <h3 class="dash-heading">Biggest Movers</h3>
+                    <h3 class="dash-heading">Most Active</h3>
                 </div>
                 <table class="dash-trending--table">
                     <tr class="dash-trending--table_header">
@@ -45,66 +45,18 @@
                         <th class="dash-trending--table_head">price/unit</th>
                         <th class="dash-trending--table_head">change</th>
                     </tr>
+                    {% for stock in top10 %}
                     <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
+                        <td class="dash-trending--table_data">{{loop.index}}</td>
+                        <td class="dash-trending--table_data">{{stock.name}}</td>
+                        <td class="dash-trending--table_data">${{stock.price}}</td>
+                        {% if stock.changePrice > 0 %}
+                        <td class="dash-trending--table_data green">+{{stock.changePercentage}}%</td>
+                        {% else %}
+                        <td class="dash-trending--table_data red">-{{stock.changePercentage}}%</td>
+                        {% endif %}
                     </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data red">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data red">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>
