@@ -23,6 +23,9 @@ def check_registration_valid(username, password, confirmation='none'):
 def formatDollar(value):
   return f"${value:,.2f}"
 
+def formatPercentage(value):
+  return f"{value:,.2f}%"
+
 def getLogo(symbol):
   try:
     api_key_test = os.environ.get('API_KEY_TEST')
