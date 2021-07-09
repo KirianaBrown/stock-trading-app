@@ -749,5 +749,8 @@ a {
   grid-template-columns: auto auto; }
   .account-wallet {
     background-color: darkcyan; }
+    .account-wallet-value {
+      text-align: center;
+      font-size: 2rem; }
   .account-password {
     background-color: lemonchiffon; }

@@ -6,6 +6,11 @@
     grid-template-columns: auto auto;
     &-wallet {
         background-color: darkcyan;
+        &-value {
+            text-align: center;
+            font-size: 2rem;
+            ;
+        }
     }
     &-password {
         background-color: lemonchiffon;
