@@ -55,9 +55,9 @@
                         <td class="dash-trending--table_data">{{stock.name}}</td>
                         <td class="dash-trending--table_data">{{stock.price | formatDollar}}</td>
                         {% if stock.changePrice > 0 %}
-                        <td class="dash-trending--table_data green">+{{stock.changePercentage}}%</td>
+                        <td class="dash-trending--table_data green">+{{stock.changePercentage | formatPercentage}}</td>
                         {% else %}
-                        <td class="dash-trending--table_data red">{{stock.changePercentage}}</td>
+                        <td class="dash-trending--table_data red">{{stock.changePercentage | formatPercentage}}</td>
                         {% endif %}
                     </tr>
                     {% endfor %}
