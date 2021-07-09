@@ -742,15 +742,19 @@ a {
     margin-top: 1rem; }
 
 .account {
-  background-color: crimson;
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: auto auto; }
   .account-wallet {
-    background-color: darkcyan; }
+    margin-top: 2rem; }
     .account-wallet-value {
       text-align: center;
-      font-size: 2rem; }
+      font-size: 2rem;
+      margin-bottom: 2rem; }
+    .account-wallet-heading {
+      margin-bottom: 1rem; }
   .account-password {
     background-color: lemonchiffon; }
+  .account-history {
+    margin-top: 4rem; }

@@ -1,18 +1,23 @@
 .account {
-    background-color: crimson;
     height: 100%;
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
     &-wallet {
-        background-color: darkcyan;
+        margin-top: 2rem;
         &-value {
             text-align: center;
             font-size: 2rem;
-            ;
+            margin-bottom: 2rem;
+        }
+        &-heading {
+            margin-bottom: 1rem;
         }
     }
     &-password {
         background-color: lemonchiffon;
+    }
+    &-history {
+        margin-top: 4rem;
     }
 }
