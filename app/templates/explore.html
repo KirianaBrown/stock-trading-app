@@ -53,7 +53,7 @@
                         {% if stock.changePrice > 0 %}
                         <td class="dash-trending--table_data green">+{{stock.changePercentage}}%</td>
                         {% else %}
-                        <td class="dash-trending--table_data red">-{{stock.changePercentage}}%</td>
+                        <td class="dash-trending--table_data red">{{stock.changePercentage}}%</td>
                         {% endif %}
                     </tr>
                     {% endfor %}
