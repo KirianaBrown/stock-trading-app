@@ -8,7 +8,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from .models import db, User
 # Helper Functions
-from .helpers import check_registration_valid, getTop10
+from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers
 
 
 from dotenv import load_dotenv
@@ -100,16 +100,16 @@ def dashboard():
 @app.route('/explore')
 def explore():
 
-  if not session.get('top10'):
-    session['top10'] = getTop10()
-    print('no top10 stored in session')
+  if not session.get('listMostActive'):
+    session['listMostActive'] = getListMostActive()
+    print('no listMostActive stored in session')
   else:
-    print('top 10 was already stored in the session')
+    print('listMostActive was already stored in the session')
   
-  top10 = session['top10']
-  top = session['top10'][0]
+  mostActive = session['listMostActive']
+  topActive = session['listMostActive'][0]
 
-  return render_template('/explore.html', top10=top10, top=top)
+  return render_template('/explore.html', mostActive=mostActive, topActive=topActive)
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():
