@@ -81,11 +81,36 @@
                         <p class='dash-portfolio-table__minor '>current</p>
                     </div>
                     {% if stock.changePrice > 0 %}
-                    <div class="dash-portfolio-table_data green ">+49.00% <br>
+                    <div class="dash-portfolio-table_data ">+{{stock.changePercentage}}% <br>
                         <p class='dash-portfolio-table__minor '>change</p>
                     </div>
                     {% else %}
-                    <div class="dash-portfolio-table_data red">49.00% <br>
+                    <div class="dash-portfolio-table_data red">{{stock.changePercentage}}%<br>
+                        <p class='dash-portfolio-table__minor '>percentage change</p>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="explore-section-header">
+                Top Losers
+            </div>
+            <div class="explore-section-content">
+                {% for stock in losers %}
+                <div class="explore-section-content_item">
+                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
+                        <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
+                    </div>
+                    <div class="dash-portfolio-table_data">${{stock.price}} usd <br>
+                        <p class='dash-portfolio-table__minor '>current</p>
+                    </div>
+                    {% if stock.changePrice > 0 %}
+                    <div class="dash-portfolio-table_data green ">+{{stock.changePercentage}}%<br>
+                        <p class='dash-portfolio-table__minor '>change</p>
+                    </div>
+                    {% else %}
+                    <div class="dash-portfolio-table_data red">{{stock.changePercentage}}%<br>
                         <p class='dash-portfolio-table__minor '>percentage change</p>
                     </div>
                     {% endif %}
