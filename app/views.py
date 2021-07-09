@@ -110,8 +110,7 @@ def explore():
   top2 = session['top10'][:2]
   top8 = session['top10'][2:]
 
-
-  return render_template('/explore.html')
+  return render_template('/explore.html', top2=top2)
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():

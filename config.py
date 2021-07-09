@@ -28,4 +28,4 @@ class DevelopmentConfig(Config):
   SESSION_COOKIE_SECURE = False
   TEMPLATES_AUTO_RELOAD = True
   SECRET_KEY: os.environ.get("SECRET_KEY")
-  SESSION_TYPE: "filesystem"
+  SESSION_PERMANENT = False
