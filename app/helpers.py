@@ -20,7 +20,7 @@ def check_registration_valid(username, password, confirmation='none'):
     if not password == confirmation:
       return 'Oops your confirmation password does not match - please try again'
 
-def formatValues(value):
+def formatDollar(value):
   return f"${value:,.2f}"
 
 def getLogo(symbol):
