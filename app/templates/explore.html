@@ -53,7 +53,7 @@
                     <tr>
                         <td class="dash-trending--table_data">{{loop.index}}</td>
                         <td class="dash-trending--table_data">{{stock.name}}</td>
-                        <td class="dash-trending--table_data">${{stock.price}}</td>
+                        <td class="dash-trending--table_data">{{stock.price | formatDollar}}</td>
                         {% if stock.changePrice > 0 %}
                         <td class="dash-trending--table_data green">+{{stock.changePercentage}}%</td>
                         {% else %}
@@ -102,7 +102,7 @@
                     <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
                         <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
                     </div>
-                    <div class="dash-portfolio-table_data">${{stock.price}} usd <br>
+                    <div class="dash-portfolio-table_data">{{stock.price | formatDollar}} usd <br>
                         <p class='dash-portfolio-table__minor '>current</p>
                     </div>
                     {% if stock.changePrice > 0 %}
