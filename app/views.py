@@ -107,8 +107,9 @@ def explore():
     print('top 10 was already stored in the session')
   
   top10 = session['top10']
+  top = session['top10'][0]
 
-  return render_template('/explore.html', top10=top10)
+  return render_template('/explore.html', top10=top10, top=top)
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():
