@@ -8,7 +8,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from .models import db, User
 # Helper Functions
-from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, getLogo, formatDollar
+from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, getLogo, formatDollar, formatPercentage
 
 
 from dotenv import load_dotenv
@@ -16,6 +16,7 @@ load_dotenv()
 
 # Custom filter
 app.jinja_env.filters["formatDollar"] = formatDollar
+app.jinja_env.filters["formatPercentage"] = formatPercentage
 
 #Make sure API key is set
 if not os.environ.get("API_KEY"):
