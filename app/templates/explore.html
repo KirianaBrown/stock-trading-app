@@ -57,7 +57,7 @@
                         {% if stock.changePrice > 0 %}
                         <td class="dash-trending--table_data green">+{{stock.changePercentage}}%</td>
                         {% else %}
-                        <td class="dash-trending--table_data red">{{stock.changePercentage}}%</td>
+                        <td class="dash-trending--table_data red">{{stock.changePercentage}}</td>
                         {% endif %}
                     </tr>
                     {% endfor %}
@@ -81,11 +81,11 @@
                         <p class='dash-portfolio-table__minor '>current</p>
                     </div>
                     {% if stock.changePrice > 0 %}
-                    <div class="dash-portfolio-table_data ">+{{stock.changePercentage}}% <br>
+                    <div class="dash-portfolio-table_data ">+{{stock.changePercentage | formatPercentage}}% <br>
                         <p class='dash-portfolio-table__minor '>change</p>
                     </div>
                     {% else %}
-                    <div class="dash-portfolio-table_data red">{{stock.changePercentage}}%<br>
+                    <div class="dash-portfolio-table_data red">{{stock.changePercentage | formatPercentage}}%<br>
                         <p class='dash-portfolio-table__minor '>percentage change</p>
                     </div>
                     {% endif %}
