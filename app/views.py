@@ -100,6 +100,7 @@ def dashboard():
 @app.route('/explore')
 def explore():
 
+  # 1. Get most active
   if not session.get('listMostActive'):
     session['listMostActive'] = getListMostActive()
     print('no listMostActive stored in session')
@@ -109,7 +110,25 @@ def explore():
   mostActive = session['listMostActive']
   topActive = session['listMostActive'][0]
 
-  return render_template('/explore.html', mostActive=mostActive, topActive=topActive)
+  # 2. gainers
+  if not session.get('listGainers'):
+    session['listGainers'] = getListGainers()
+    print('no list gainers in session // set now')
+  else:
+    print('list gainers already in session')
+
+  gainers = session['listGainers']
+
+  # 3. losers
+  if not session.get('listLosers'):
+    session['listLosers'] = getListLosers()
+    print('no list losers in current session // saved now')
+  else:
+    print('list losers already stored in session')
+
+  losers = session['listLosers']
+
+  return render_template('/explore.html', mostActive=mostActive, topActive=topActive, gainers=gainers, losers=losers)
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():
