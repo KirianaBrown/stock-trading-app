@@ -14,6 +14,8 @@ from .helpers import check_registration_valid, getListGainers, getListMostActive
 from dotenv import load_dotenv
 load_dotenv()
 
+# Custom filter
+app.jinja_env.filters["formatValues"] = formatValues
 
 #Make sure API key is set
 if not os.environ.get("API_KEY"):
