@@ -20,17 +20,17 @@
                         <img src="{{url_for('static', filename='/img/dashboard/chart.svg')}}" class='dash-spotlight--content_image'>
                     </div>
                     <div class="dash-spotlight--content_text">
-                        <div class="dash-spotlight--content_text-symbol">{{topActive.symbol}}</div>
-                        <div class="dash-spotlight--content_text-name">{{topActive.name}}</div>
+                        <div class="dash-spotlight--content_text-symbol">{{spotlight.symbol}}</div>
+                        <div class="dash-spotlight--content_text-name">{{spotlight.name}}</div>
                         <p class="dash-spotlight--content_text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nisi amet cupiditate quam, natus ea ipsum corporis sed asperiores, ut id laborum magnam similique modi molestias quae eum labore rerum. Lorem, ipsum dolor sit amet
                             consectetur adipisicing elit. Earum aut corrupti tempora, ex aperiam quod placeat, facilis asperiores, eius vel non dicta! Ut asperiores id iste minus? Deleniti, nemo aliquid.</p>
                         <hr class='margin'>
                         <div class="dash-spotlight--content_text-price">
                             <div class="dash-spotlight--content_text-price">price</div>
-                            {% if topActive.changePrice > 0 %}
-                            <div class="dash-spotlight--content_text-details green">${{topActive.price | formatDollar}} usd (+{{topActive.changePercentage | formatPercentage}})</div>
+                            {% if spotlight.changePrice > 0 %}
+                            <div class="dash-spotlight--content_text-details green">${{spotlight.price | formatDollar}} usd (+{{spotlight.changePercentage | formatPercentage}})</div>
                             {% else %}
-                            <div class="dash-spotlight--content_text-details red">{{topActive.price | formatDollar}} usd ({{topActive.changePercentage | formatPercentage}})</div>
+                            <div class="dash-spotlight--content_text-details red">{{spotlight.price | formatDollar}} usd ({{spotlight.changePercentage | formatPercentage}})</div>
                             {% endif %}
                         </div>
                     </div>

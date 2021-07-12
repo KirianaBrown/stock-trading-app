@@ -154,7 +154,19 @@ def explore():
     print('listMostActive was already stored in the session')
   
   mostActive = session['listMostActive']
-  topActive = session['listMostActive'][0]
+
+  # 2. get spotlight
+  if not session.get('spotlightCompany'):
+    session['spotlightCompany'] = mostActive[random.randint(0, 9)]
+
+  spotlight = session['spotlightCompany']
+
+  #2b get spotlight company details
+  if not session.get('spotlightCompanyDetails'):
+    session['spotlightCompanyDetails'] = getCompanyDetails(spotlight['symbol'])
+
+  spotlightCompanyDetails = session['spotlightCompanyDetails']
+
 
   # 2. gainers
   if not session.get('listGainers'):
@@ -174,7 +186,7 @@ def explore():
 
   losers = session['listLosers']
 
-  return render_template('/explore.html', mostActive=mostActive, topActive=topActive, gainers=gainers, losers=losers)
+  return render_template('/explore.html', mostActive=mostActive, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, gainers=gainers, losers=losers)
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():
