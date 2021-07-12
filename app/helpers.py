@@ -151,3 +151,35 @@ def getCryto(symbol):
   except(KeyError, TypeError, ValueError):
     return None
     
+def getCompanyDetails(symbol):
+  # cloud.iexapis.com ~ company details  ~
+    # Contact API and convert into python dictionary
+    try:
+        api_key_test = os.environ.get('API_KEY_TEST')
+        # url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
+        url = f'https://sandbox.iexapis.com/stable/stock/{symbol}/company/?token={api_key_test}'
+
+        response = requests.get(url)
+    except requests.RequestException:
+        return None
+
+    # Parse response
+    try:
+        list = response.json()
+        data = []
+
+        for item in range(len(list)):
+          data.append({
+            "name": list[item]["companyName"],
+            "symbol": list[item]["symbol"],
+            "exchange": list[item]["exchange"],
+            "industry": list[item]["industry"],
+            "description": list[item]["description"],
+            "ceo": list[item]["CEO"],
+            "sector": list[item]["sector"],
+            "country": list[item]["country"],
+          })
+        
+        return data
+    except (KeyError, TypeError, ValueError):
+        return None
