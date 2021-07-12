@@ -22,8 +22,13 @@
                     <div class="dash-spotlight--content_text">
                         <div class="dash-spotlight--content_text-symbol">{{spotlight.symbol}}</div>
                         <div class="dash-spotlight--content_text-name">{{spotlight.name}}</div>
-                        <p class="dash-spotlight--content_text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nisi amet cupiditate quam, natus ea ipsum corporis sed asperiores, ut id laborum magnam similique modi molestias quae eum labore rerum. Lorem, ipsum dolor sit amet
-                            consectetur adipisicing elit. Earum aut corrupti tempora, ex aperiam quod placeat, facilis asperiores, eius vel non dicta! Ut asperiores id iste minus? Deleniti, nemo aliquid.</p>
+                        <div class="dash-spotlight--content_text-exchange">{{spotlightCompanyDetails['exchange']}}</div>
+                        {% if spotlightCompanyDetails %}
+                        <p class="dash-spotlight--content_text-description">{{spotlightCompanyDetails['description']}}</p>
+                        {% else %}
+                        <p>-----</p>
+                        {% endif %}
+                        <div class="dash-spotlight--content_text-sector">{{spotlightCompanyDetails['sector']}}</div>
                         <hr class='margin'>
                         <div class="dash-spotlight--content_text-price">
                             <div class="dash-spotlight--content_text-price">price</div>
