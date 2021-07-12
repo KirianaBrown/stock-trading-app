@@ -115,9 +115,15 @@ def dashboard():
     if not session.get('spotlightCompany'):
       session['spotlightCompany'] = mostActive[random.randint(0, 9)]
 
-
     spotlight = session['spotlightCompany']
     print(spotlight['symbol'])  
+
+    #2b get spotlight company details
+    if not session.get('spotlightCompanyDetails'):
+      session['spotlightCompanyDetails'] = getCompanyDetails(spotlight['symbol'])
+
+    spotlightCompanyDetails = session['spotlightCompanyDetails']
+
     
     # 3. get bitcoin
     if not session.get('bitcoin'):
