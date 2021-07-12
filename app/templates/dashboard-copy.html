@@ -91,14 +91,20 @@
                     </div>
                     <div class="dash-trending-assets--item ">
                         <div class="dash-trending-assets_image ">
-                            <img src="{{url_for( 'static', filename='/img/dashboard/cardano.svg' )}} " alt="Gold" class="dash-trending-assets_img">
+                            <img src="{{url_for( 'static', filename='/img/dashboard/litecoin.svg' )}} " alt="LiteCoin" class="dash-trending-assets_img">
                         </div>
                         <div class="dash-trending-assets_name ">
-                            Cardano
+                            Litecoin
                         </div>
+                        {% if litecoin %}
                         <div class="dash-trending-assets_cost ">
-                            $2000
+                            {{ litecoin | formatDollar }}
                         </div>
+                        {% else %}
+                        <div class="dash-trending-assets_cost ">
+                            ---
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="dash-trending-assets--item ">
                         <div class="dash-trending-assets_image ">

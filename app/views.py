@@ -112,20 +112,32 @@ def dashboard():
     spotlight = session['listMostActive'][0]
 
     # 3. get bitcoin
-    bitcoin = getCryto('btcusd')
+    if not session.get('bitcoin'):
+      session['bitcoin'] = getCryto('btcusd')
+      print('added bitcoin to session history')
+    
+    bitcoin = session['bitcoin']['price']
     print(bitcoin)
 
     # 4. get cardona
-    litecoin = getCryto('LTCUSD')
+    if not session.get('litecoin'):
+      session['litecoin'] = getCryto('ltcusd')
+      print('added litecoin to session history')
+    
+    litecoin = float(session['litecoin']['price'])
     print(litecoin)
 
     # 5. get etherirum
-    eth = getCryto('ethusd')
-    print(eth['price'])
+    if not session.get('eth'):
+      session['eth'] = getCryto('ethusd')
+      print('added eth to session history')
+    
+    eth = session['eth']['price']
+    print(eth)
 
     # 6. get portfolio
 
-    return render_template('/dashboard-copy.html')
+    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth)
 
 @app.route('/explore')
 def explore():
