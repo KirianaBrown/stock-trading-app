@@ -107,6 +107,7 @@ def dashboard():
       print('ListMostActive was already stored in the session')
     
     mostActive = session['listMostActive']
+    trending = mostActive[:5]
 
     # 2. get spotlight
     spotlight = session['listMostActive'][0]
@@ -126,11 +127,10 @@ def dashboard():
     if not session.get('eth'):
       session['eth'] = getCryto('ethusd')  
     eth = float(session['eth']['price'])
-    
 
     # 6. get portfolio
 
-    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth)
+    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending)
 
 @app.route('/explore')
 def explore():
