@@ -165,21 +165,7 @@ def getCompanyDetails(symbol):
 
     # Parse response
     try:
-        list = response.json()
-        data = []
-
-        for item in range(len(list)):
-          data.append({
-            "name": list[item]["companyName"],
-            "symbol": list[item]["symbol"],
-            "exchange": list[item]["exchange"],
-            "industry": list[item]["industry"],
-            "description": list[item]["description"],
-            "ceo": list[item]["CEO"],
-            "sector": list[item]["sector"],
-            "country": list[item]["country"],
-          })
-        
+        data = response.json()
         return data
     except (KeyError, TypeError, ValueError):
-        return None
+      return None

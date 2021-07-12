@@ -123,7 +123,6 @@ def dashboard():
       session['spotlightCompanyDetails'] = getCompanyDetails(spotlight['symbol'])
 
     spotlightCompanyDetails = session['spotlightCompanyDetails']
-
     
     # 3. get bitcoin
     if not session.get('bitcoin'):
@@ -142,7 +141,7 @@ def dashboard():
 
     # 6. get portfolio
 
-    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight)
+    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails)
 
 @app.route('/explore')
 def explore():
