@@ -2,6 +2,9 @@ import os
 import requests
 
 
+def randomInt():
+  return randomInt(0, 9)
+
 def check_registration_valid(username, password, confirmation='none'):
 
   if not username and not password:

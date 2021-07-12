@@ -8,7 +8,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from .models import db, User
 # Helper Functions
-from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, getLogo, formatDollar, formatPercentage
+from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, getLogo, formatDollar, formatPercentage, randomInt
 
 
 from dotenv import load_dotenv
@@ -98,6 +98,26 @@ def login():
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
   if request.method == 'GET':
+  
+    # 1. get most active
+    if not session.get('listMostActive'):
+      session['listMostActive'] = getListMostActive()
+      print('no listMostActive stored in session | It is now')
+    else:
+      print('ListMostActive was already stored in the session')
+    
+    mostActive = session['listMostActive']
+
+    # 2. get spotlight
+    spotlight = session['listMostActive'][0]
+
+    # 3. get bitcoin
+
+    # 4. get gold
+
+    # 5. get etherirum
+
+    # 6. get portfolio
 
     return render_template('/dashboard-copy.html')
 
@@ -122,9 +142,6 @@ def explore():
     print('list gainers already in session')
 
   gainers = session['listGainers']
- 
-  logo = getLogo('XELA')
-  print(logo['url'])
 
   # 3. losers
   if not session.get('listLosers'):
