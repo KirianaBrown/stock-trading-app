@@ -105,11 +105,20 @@ def dashboard():
       session['listMostActive'] = getListMostActive()
     
     mostActive = session['listMostActive']
-    trending = mostActive[:5]
+
+    if not session.get('trending'):
+      session['trending'] = mostActive[:5]
+
+    trending = session['trending']
 
     # 2. get spotlight
-    spotlight = session['listMostActive'][random.randint(0, 9)]
+    if not session.get('spotlightCompany'):
+      session['spotlightCompany'] = mostActive[random.randint(0, 9)]
 
+
+    spotlight = session['spotlightCompany']
+    print(spotlight['symbol'])  
+    
     # 3. get bitcoin
     if not session.get('bitcoin'):
       session['bitcoin'] = getCryto('btcusd') 
@@ -119,7 +128,6 @@ def dashboard():
     if not session.get('litecoin'):
       session['litecoin'] = getCryto('ltcusd') 
     litecoin = float(session['litecoin']['price'])
-
 
     # 5. get etherirum
     if not session.get('eth'):
