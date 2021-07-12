@@ -113,27 +113,20 @@ def dashboard():
 
     # 3. get bitcoin
     if not session.get('bitcoin'):
-      session['bitcoin'] = getCryto('btcusd')
-      print('added bitcoin to session history')
-    
-    bitcoin = session['bitcoin']['price']
-    print(bitcoin)
+      session['bitcoin'] = getCryto('btcusd') 
+    bitcoin = float(session['bitcoin']['price'])
 
     # 4. get cardona
     if not session.get('litecoin'):
-      session['litecoin'] = getCryto('ltcusd')
-      print('added litecoin to session history')
-    
+      session['litecoin'] = getCryto('ltcusd') 
     litecoin = float(session['litecoin']['price'])
-    print(litecoin)
+
 
     # 5. get etherirum
     if not session.get('eth'):
-      session['eth'] = getCryto('ethusd')
-      print('added eth to session history')
+      session['eth'] = getCryto('ethusd')  
+    eth = float(session['eth']['price'])
     
-    eth = session['eth']['price']
-    print(eth)
 
     # 6. get portfolio
 
