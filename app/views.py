@@ -109,18 +109,19 @@ def dashboard():
     mostActive = session['listMostActive']
 
     # 2. get spotlight
-    randInt = randomInt(0,9)
-    print(randInt)
     spotlight = session['listMostActive'][0]
 
     # 3. get bitcoin
     bitcoin = getCryto('btcusd')
+    print(bitcoin)
 
     # 4. get cardona
     cardano = getCryto('adausd')
+    print(cardano)
 
     # 5. get etherirum
     eth = getCryto('ethusd')
+    print(eth)
 
     # 6. get portfolio
 
