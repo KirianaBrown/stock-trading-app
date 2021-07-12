@@ -116,12 +116,12 @@ def dashboard():
     print(bitcoin)
 
     # 4. get cardona
-    cardano = getCryto('adausd')
-    print(cardano)
+    litecoin = getCryto('LTCUSD')
+    print(litecoin)
 
     # 5. get etherirum
     eth = getCryto('ethusd')
-    print(eth)
+    print(eth['price'])
 
     # 6. get portfolio
 
