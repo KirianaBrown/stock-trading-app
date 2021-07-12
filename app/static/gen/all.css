@@ -563,6 +563,12 @@ a {
       .dash-spotlight--content_text-name {
         color: #b3bbd7;
         font-size: 2rem; }
+      .dash-spotlight--content_text-exchange {
+        color: #3e4975;
+        font-size: 1.2rem; }
+      .dash-spotlight--content_text-sector {
+        color: #3e4975;
+        font-size: 1.2rem; }
       .dash-spotlight--content_text-description {
         font-size: 1rem;
         margin: 1rem 0;

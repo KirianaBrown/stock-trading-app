@@ -16,20 +16,33 @@
                     <h3 class="dash-heading">Spotlight Stock</h3>
                 </div>
                 <div class="dash-spotlight--content">
+                    {% if spotlight %}
                     <div class="dash-spotlight--content_img">
                         <img src="{{url_for('static', filename='/img/dashboard/chart.svg')}}" class='dash-spotlight--content_image'>
                     </div>
                     <div class="dash-spotlight--content_text">
-                        <div class="dash-spotlight--content_text-symbol">AAPL</div>
-                        <div class="dash-spotlight--content_text-name">Apple</div>
-                        <p class="dash-spotlight--content_text-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas nisi amet cupiditate quam, natus ea ipsum corporis sed asperiores, ut id laborum magnam similique modi molestias quae eum labore rerum. Lorem, ipsum dolor sit amet
-                            consectetur adipisicing elit. Earum aut corrupti tempora, ex aperiam quod placeat, facilis asperiores, eius vel non dicta! Ut asperiores id iste minus? Deleniti, nemo aliquid.</p>
+                        <div class="dash-spotlight--content_text-symbol">{{spotlight['symbol']}}</div>
+                        <div class="dash-spotlight--content_text-name">{{spotlight['name']}}</div>
+                        <div class="dash-spotlight--content_text-exchange">{{spotlightCompanyDetails['exchange']}}</div>
+                        {% if spotlightCompanyDetails %}
+                        <p class="dash-spotlight--content_text-description">{{spotlightCompanyDetails['description']}}</p>
+                        {% else %}
+                        <p>-----</p>
+                        {% endif %}
+                        <div class="dash-spotlight--content_text-sector">{{spotlightCompanyDetails['sector']}}</div>
                         <hr class='margin'>
                         <div class="dash-spotlight--content_text-price">
                             <div class="dash-spotlight--content_text-price">price</div>
-                            <div class="dash-spotlight--content_text-details green">$50 usd (up 20%)</div>
+                            {% if spotlight.changePrice > 0 %}
+                            <div class="dash-spotlight--content_text-details green">{{spotlight.price | formatDollar}} (up {{spotlight.changePercentage | formatPercentage}})</div>
+                            {% else %}
+                            <div class="dash-spotlight--content_text-details red">{{spotlight.price | formatDollar}} (down {{spotlight.formatPercentage}})</div>
+                            {% endif %}
                         </div>
                     </div>
+                    {% else %}
+                    <p>Welcome to KB Trader</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
