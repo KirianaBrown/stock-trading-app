@@ -1,4 +1,5 @@
 import os
+import random
 
 from flask.helpers import url_for
 from app import app
@@ -102,15 +103,12 @@ def dashboard():
     # 1. get most active
     if not session.get('listMostActive'):
       session['listMostActive'] = getListMostActive()
-      print('no listMostActive stored in session | It is now')
-    else:
-      print('ListMostActive was already stored in the session')
     
     mostActive = session['listMostActive']
     trending = mostActive[:5]
 
     # 2. get spotlight
-    spotlight = session['listMostActive'][0]
+    spotlight = session['listMostActive'][random.randint(0, 9)]
 
     # 3. get bitcoin
     if not session.get('bitcoin'):
@@ -130,7 +128,7 @@ def dashboard():
 
     # 6. get portfolio
 
-    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending)
+    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight)
 
 @app.route('/explore')
 def explore():
