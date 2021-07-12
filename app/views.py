@@ -109,6 +109,8 @@ def dashboard():
     mostActive = session['listMostActive']
 
     # 2. get spotlight
+    randInt = randomInt()
+    print(randInt)
     spotlight = session['listMostActive'][0]
 
     # 3. get bitcoin

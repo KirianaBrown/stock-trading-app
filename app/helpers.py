@@ -139,3 +139,19 @@ def getListLosers():
         return data
     except (KeyError, TypeError, ValueError):
         return None
+
+def getCryto(symbol):
+  try:
+    api_key_test: os.environ.get('API_KEY_TEST')
+    url = f'https://sandbox.iexapis.com/stable/crypto/{symbol}/price/?token={api_key_test}'
+
+    response = requests.get(url)
+  except requests.RequestException:
+    return None
+  
+  #parse data
+  try:
+    return response.json()
+  except(KeyError, TypeError, ValueError):
+    return None
+    
