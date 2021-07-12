@@ -46,36 +46,25 @@
                         <th class="dash-trending--table_head">price/unit</th>
                         <th class="dash-trending--table_head">change</th>
                     </tr>
+                    {% if trending %} {% for stock in trending %}
+                    <tr>
+                        <td class="dash-trending--table_data">{{loop.index}}</td>
+                        <td class="dash-trending--table_data">{{stock.name}}</td>
+                        <td class="dash-trending--table_data">{{stock.price | formatDollar}}</td>
+                        {% if stock.changePrice > 0 %}
+                        <td class="dash-trending--table_data green">+{{stock.changePercentage | formatPercentage}}</td>
+                        {% else %}
+                        <td class="dash-trending--table_data red">{{stock.changePercentage | formatPercentage}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %} {% else %}
                     <tr>
                         <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
+                        <td class="dash-trending--table_data">------</td>
+                        <td class="dash-trending--table_data">$----</td>
+                        <td class="dash-trending--table_data green">---%</td>
                     </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data red">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data red">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
-                    <tr>
-                        <td class="dash-trending--table_data">1</td>
-                        <td class="dash-trending--table_data">MINX version control</td>
-                        <td class="dash-trending--table_data">$109.92</td>
-                        <td class="dash-trending--table_data green">+49.00%</td>
-                    </tr>
+                    {% endif %}
                 </table>
                 <div class="dash-trending-assets">
                     <div class="dash-trending-assets--item">
