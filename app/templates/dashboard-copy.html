@@ -85,9 +85,15 @@
                         <div class=" dash-trending-assets_name ">
                             Bitcoin
                         </div>
+                        {% if bitcoin %}
                         <div class="dash-trending-assets_cost ">
-                            $2000
+                            {{ bitcoin | formatDollar }}
                         </div>
+                        {% else %}
+                        <div class="dash-trending-assets_cost ">
+                            -.-
+                        </div>
+                        {% endif %}
                     </div>
                     <div class="dash-trending-assets--item ">
                         <div class="dash-trending-assets_image ">
@@ -102,7 +108,7 @@
                         </div>
                         {% else %}
                         <div class="dash-trending-assets_cost ">
-                            ---
+                            -.-
                         </div>
                         {% endif %}
                     </div>
@@ -113,9 +119,15 @@
                         <div class="dash-trending-assets_name ">
                             ethereum
                         </div>
+                        {% if eth %}
                         <div class="dash-trending-assets_cost ">
-                            $2000
+                            {{ eth | formatDollar }}
                         </div>
+                        {% else %}
+                        <div class="dash-trending-assets_cost ">
+                            -.-
+                        </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
