@@ -81,15 +81,15 @@
                 <tbody>
                     <tr class='quote-table_row '>
                         <td class='quote-table_data '>Primary Exchange: {{spotlightCompanyDetails['exchange']}}</td>
-                        <td class='quote-table_data '>Market Cap: 54Billion</td>
+                        <td class='quote-table_data '>Market Cap: {{spotlightQuote['marketCap']}}</td>
                     </tr>
                     <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Week 52 High: 435</td>
-                        <td class='quote-table_data '>Week 52 Low: 399</td>
+                        <td class='quote-table_data '>Week 52 High: {{spotlightQuote['week52High'] | formatDollar}}</td>
+                        <td class='quote-table_data '>Week 52 Low: {{spotlightQuote['week52Low'] | formatDollar}}</td>
                     </tr>
                     <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Open: $356</td>
-                        <td class='quote-table_data '>Close: $502</td>
+                        <td class='quote-table_data '>Open: {{spotlightQuote['openPrice'] | formatDollar}}</td>
+                        <td class='quote-table_data '>Close: {{spotlightQuote['closePrice'] |formatDollar}}</td>
                     </tr>
                 </tbody>
             </table>

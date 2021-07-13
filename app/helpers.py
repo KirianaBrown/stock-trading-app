@@ -175,9 +175,11 @@ def getQuote(symbol):
   # cloud.iexapis.com ~ quote ~
   try: 
     api_key_test = os.environ.get('API_KEY_TEST')
-    url = f'https://sandbox.iexapis.com/stable/{symbol}/quote/?token={api_key_test}'
+    # url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
+    url = f'https://sandbox.iexapis.com/stable/stock/{symbol}/quote/?token={api_key_test}'
 
     response = requests.get(url)
+    response.raise_for_status()
   except requests.RequestException:
     return None
   
@@ -196,4 +198,5 @@ def getQuote(symbol):
       "week52Low": data["week52Low"]
     }
   except(KeyError, TypeError, ValueError):
+    print('error parsing the data')
     return None

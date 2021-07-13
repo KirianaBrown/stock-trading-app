@@ -9,7 +9,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from .models import db, User
 # Helper Functions
-from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, formatDollar, formatPercentage, getCryto,getCompanyDetails, getQuote,
+from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, formatDollar, formatPercentage, getCryto,getCompanyDetails, getQuote
 
 
 from dotenv import load_dotenv
@@ -211,8 +211,11 @@ def quote():
       session['spotlightCompanyDetails'] = getCompanyDetails(spotlight['symbol'])
 
     spotlightCompanyDetails = session['spotlightCompanyDetails']
+
+    spotlightQuote = getQuote('SGOC')
+    print(spotlightQuote)
     
-    return render_template('/quote.html', spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails)
+    return render_template('/quote.html', spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, spotlightQuote=spotlightQuote)
 
 @app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
