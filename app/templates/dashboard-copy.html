@@ -144,6 +144,7 @@
                 </div>
                 <div class="dash-portfolio--content ">
                     <table class='dash-portfolio-table'>
+                        {% if portfolio %}
                         <tr class='dash-portfolio-table__item'>
                             <td>
                                 <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
@@ -158,34 +159,22 @@
                                 <p class='dash-portfolio-table__minor '>sdlfksmds</p>
                             </td>
                         </tr>
+                        {% else %}
                         <tr class='dash-portfolio-table__item'>
                             <td>
                                 <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
                             </td>
-                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">MINX version control <br>
-                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
+                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">---- <br>
+                                <p class=' dash-portfolio-table__minor '>company</p>
                             </td>
-                            <td class="dash-portfolio-table_data red ">$109.92 <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            <td class="dash-portfolio-table_data green ">$---- <br>
+                                <p class='dash-portfolio-table__minor '>price</p>
                             </td>
-                            <td class="dash-portfolio-table_data red ">-49.00% <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                        </tr>
-                        <tr class='dash-portfolio-table__item'>
-                            <td>
-                                <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                            </td>
-                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">MINX version control <br>
-                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data green ">$109.92 <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
-                            </td>
-                            <td class="dash-portfolio-table_data green ">+49.00% <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                            <td class="dash-portfolio-table_data green ">---% <br>
+                                <p class='dash-portfolio-table__minor '>change</p>
                             </td>
                         </tr>
+                        {% endif %}
                     </table>
                 </div>
             </div>
