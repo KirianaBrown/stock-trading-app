@@ -149,14 +149,14 @@
                             <td>
                                 <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
                             </td>
-                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">MINX version control <br>
-                                <p class=' dash-portfolio-table__minor '>sdlfksmds</p>
+                            <td class="dash-portfolio-table_data dash-portfolio-table-name ">{{portfolio.name}} <br>
+                                <p class=' dash-portfolio-table__minor '>company</p>
                             </td>
                             <td class="dash-portfolio-table_data green ">$109.92 <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                                <p class='dash-portfolio-table__minor '>current</p>
                             </td>
                             <td class="dash-portfolio-table_data green ">+49.00% <br>
-                                <p class='dash-portfolio-table__minor '>sdlfksmds</p>
+                                <p class='dash-portfolio-table__minor '>change</p>
                             </td>
                         </tr>
                         {% else %}
