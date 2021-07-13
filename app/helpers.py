@@ -130,6 +130,7 @@ def getListLosers():
             "price": list[item]["latestPrice"],
             "changePercentage": (list[item]["changePercent"] * 100),
             "changePrice": list[item]["change"],
+            "marketCap":list[item][""]
           })
         
         return data
@@ -169,3 +170,30 @@ def getCompanyDetails(symbol):
         return data
     except (KeyError, TypeError, ValueError):
       return None
+
+def getQuote(symbol):
+  # cloud.iexapis.com ~ quote ~
+  try: 
+    api_key_test = os.environ.get('API_KEY_TEST')
+    url = f'https://sandbox.iexapis.com/stable/{symbol}/quote/?token={api_key_test}'
+
+    response = requests.get(url)
+  except requests.RequestException:
+    return None
+  
+  # parse response
+  try:
+    data = response.json()
+    return {
+      "symbol": data["symbol"],
+      "exchange": data["primaryExchange"],
+      "latestPrice": data["latestPrice"],
+      "latestTime": data["latestTime"],
+      "openPrice":data["open"],
+      "closePrice": data["previousClose"],
+      "marketCap": data["marketCap"],
+      "week52High": data["week52High"],
+      "week52Low": data["week52Low"]
+    }
+  except(KeyError, TypeError, ValueError):
+    return None
