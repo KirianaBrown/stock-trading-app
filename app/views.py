@@ -145,7 +145,6 @@ def dashboard():
 
 @app.route('/explore')
 def explore():
-
   # 1. Get most active
   if not session.get('listMostActive'):
     session['listMostActive'] = getListMostActive()
@@ -166,7 +165,6 @@ def explore():
     session['spotlightCompanyDetails'] = getCompanyDetails(spotlight['symbol'])
 
   spotlightCompanyDetails = session['spotlightCompanyDetails']
-
 
   # 2. gainers
   if not session.get('listGainers'):
@@ -190,8 +188,31 @@ def explore():
 
 @app.route('/quote', methods=['GET', 'POST'])
 def quote():
+
   if request.method == 'GET':
-    return render_template('/quote.html')
+
+     # 1. Get most active
+    if not session.get('listMostActive'):
+      session['listMostActive'] = getListMostActive()
+      print('no listMostActive stored in session')
+    else:
+      print('listMostActive was already stored in the session')
+  
+    mostActive = session['listMostActive']
+
+    # 2. get spotlight
+    if not session.get('spotlightCompany'):
+      session['spotlightCompany'] = mostActive[random.randint(0, 9)]
+
+    spotlight = session['spotlightCompany']
+
+    #2b get spotlight company details
+    if not session.get('spotlightCompanyDetails'):
+      session['spotlightCompanyDetails'] = getCompanyDetails(spotlight['symbol'])
+
+    spotlightCompanyDetails = session['spotlightCompanyDetails']
+    
+    return render_template('/quote.html', spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails)
 
 @app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
