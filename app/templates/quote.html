@@ -64,9 +64,46 @@
                 </div>
                 <button type='submit ' class="btn-primary quote-form_action">buy</button>
             </form>
-            {% endif %}
+            {% else %}
+            <h2 class="quote-company-stock">{{spotlight['symbol']}}</h2>
+            <div class="quote-company-name">{{spotlight['name']}}</div>
+            <div class="quote-company-price">{{spotlight['price'] | formatDollar}} usd {% if spotlight.changePrice > 0 %}
+                <span class='green quote-company-price_stats '>{{spotlight.changePrice | formatDollar}} ({{spotlight.changePercentage | formatPercentage}})</span></div>
+            {% else %}
+            <span class='red quote-company-price_stats '>{{spotlight.changePrice | formatDollar}} ({{spotlight.changePercentage | formatPercentage}})</span></div>
+        {% endif %}
+        <hr>
+        <p class="quote-company-description">
+            {{spotlightCompanyDetails['description']}}
+        </p>
+        <div class="quote-company-details">
+            <table class='quote-table '>
+                <tbody>
+                    <tr class='quote-table_row '>
+                        <td class='quote-table_data '>Primary Exchange: {{spotlightCompanyDetails['exchange']}}</td>
+                        <td class='quote-table_data '>Market Cap: 54Billion</td>
+                    </tr>
+                    <tr class='quote-table_row '>
+                        <td class='quote-table_data '>Week 52 High: 435</td>
+                        <td class='quote-table_data '>Week 52 Low: 399</td>
+                    </tr>
+                    <tr class='quote-table_row '>
+                        <td class='quote-table_data '>Open: $356</td>
+                        <td class='quote-table_data '>Close: $502</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        <form class='quote-form '>
+            <div class="quote-form_group">
+                <label for="quantity" class="quote-form_label">Quantity</label>
+                <input type="number" class="quote-form_input" placeholder="1">
+            </div>
+            <button type='submit ' class="btn-primary quote-form_action">buy</button>
+        </form>
+        {% endif %}
     </div>
+</div>
 </div>
 
 {% endblock %}
