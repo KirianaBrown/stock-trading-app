@@ -12,15 +12,19 @@ def wallet(action):
 
     if not amount:
       return 'No amount provided'
+
+    if action == 'topup':
+      return f'topup selected with an amount of {amount}'
     
-    print(f'amount to top up wallet: {amount}')
+    if action == 'withdrawal':
+      return f'withdrawal selected with an amount of {amount}'
 
     # 2. get wallet for current user
 
     # 3. Add value to the wallet
 
     # 4. Log transaction date (render account page)
-    return render_template('/account.html')
+    # return render_template('/account.html')
 
   return 'top up the wallet'
 
