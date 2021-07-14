@@ -32,7 +32,7 @@ def buy():
 
     # 6. render results to ui for user confirmation
 
-    return f'A buy form has been submitted for stock: {stock} for a quantity of {quantity} at a price of {price} with a wallet value of {wallet} leaving a remainder of {remainder}'
+    return render_template('/confirmation.html', action='buy', symbol=stock, name=data['name'], total=total, price=price, remainder=remainder)
 
 
 @app.route('/confirmation', methods=['GET', 'POST'])
@@ -48,4 +48,4 @@ def confirmation():
 
   # 3. return confirmation and render portfolio to show updated transaction details
 
-  return render_template('/confirmation.html', action='BUY', symbol='AAPL', name='apple corporation', wallet=50000, total=1202, price=1.98, remainder=1400)
+  return 'success'
