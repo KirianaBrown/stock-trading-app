@@ -23,14 +23,14 @@
                 <input type="text" id='name' class="quote-form_input" name="name" value={{name}} hidden>
             </div>
             <div class="quote-form_group">
-                <label for="price">Price per Unit</label>
-                <input type="number" id='price' class="quote-form_input" name="price" value={{price}} disabled>
+                <label for="price" class='confirmation-form_label'>Price per Unit</label>
+                <input type="number" id='price' class="confirmation-form_input" name="price" value={{price}} disabled>
             </div>
             <div class="quote-form_group">
-                <label for="total">Total Cost</label>
-                <input type="number" id='total' class="quote-form_input" name="total" value={{total}} disabled>
+                <label for="total" class='confirmation-form_label'>Total Cost</label>
+                <input type="number" id='total' class="confirmation-form_input" name="total" value={{total}} disabled>
             </div>
-            <p>Your wallet balance after {{action}}: {{remainder}}</p>
+            <p class='confirmation-form_text'>Your wallet balance after {{action}}: {{remainder}}</p>
             <div class="flex-button-group">
                 <button type="submit" class="btn-tertiary ">Cancel</button>
                 <button type="submit" class="btn-primary ">{{action}}</button>
