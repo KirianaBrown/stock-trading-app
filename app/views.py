@@ -191,32 +191,18 @@ def quote(symbol):
       else:
         session['quoteSymbol'] = session['spotlightCompany']['symbol']
     
-    quote = session['quoteSymbol']
-    print(quote)
+    quoteSymbol = session['quoteSymbol']
 
     # we have the symbol and need the following
 
-     # 1. Get most active
-    if not session.get('listMostActive'):
-      session['listMostActive'] = getListMostActive()
+    # 1. get quote
+    quote = getQuote(quoteSymbol)
 
-    mostActive = session['listMostActive']
+    # 2. get description (industry / description)
+    companyDetails = getCompanyDetails(quoteSymbol)
 
-    # 2. get spotlight
-    if not session.get('spotlightCompany'):
-      session['spotlightCompany'] = mostActive[random.randint(0, 9)]
-
-    spotlight = session['spotlightCompany']
-
-    #2b get spotlight company details
-    if not session.get('spotlightCompanyDetails'):
-      session['spotlightCompanyDetails'] = getCompanyDetails(spotlight['symbol'])
-
-    spotlightCompanyDetails = session['spotlightCompanyDetails']
-
-    spotlightQuote = getQuote(spotlight['symbol'])
     
-    return render_template('/quote.html', spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, spotlightQuote=spotlightQuote)
+    return render_template('/quote.html', quote=quote, companyDetails=companyDetails)
 
   else:
     # post (quote form to render symbol)

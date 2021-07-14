@@ -136,7 +136,7 @@ def getListLosers():
     except (KeyError, TypeError, ValueError):
         return None
 
-        
+
 def getCryto(symbol):
   try:
     # api_key_test: os.environ.get('API_KEY_TEST')
@@ -188,6 +188,7 @@ def getQuote(symbol):
     data = response.json()
     return {
       "symbol": data["symbol"],
+      "name": data["companyName"],
       "exchange": data["primaryExchange"],
       "latestPrice": data["latestPrice"],
       "latestTime": data["latestTime"],
@@ -195,8 +196,9 @@ def getQuote(symbol):
       "closePrice": data["previousClose"],
       "marketCap": data["marketCap"],
       "week52High": data["week52High"],
-      "week52Low": data["week52Low"]
+      "week52Low": data["week52Low"],
+      "priceChange": data["change"],
+      "percentChange": data["changePercent"]
     }
   except(KeyError, TypeError, ValueError):
-    print('error parsing the data')
     return None
