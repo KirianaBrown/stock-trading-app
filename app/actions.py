@@ -61,8 +61,6 @@ def sell():
     return render_template('/confirmation.html', action='sell', symbol=stock, name=data['name'], total=total, price=price, remainder=remainder)
 
 
-
-
 @app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
 def confirmation(action):
    # confirm should be able to receive both a sell and a buy action and perform differently depending if sell x if buy do y
