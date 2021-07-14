@@ -16,16 +16,33 @@
             <h5 class="account-wallet-heading">Current Amount in Wallet</h5>
             <div class="account-wallet-value_dollar">$200.00</div>
         </div>
+
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tab-links tab-active" onclick="openCity(event, 'TopUp')">Top up</button>
+            <button class="tab-links" onclick="openCity(event, 'Withdrawal')">Withdrawal</button>
+        </div>
         <!-- Tab content -->
-        <div id="Wallet" class="tab-content first">
-            <form class='tab-form' action='/wallet' method='POST'>
+        <div id="TopUp" class="tab-content first">
+            <form class='tab-form' method='POST' action='/wallet'>
                 <div class="tab-form-group">
-                    <label for="quantity" class='tab-form-label'>Amount $</label>
-                    <input id='quanitity' type='number' placeholder='10' name='amount' class='tab-form-input'>
+                    <label for="quantity" class='tab-form-label'>$ amount</label>
+                    <input id='quantity' type='number' name='amount' placeholder='1' class='tab-form-input'>
                 </div>
-                <button type='submit' class='tab-form-action btn-primary'>Top Up Wallet</button>
+                <button type='submit' class='tab-form-action btn-primary'>Top Up</button>
             </form>
         </div>
+
+        <div id="Withdrawal" class="tab-content">
+            <form class='tab-form' method='POST' action='/wallet'>
+                <div class="tab-form-group">
+                    <label for="quantity" class='tab-form-label'>$ amount</label>
+                    <input id='quantity' type='number' placeholder='1' class='tab-form-input' name='amount'>
+                </div>
+                <button type='submit' class='tab-form-action btn-primary'>Withdrawl</button>
+            </form>
+        </div>
+
         <div class="dash-trending--header account-history">
             <h3 class="dash-heading portfolio-right-sell_heading">transaction history</h3>
         </div>
@@ -50,7 +67,7 @@
         </div>
 
         <!-- Tab content -->
-        <div id="UpdatePassword" class="tab-content first">
+        <div id="UpdatePassword" class="tab-content-first">
             <form class='tab-form'>
                 <div class="tab-form-group">
                     <label for="current" class='tab-form-label'>Current Password</label>

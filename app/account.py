@@ -20,7 +20,7 @@ def wallet():
     # 3. Add value to the wallet
 
     # 4. Log transaction date (render account page)
-    return render_template('/account')
+    return render_template('/account.html')
 
   return 'top up the wallet'
 
