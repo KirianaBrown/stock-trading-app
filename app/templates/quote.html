@@ -14,10 +14,10 @@
             <h1 class='quote-header'>Quote</h1>
             <!-- Tab content -->
             <div id="Quote" class="tab-content first">
-                <form class='tab-form'>
+                <form class='tab-form' action="/quote" method='POST'>
                     <div class="tab-form-group">
                         <label for="symbol" class='tab-form-label'>symbol</label>
-                        <input id='symbol' type='text' placeholder='eg {{spotlight["symbol"]}}' class='tab-form-input' autocomplete="false">
+                        <input id='symbol' type='text' placeholder='eg {{spotlight["symbol"]}}' class='tab-form-input' autocomplete="false" name='symbol'>
                     </div>
                     <button type='submit' class='tab-form-action btn-primary '>Quote</button>
                 </form>

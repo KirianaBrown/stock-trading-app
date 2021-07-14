@@ -148,9 +148,6 @@ def explore():
   # 1. Get most active
   if not session.get('listMostActive'):
     session['listMostActive'] = getListMostActive()
-    print('no listMostActive stored in session')
-  else:
-    print('listMostActive was already stored in the session')
   
   mostActive = session['listMostActive']
 
@@ -169,30 +166,14 @@ def explore():
   # 2. gainers
   if not session.get('listGainers'):
     session['listGainers'] = getListGainers()
-    print('no list gainers in session // set now')
-  else:
-    print('list gainers already in session')
 
   gainers = session['listGainers']
 
   # 3. losers
   if not session.get('listLosers'):
     session['listLosers'] = getListLosers()
-    print('no list losers in current session // saved now')
-  else:
-    print('list losers already stored in session')
 
   losers = session['listLosers']
-
-
-  print('------------------------------')
-  print(f'Active: {mostActive}')
-  print(f'spotlight: {spotlight}')
-  print(f'spotlightCompanyDetails: {spotlightCompanyDetails}')
-  print(f'Gainers: {gainers}')
-  print(f'Losers: {losers}')
-  print('------------------------------')
-
 
   return render_template('/explore.html', mostActive=mostActive, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, gainers=gainers, losers=losers)
 
@@ -204,10 +185,7 @@ def quote():
      # 1. Get most active
     if not session.get('listMostActive'):
       session['listMostActive'] = getListMostActive()
-      print('no listMostActive stored in session')
-    else:
-      print('listMostActive was already stored in the session')
-  
+
     mostActive = session['listMostActive']
 
     # 2. get spotlight
@@ -223,9 +201,14 @@ def quote():
     spotlightCompanyDetails = session['spotlightCompanyDetails']
 
     spotlightQuote = getQuote(spotlight['symbol'])
-    print(spotlightQuote)
     
     return render_template('/quote.html', spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, spotlightQuote=spotlightQuote)
+
+  else:
+    # post (quote form to render symbol)
+    req = request.form
+    symbol = req.get('symbol')
+    return f'The symbol posted from the quote box is == {symbol}'
 
 @app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
@@ -236,7 +219,6 @@ def portfolio():
 def account():
   if request.method == 'GET':
     return render_template('/account.html')
-
 
 @app.route('/logout')
 def logout():
