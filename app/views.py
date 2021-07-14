@@ -183,16 +183,16 @@ def quote(symbol):
 
   if request.method == 'GET':
 
-    if not symbol:
-      if not session.get('quoteSymbol'):
-        if session.get('spotlightCompany'):
+    if symbol: 
+      session['quoteSymbol'] = symbol
+
+    else:
+      if not session['quoteSymbol']:
+        if session['spotlightCompany']:
           session['quoteSymbol'] = session['spotlightCompany']['symbol']
         else:
-          session['quoteSymbol'] = 'APPL'
-      else:
-        pass
-    else:
-      session['quoteSymbol'] = symbol
+          session['quoteSymbol'] = 'AAPL'
+
     
     quoteSymbol = session['quoteSymbol']
 
