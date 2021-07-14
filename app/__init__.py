@@ -35,7 +35,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # import views
-from app import views, actions
+from app import views, actions, account
 
 def create_app():
     db.init_app(app)
