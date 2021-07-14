@@ -15,7 +15,7 @@
         </div>
         <h2 class="quote-company-stock">{{symbol}}</h2>
         <div class="quote-company-name">{{name}}</div>
-        <form class="confirmation-form" method="POST" action="/confirmation">
+        <form class="confirmation-form" method="POST" action="/confirmation/{{action}}">
             <div class="quote-form_group">
                 <input type="text" id='symbol' class="quote-form_input" name="symbol" value={{symbol}} hidden>
             </div>
