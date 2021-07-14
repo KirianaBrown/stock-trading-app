@@ -70,9 +70,7 @@
         <h2 class="quote-company-stock">----</h2>
         <div class="quote-company-name">----</div>
         <div class="quote-company-price">
-
             <span class='red quote-company-price_stats '>----</span></div>
-
         <hr>
         <p class="quote-company-description">
             ----
@@ -97,12 +95,13 @@
         </div>
         {% endif %}
 
-        <form class='quote-form '>
+        <form class="quote-form" method="POST" action="/buy">
             <div class="quote-form_group">
                 <label for="quantity" class="quote-form_label">Quantity</label>
-                <input type="number" class="quote-form_input" placeholder='1 '>
+                <input type="number" name='quantity' class="quote-form_input" placeholder='1 '>
+                <input type="text" disabled hidden class="quote-form_input" name='symbol' value='{{quote.symbol}}'>
             </div>
-            <button type='submit ' class="btn-primary quote-form_action">buy</button>
+            <button type="submit" class="btn-primary quote-form_action">buy</button>
         </form>
     </div>
 
