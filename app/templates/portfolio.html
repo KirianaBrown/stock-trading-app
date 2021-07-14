@@ -15,18 +15,18 @@
             </div>
             <!-- Tab content -->
             <div id="Sell" class="tab-content first">
-                <form class='tab-form'>
+                <form class='tab-form' action='/sell' method='post'>
                     <div class="tab-form-group">
                         <label for="symbol" class='tab-form-label'>symbol</label>
-                        <select id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
-                          <option>one</option>
-                          <option>two</option>
-                          <option>three</option>
+                        <select id='symbol' type='text' placeholder='AAPL' name='symbol' class='tab-form-input'>
+                          <option>AAPL</option>
+                          <option>TWTR</option>
+                          <option>SCOR</option>
                         </select>
                     </div>
                     <div class="tab-form-group">
                         <label for="quantity" class='tab-form-label'>quantity</label>
-                        <input id='quanitity' type='number' placeholder='1' class='tab-form-input'>
+                        <input id='quanitity' type='number' placeholder='1' class='tab-form-input' name='quantity'>
                     </div>
                     <button type='submit' class='tab-form-action btn-primary'>Sell</button>
                 </form>

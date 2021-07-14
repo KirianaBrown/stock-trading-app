@@ -31,8 +31,36 @@ def buy():
     remainder = (wallet - total)
 
     # 6. render results to ui for user confirmation
-
     return render_template('/confirmation.html', action='buy', symbol=stock, name=data['name'], total=total, price=price, remainder=remainder)
+
+@app.route('/sell', methods=['POST', 'GET'])
+def sell():
+  if request.method == 'GET':
+    return redirect(request.url)
+  else:
+    # 1. get form data
+    req = request.form
+    stock = req.get('symbol')
+    quantity = req.get('quantity')
+
+    # 2. get latest price of stock
+    print(stock)
+
+    data = getQuote(stock)
+    price = data['latestPrice']
+
+    # 3. total
+    total = float(price) * float(quantity)
+
+    # 4. get users wallet
+    wallet = 1999
+
+    # 5. calc remainder
+    remainder = wallet + total
+
+    return render_template('/confirmation.html', action='sell', symbol=stock, name=data['name'], total=total, price=price, remainder=remainder)
+
+
 
 
 @app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
