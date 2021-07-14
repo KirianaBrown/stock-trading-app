@@ -177,10 +177,24 @@ def explore():
 
   return render_template('/explore.html', mostActive=mostActive, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, gainers=gainers, losers=losers)
 
-@app.route('/quote', methods=['GET', 'POST'])
-def quote():
+@app.route('/quote', defaults={'symbol': ''}, methods=['GET', 'POST'])
+@app.route('/quote/<string:symbol>')
+def quote(symbol):
 
   if request.method == 'GET':
+
+    if symbol:
+      session['quoteSymbol'] = symbol
+    else:
+      if not session.get('spotlightCompany'):
+        session['quoteSymbol'] = 'APPL'
+      else:
+        session['quoteSymbol'] = session['spotlightCompany']['symbol']
+    
+    quote = session['quoteSymbol']
+    print(quote)
+
+    # we have the symbol and need the following
 
      # 1. Get most active
     if not session.get('listMostActive'):
@@ -208,7 +222,7 @@ def quote():
     # post (quote form to render symbol)
     req = request.form
     symbol = req.get('symbol')
-    return f'The symbol posted from the quote box is == {symbol}'
+    return redirect(f'/quote/{symbol}')
 
 @app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
