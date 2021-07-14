@@ -207,18 +207,18 @@
                     </div>
 
                     <div id="Sell" class="tab-content">
-                        <form class='tab-form'>
+                        <form class='tab-form' method='POST' action='/sell'>
                             <div class="tab-form-group">
                                 <label for="symbol" class='tab-form-label'>symbol</label>
-                                <select id='symbol' type='text' placeholder='AAPL' class='tab-form-input'>
-                                    <option>hi</option>
-                                    <option>hello</option>
+                                <select id='symbol' type='text' placeholder='AAPL' class='tab-form-input' name='symbol'>
+                                    <option>AAPL</option>
+                                    <option>CLOV</option>
                                     <option>bye</option>
                                 </select>
                             </div>
                             <div class="tab-form-group">
                                 <label for="quantity" class='tab-form-label'>quantity</label>
-                                <input id='quantity' type='number' placeholder='1' class='tab-form-input'>
+                                <input id='quantity' type='number' placeholder='1' class='tab-form-input' name='quantity'>
                             </div>
                             <button type='submit' class='tab-form-action btn-primary'>Sell</button>
                         </form>
