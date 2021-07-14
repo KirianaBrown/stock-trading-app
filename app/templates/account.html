@@ -18,10 +18,10 @@
         </div>
         <!-- Tab content -->
         <div id="Wallet" class="tab-content first">
-            <form class='tab-form'>
+            <form class='tab-form' action='/wallet' method='POST'>
                 <div class="tab-form-group">
                     <label for="quantity" class='tab-form-label'>Amount $</label>
-                    <input id='quanitity' type='number' placeholder='10' class='tab-form-input'>
+                    <input id='quanitity' type='number' placeholder='10' name='amount' class='tab-form-input'>
                 </div>
                 <button type='submit' class='tab-form-action btn-primary'>Top Up Wallet</button>
             </form>
