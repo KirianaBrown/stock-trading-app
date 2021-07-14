@@ -3,8 +3,8 @@ from .models import db
 from flask.helpers import url_for
 from flask import Flask, redirect, render_template, request, session, flash
 
-@app.route('/wallet', methods=['GET', 'POST'])
-def wallet():
+@app.route('/wallet/<string:action>', methods=['GET', 'POST'])
+def wallet(action):
   if request.method == 'POST':
     # 1. get amount from form
     req = request.form
