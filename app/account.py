@@ -11,3 +11,8 @@ def wallet():
 @app.route('/password', methods=['GET', 'POST'])
 def password():
   return 'change password'
+
+
+@app.route('/delete', methods=['GET', 'POST'])
+def delete():
+  return 'Delete account'
