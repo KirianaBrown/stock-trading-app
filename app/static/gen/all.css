@@ -792,3 +792,5 @@ a {
   display: flex;
   justify-content: center;
   align-items: center; }
+  .confirmation-form {
+    display: inline-block; }

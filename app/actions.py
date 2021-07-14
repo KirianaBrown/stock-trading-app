@@ -48,4 +48,4 @@ def confirmation():
 
   # 3. return confirmation and render portfolio to show updated transaction details
 
-  return render_template('/confirmation.html')
+  return render_template('/confirmation.html', action='BUY')
