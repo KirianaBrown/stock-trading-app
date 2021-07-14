@@ -40,7 +40,12 @@ def wallet(action):
 
 @app.route('/password', methods=['GET', 'POST'])
 def password():
-  return 'change password'
+  if request.method == 'POST':
+    return 'password wants to be changed'
+  else:
+    return redirect('/account')
+
+    
 
 
 @app.route('/delete', methods=['GET', 'POST'])
