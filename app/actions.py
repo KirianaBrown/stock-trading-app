@@ -35,9 +35,9 @@ def buy():
     return render_template('/confirmation.html', action='buy', symbol=stock, name=data['name'], total=total, price=price, remainder=remainder)
 
 
-@app.route('/confirmation', methods=['GET', 'POST'])
-def confirmation():
-  # confirm should be able to receive both a sell and a buy action and perform differently depending if sell x if buy do y
+@app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
+def confirmation(action):
+   # confirm should be able to receive both a sell and a buy action and perform differently depending if sell x if buy do y
 
   # should be a request by a user to confirm the purchase provided
   # if yes then 
@@ -47,5 +47,12 @@ def confirmation():
   # 2. adjust wallet appropriately
 
   # 3. return confirmation and render portfolio to show updated transaction details
+  if action == 'buy':
+    req = request.form
+    name = req.get('name')
+    return f'confirmation from a buy form with a name value of {name}'  
+  elif action == 'sell':
+    return f'confirmation to sell a stock'
+  else:
+    return 'confirmation has been hit without a link'
 
-  return 'success'
