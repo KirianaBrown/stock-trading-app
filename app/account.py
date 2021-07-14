@@ -5,6 +5,23 @@ from flask import Flask, redirect, render_template, request, session, flash
 
 @app.route('/wallet', methods=['GET', 'POST'])
 def wallet():
+  if request.method == 'POST':
+    # 1. get amount from form
+    req = request.form
+    amount = req.get('amount')
+
+    if not amount:
+      return 'No amount provided'
+    
+    print(f'amount to top up wallet: {amount}')
+
+    # 2. get wallet for current user
+
+    # 3. Add value to the wallet
+
+    # 4. Log transaction date (render account page)
+    return render_template('/account')
+
   return 'top up the wallet'
 
 
