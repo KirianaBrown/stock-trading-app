@@ -130,13 +130,13 @@ def getListLosers():
             "price": list[item]["latestPrice"],
             "changePercentage": (list[item]["changePercent"] * 100),
             "changePrice": list[item]["change"],
-            "marketCap":list[item][""]
           })
         
         return data
     except (KeyError, TypeError, ValueError):
         return None
 
+        
 def getCryto(symbol):
   try:
     # api_key_test: os.environ.get('API_KEY_TEST')

@@ -54,7 +54,7 @@
                         <th class="dash-trending--table_head">price/unit</th>
                         <th class="dash-trending--table_head">change</th>
                     </tr>
-                    {% for stock in mostActive %}
+                    {% if mostActive %} {% for stock in mostActive %}
                     <tr>
                         <td class="dash-trending--table_data">{{loop.index}}</td>
                         <td class="dash-trending--table_data">{{stock.name}}</td>
@@ -65,7 +65,14 @@
                         <td class="dash-trending--table_data red">{{stock.changePercentage | formatPercentage}}</td>
                         {% endif %}
                     </tr>
-                    {% endfor %}
+                    {% endfor %} {% else %}
+                    <tr>
+                        <td class="dash-trending--table_data">{{loop.index}}</td>
+                        <td class="dash-trending--table_data">----</td>
+                        <td class="dash-trending--table_data">----</td>
+                        <td class="dash-trending--table_data red">----</td>
+                    </tr>
+                    {% endif%}
                 </table>
             </div>
         </div>
@@ -76,7 +83,7 @@
                 Top Gainers
             </div>
             <div class="explore-section-content">
-                {% for stock in gainers %}
+                {% if gainers %} {% for stock in gainers %}
                 <div class="explore-section-content_item">
                     <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
                     <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
@@ -89,15 +96,27 @@
                     <div class="dash-portfolio-table_data green">+{{stock.changePercentage | formatPercentage}}<br>
                         <p class='dash-portfolio-table__minor '>change</p>
                     </div>
-
                 </div>
-                {% endfor %}
+                {% endfor %} {% else %}
+                <div class="explore-section-content_item">
+                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">----<br>
+                        <p class=' dash-portfolio-table__minor '>---</p>
+                    </div>
+                    <div class="dash-portfolio-table_data">--- usd <br>
+                        <p class='dash-portfolio-table__minor '>current</p>
+                    </div>
+                    <div class="dash-portfolio-table_data green">+---<br>
+                        <p class='dash-portfolio-table__minor '>change</p>
+                    </div>
+                </div>
+                {% endif %}
             </div>
             <div class="explore-section-header losers-header">
                 Top Losers
             </div>
             <div class="explore-section-content">
-                {% for stock in losers %}
+                {% if losers %} {% for stock in losers %}
                 <div class="explore-section-content_item">
                     <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
                     <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
@@ -110,9 +129,22 @@
                     <div class="dash-portfolio-table_data red">{{stock.changePercentage | formatPercentage}}<br>
                         <p class='dash-portfolio-table__minor '>percentage change</p>
                     </div>
-
                 </div>
-                {% endfor %}
+                {% endfor %} {% else %}
+                <div class="explore-section-content_item">
+                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">----<br>
+                        <p class=' dash-portfolio-table__minor '>----</p>
+                    </div>
+                    <div class="dash-portfolio-table_data">--- usd <br>
+                        <p class='dash-portfolio-table__minor '>current</p>
+                    </div>
+
+                    <div class="dash-portfolio-table_data red">----<br>
+                        <p class='dash-portfolio-table__minor '>percentage change</p>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

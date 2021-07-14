@@ -184,6 +184,16 @@ def explore():
 
   losers = session['listLosers']
 
+
+  print('------------------------------')
+  print(f'Active: {mostActive}')
+  print(f'spotlight: {spotlight}')
+  print(f'spotlightCompanyDetails: {spotlightCompanyDetails}')
+  print(f'Gainers: {gainers}')
+  print(f'Losers: {losers}')
+  print('------------------------------')
+
+
   return render_template('/explore.html', mostActive=mostActive, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, gainers=gainers, losers=losers)
 
 @app.route('/quote', methods=['GET', 'POST'])
@@ -212,7 +222,7 @@ def quote():
 
     spotlightCompanyDetails = session['spotlightCompanyDetails']
 
-    spotlightQuote = getQuote('SGOC')
+    spotlightQuote = getQuote(spotlight['symbol'])
     print(spotlightQuote)
     
     return render_template('/quote.html', spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, spotlightQuote=spotlightQuote)
