@@ -183,13 +183,16 @@ def quote(symbol):
 
   if request.method == 'GET':
 
-    if symbol:
-      session['quoteSymbol'] = symbol
-    else:
-      if not session.get('spotlightCompany'):
-        session['quoteSymbol'] = 'APPL'
+    if not symbol:
+      if not session.get('quoteSymbol'):
+        if session.get('spotlightCompany'):
+          session['quoteSymbol'] = session['spotlightCompany']['symbol']
+        else:
+          session['quoteSymbol'] = 'APPL'
       else:
-        session['quoteSymbol'] = session['spotlightCompany']['symbol']
+        pass
+    else:
+      session['quoteSymbol'] = symbol
     
     quoteSymbol = session['quoteSymbol']
 
@@ -201,7 +204,6 @@ def quote(symbol):
     # 2. get description (industry / description)
     companyDetails = getCompanyDetails(quoteSymbol)
 
-    
     return render_template('/quote.html', quoteSymbol=quoteSymbol, quote=quote, companyDetails=companyDetails)
 
   else:
