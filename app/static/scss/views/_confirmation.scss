@@ -14,5 +14,19 @@
     }
     &-form {
         display: inline-block;
+        background-color: cadetblue;
+        width: 80%;
+        padding: 2rem;
+    }
+    &-symbol {
+        height: 4rem;
+        width: 4rem;
+        background-color: wheat;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-bottom: 1rem;
     }
 }

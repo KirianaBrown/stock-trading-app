@@ -48,4 +48,4 @@ def confirmation():
 
   # 3. return confirmation and render portfolio to show updated transaction details
 
-  return render_template('/confirmation.html', action='BUY', symbol='AAPL', name='apple corporation', wallet=50000, total=1202, price=1.98)
+  return render_template('/confirmation.html', action='BUY', symbol='AAPL', name='apple corporation', wallet=50000, total=1202, price=1.98, remainder=1400)

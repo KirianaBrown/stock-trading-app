@@ -799,4 +799,17 @@ a {
     text-align: center;
     border-radius: 5px; }
   .confirmation-form {
-    display: inline-block; }
+    display: inline-block;
+    background-color: cadetblue;
+    width: 80%;
+    padding: 2rem; }
+  .confirmation-symbol {
+    height: 4rem;
+    width: 4rem;
+    background-color: wheat;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 1rem; }
