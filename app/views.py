@@ -202,7 +202,7 @@ def quote(symbol):
     companyDetails = getCompanyDetails(quoteSymbol)
 
     
-    return render_template('/quote.html', quote=quote, companyDetails=companyDetails)
+    return render_template('/quote.html', quoteSymbol=quoteSymbol, quote=quote, companyDetails=companyDetails)
 
   else:
     # post (quote form to render symbol)
