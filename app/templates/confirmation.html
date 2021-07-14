@@ -8,8 +8,7 @@
 <!-- main content -->
 {% block dashboard %}
 <div class="confirmation">
-
-    <div class="dash-actions-content">
+    <div class="confirmation-content">
         <h1 class='quote-header'>Confirmation of {{action}}</h1>
         <div class="quote-company-symbol">
             <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
@@ -19,19 +18,19 @@
         <form class="confirmation-form" method="POST" action="/confirmation">
             <div class="quote-form_group">
                 <label for="symbol">Stock</label>
-                <input type="text" id='symbol' class="quote-form_input" name="symbol" value={{symbol}}>
+                <input type="text" id='symbol' class="quote-form_input" name="symbol" value={{symbol}} disabled>
             </div>
             <div class="quote-form_group">
                 <label for="name">Name</label>
-                <input type="text" id='name' class="quote-form_input" name="name" value={{name}}>
+                <input type="text" id='name' class="quote-form_input" name="name" value={{name}} disabled>
             </div>
             <div class="quote-form_group">
                 <label for="price">Price per Unit</label>
-                <input type="number" id='price' class="quote-form_input" name="price" value={{symbol}} disabled>
+                <input type="number" id='price' class="quote-form_input" name="price" value={{price}} disabled>
             </div>
             <div class="quote-form_group">
                 <label for="total">Total Cost</label>
-                <input type="number" id='total' class="quote-form_input" name="total" value={{total}}>
+                <input type="number" id='total' class="quote-form_input" name="total" value={{total}} disabled>
             </div>
             <p>Current wallet balance: $10000</p>
             <div class="flex-button-group">

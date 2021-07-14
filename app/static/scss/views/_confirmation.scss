@@ -5,6 +5,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: orange;
+    &-content {
+        background-color: blanchedalmond;
+        width: 60%;
+        text-align: center;
+        border-radius: $border-radius;
+    }
     &-form {
         display: inline-block;
     }
