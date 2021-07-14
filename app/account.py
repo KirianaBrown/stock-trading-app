@@ -1,5 +1,8 @@
 from app import app
 from .models import db
+from flask_session import Session
+# Werkzeug security
+from werkzeug.security import check_password_hash, generate_password_hash
 from flask.helpers import url_for
 from flask import Flask, redirect, render_template, request, session, flash
 

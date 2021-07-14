@@ -68,18 +68,18 @@
 
         <!-- Tab content -->
         <div id="UpdatePassword" class="password-tab-content first">
-            <form class='tab-form'>
+            <form class='tab-form' action='/password' method='POST'>
                 <div class="tab-form-group">
                     <label for="current" class='tab-form-label'>Current Password</label>
-                    <input id='current' type='password' placeholder='Current Password' class='tab-form-input'>
+                    <input id='current' type='password' placeholder='Current Password' class='tab-form-input' name='current'>
                 </div>
                 <div class="tab-form-group">
                     <label for="new" class='tab-form-label'>New Password</label>
-                    <input id='new' type='password' placeholder='New Password' class='tab-form-input'>
+                    <input id='new' type='password' placeholder='New Password' class='tab-form-input' name='new'>
                 </div>
                 <div class="tab-form-group">
                     <label for="confirm" class='tab-form-label'>Confirm New Password</label>
-                    <input id='confirm' type='password' placeholder='Confirm New Password' class='tab-form-input'>
+                    <input id='confirm' type='password' placeholder='Confirm New Password' class='tab-form-input' name='confirm'>
                 </div>
                 <button type='submit' class='tab-form-action btn-primary'>Update Password</button>
             </form>
