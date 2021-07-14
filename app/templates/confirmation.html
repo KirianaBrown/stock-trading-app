@@ -32,7 +32,7 @@
             </div>
             <p class='confirmation-form_text'>Your wallet balance after {{action}}: {{remainder}}</p>
             <div class="flex-button-group">
-                <button type="submit" class="btn-tertiary ">Cancel</button>
+                <input type='button' onclick="history.back(-1)" class="btn-tertiary" value='cancel'>
                 <button type="submit" class="btn-primary">{{action}}</button>
             </div>
         </form>
