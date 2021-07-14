@@ -7,103 +7,102 @@
 
 <!-- main content -->
 {% block dashboard %}
-<div class="quote">
-    <div class="quote-top">
+<div class="confirmation">
 
-        <div class="dash-actions-content">
-            <h1 class='quote-header'>Quote</h1>
-            <!-- Tab content -->
-            <div id="Quote" class="tab-content first">
-                <form class='tab-form' action="/quote" method='POST'>
-                    <div class="tab-form-group">
-                        <label for="symbol" class='tab-form-label'>symbol</label>
-                        <input id='symbol' type='text' placeholder='eg {{quoteSymbol}}' class='tab-form-input' autocomplete="false" name='symbol'>
-                    </div>
-                    <button type='submit' class='tab-form-action btn-primary '>Quote</button>
-                </form>
-            </div>
+    <div class="dash-actions-content">
+        <h1 class='quote-header'>Quote</h1>
+        <!-- Tab content -->
+        <div id="Quote" class="tab-content first">
+            <form class='tab-form' action="/quote" method='POST'>
+                <div class="tab-form-group">
+                    <label for="symbol" class='tab-form-label'>symbol</label>
+                    <input id='symbol' type='text' placeholder='eg {{quoteSymbol}}' class='tab-form-input' autocomplete="false" name='symbol'>
+                </div>
+                <button type='submit' class='tab-form-action btn-primary '>Quote</button>
+            </form>
         </div>
-
-    </div>
-    <div class="quote-base">
-        <div class="quote-company">
-            <div class="quote-company-symbol">
-                <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
-            </div>
-            {% if quote %}
-            <h2 class="quote-company-stock">{{quote.symbol}}</h2>
-            <div class="quote-company-name">{{quote.name}}</div>
-            <div class="quote-company-price">{{quote.latestPrice | formatDollar}} usd {% if quote.priceChange > 0 %}
-                <span class='green quote-company-price_stats '>{{quote.priceChange | formatDollar}} ({{quote.percentChange | formatPercentage}})</span></div>
-            {% else %}
-            <span class='red quote-company-price_stats '>{{quote.priceChange | formatDollar}} ({{quote.percentChange | formatPercentage}})</span></div>
-        {% endif %}
-        <hr> {% if companyDetails %}
-        <p class="quote-company-description">
-            {{companyDetails.description}}
-        </p>
-        <div class="quote-company-name">{{companyDetails.industry}}</div>
-        {% else %}
-        <p class="quote-company-description">
-            -----
-        </p>
-        {% endif %}
-        <div class="quote-company-details">
-            <table class='quote-table '>
-                <tbody>
-                    <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Primary Exchange: {{quote.exchange}}</td>
-                        <td class='quote-table_data '>Market Cap: {{quote.marketCap}}</td>
-                    </tr>
-                    <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Week 52 High: {{quote.week52High | formatDollar}}</td>
-                        <td class='quote-table_data '>Week 52 Low: {{quote.week52Low | formatDollar}}</td>
-                    </tr>
-                    <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Open: {{quote.openPrice | formatDollar}}</td>
-                        <td class='quote-table_data '>Close: {{quote.closePrice | formatDollar}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        {% else %}
-        <h2 class="quote-company-stock">----</h2>
-        <div class="quote-company-name">----</div>
-        <div class="quote-company-price">
-            <span class='red quote-company-price_stats '>----</span></div>
-        <hr>
-        <p class="quote-company-description">
-            ----
-        </p>
-        <div class="quote-company-details">
-            <table class='quote-table '>
-                <tbody>
-                    <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Primary Exchange: ----</td>
-                        <td class='quote-table_data '>Market Cap: ----</td>
-                    </tr>
-                    <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Week 52 High: ----</td>
-                        <td class='quote-table_data '>Week 52 Low: ----</td>
-                    </tr>
-                    <tr class='quote-table_row '>
-                        <td class='quote-table_data '>Open: ----</td>
-                        <td class='quote-table_data '>Close:----</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        {% endif %}
-
-        <form class="quote-form" method="POST" action="/buy">
-            <div class="quote-form_group">
-                <label for="quantity" class="quote-form_label">quantity</label>
-                <input type="number" name='quantity' class="quote-form_input" placeholder='1 '>
-                <input type="text" class="quote-form_input" hidden name="symbol" value={{quote.symbol}}>
-            </div>
-            <button type="submit" class="btn-primary quote-form_action">buy</button>
-        </form>
     </div>
 
-    {% endblock %}
+</div>
+<div class="quote-base">
+    <div class="quote-company">
+        <div class="quote-company-symbol">
+            <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
+        </div>
+        {% if quote %}
+        <h2 class="quote-company-stock">{{quote.symbol}}</h2>
+        <div class="quote-company-name">{{quote.name}}</div>
+        <div class="quote-company-price">{{quote.latestPrice | formatDollar}} usd {% if quote.priceChange > 0 %}
+            <span class='green quote-company-price_stats '>{{quote.priceChange | formatDollar}} ({{quote.percentChange | formatPercentage}})</span></div>
+        {% else %}
+        <span class='red quote-company-price_stats '>{{quote.priceChange | formatDollar}} ({{quote.percentChange | formatPercentage}})</span></div>
+    {% endif %}
+    <hr> {% if companyDetails %}
+    <p class="quote-company-description">
+        {{companyDetails.description}}
+    </p>
+    <div class="quote-company-name">{{companyDetails.industry}}</div>
+    {% else %}
+    <p class="quote-company-description">
+        -----
+    </p>
+    {% endif %}
+    <div class="quote-company-details">
+        <table class='quote-table '>
+            <tbody>
+                <tr class='quote-table_row '>
+                    <td class='quote-table_data '>Primary Exchange: {{quote.exchange}}</td>
+                    <td class='quote-table_data '>Market Cap: {{quote.marketCap}}</td>
+                </tr>
+                <tr class='quote-table_row '>
+                    <td class='quote-table_data '>Week 52 High: {{quote.week52High | formatDollar}}</td>
+                    <td class='quote-table_data '>Week 52 Low: {{quote.week52Low | formatDollar}}</td>
+                </tr>
+                <tr class='quote-table_row '>
+                    <td class='quote-table_data '>Open: {{quote.openPrice | formatDollar}}</td>
+                    <td class='quote-table_data '>Close: {{quote.closePrice | formatDollar}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    {% else %}
+    <h2 class="quote-company-stock">----</h2>
+    <div class="quote-company-name">----</div>
+    <div class="quote-company-price">
+        <span class='red quote-company-price_stats '>----</span></div>
+    <hr>
+    <p class="quote-company-description">
+        ----
+    </p>
+    <div class="quote-company-details">
+        <table class='quote-table '>
+            <tbody>
+                <tr class='quote-table_row '>
+                    <td class='quote-table_data '>Primary Exchange: ----</td>
+                    <td class='quote-table_data '>Market Cap: ----</td>
+                </tr>
+                <tr class='quote-table_row '>
+                    <td class='quote-table_data '>Week 52 High: ----</td>
+                    <td class='quote-table_data '>Week 52 Low: ----</td>
+                </tr>
+                <tr class='quote-table_row '>
+                    <td class='quote-table_data '>Open: ----</td>
+                    <td class='quote-table_data '>Close:----</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    <form class="quote-form" method="POST" action="/buy">
+        <div class="quote-form_group">
+            <label for="quantity" class="quote-form_label">quantity</label>
+            <input type="number" name='quantity' class="quote-form_input" placeholder='1 '>
+            <input type="text" class="quote-form_input" hidden name="symbol" value={{quote.symbol}}>
+        </div>
+        <button type="submit" class="btn-primary quote-form_action">buy</button>
+    </form>
+</div>
+
+{% endblock %}

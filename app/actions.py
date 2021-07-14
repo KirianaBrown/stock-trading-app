@@ -35,7 +35,7 @@ def buy():
     return f'A buy form has been submitted for stock: {stock} for a quantity of {quantity} at a price of {price} with a wallet value of {wallet} leaving a remainder of {remainder}'
 
 
-@app.route('/confirm', methods=['GET', 'POST'])
+@app.route('/confirmation', methods=['GET', 'POST'])
 def confirmation():
   # confirm should be able to receive both a sell and a buy action and perform differently depending if sell x if buy do y
 
@@ -48,4 +48,4 @@ def confirmation():
 
   # 3. return confirmation and render portfolio to show updated transaction details
 
-  return 'confirmation of purchase request'
+  return render_template('/confirmation.html')
