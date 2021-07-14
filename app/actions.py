@@ -9,7 +9,6 @@ def buy():
     return redirect(request.url)
   else:
     req = request.form
-    
     # 1. get form data
     stock = request.form.get('symbol')
     quantity = request.form.get('quantity')
