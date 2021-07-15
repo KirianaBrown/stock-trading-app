@@ -15,7 +15,11 @@ class User(db.Model):
     db.Text,
     nullable=False
   )
+  wallet = db.Column(
+    db.Float
+  )
 
-  def __init__(self, username, password):
+  def __init__(self, username, password, wallet):
     self.username = username,
-    self.password = password
+    self.password = password,
+    self.wallet = wallet
