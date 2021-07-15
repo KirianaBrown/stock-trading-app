@@ -12,13 +12,13 @@
         {% if action == 'delete' %}
         <h1 class='quote-header'>Confirm request to {{action}} account </h1>
         <div class="confirmation-symbol">
-            <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
+            <img src="{{url_for('static', filename='img/dashboard/account.svg')}}" alt='company details' class='quote-company-icon'>
         </div>
         <form class="confirmation-form" method="POST" action="/confirmation/{{action}}">
             <input hidden name='id'>
             <div class="flex-button-group">
                 <input type='button' onclick="history.back(-1)" class="btn-tertiary" value='cancel'>
-                <button type="submit" class="btn-primary">{{action}}</button>
+                <button type="submit" class="btn-delete">{{action}}</button>
             </div>
         </form>
         {% else %}
