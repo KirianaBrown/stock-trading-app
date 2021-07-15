@@ -78,6 +78,10 @@ def confirmation(action):
     return f'confirmation from a buy form with a name value of {name}'  
   elif action == 'sell':
     return f'confirmation to sell a stock'
+  elif action == 'delete':
+    # remove db user account
+    # render index
+    return f'confirmation to delete account'
   else:
     return 'confirmation has been hit without a link'
 
