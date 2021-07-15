@@ -9,6 +9,19 @@
 {% block dashboard %}
 <div class="confirmation">
     <div class="confirmation-content">
+        {% if action == 'delete' %}
+        <h1 class='quote-header'>Confirm request to {{action}} account </h1>
+        <div class="confirmation-symbol">
+            <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
+        </div>
+        <form class="confirmation-form" method="POST" action="/confirmation/{{action}}">
+            <input hidden name='id'>
+            <div class="flex-button-group">
+                <input type='button' onclick="history.back(-1)" class="btn-tertiary" value='cancel'>
+                <button type="submit" class="btn-primary">{{action}}</button>
+            </div>
+        </form>
+        {% else %}
         <h1 class='quote-header'>Confirmation of {{action}}</h1>
         <div class="confirmation-symbol">
             <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
@@ -37,6 +50,6 @@
             </div>
         </form>
     </div>
+    {% endif %}
 </div>
-
 {% endblock %}

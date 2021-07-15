@@ -41,13 +41,36 @@ def wallet(action):
 @app.route('/password', methods=['GET', 'POST'])
 def password():
   if request.method == 'POST':
-    return 'password wants to be changed'
+    # 1. get form values
+    req = request.form
+    current = req.get('current')
+    new = req.get('new')
+    confirm = req.get('confirm')
+
+    # 2. get current users id 
+
+    # 3. get current users password 
+    dbPassword = 'saltme'
+
+    # 4. validate
+    if not current == dbPassword:
+      # flash error message
+      return redirect('/account')
+    
+    if not new == confirm:
+      # flash error message
+      return redirect('/account')
+
+    if not len(new) >= 8:
+      #flash error message
+      return redirect('/account')
+
+    # 5. now validated update (salt the password and update in db)
+    return f'password wants to be changed from {current} to new {new} which has been confirmed {confirm}'
   else:
     return redirect('/account')
 
     
-
-
 @app.route('/delete', methods=['GET', 'POST'])
 def delete():
-  return 'Delete account'
+  return render_template('/confirmation.html', action='delete')
