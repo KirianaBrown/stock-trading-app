@@ -93,7 +93,6 @@ def login():
     session['user_id'] = user.id
     session['username'] = user.username
 
-    print('successfully logged in - all credentials match!')
     return redirect('/dashboard')
 
 @app.route('/dashboard', methods=['GET', 'POST'])
@@ -107,7 +106,7 @@ def dashboard():
     mostActive = session['listMostActive']
 
     if not session.get('trending'):
-      session['trending'] = mostActive[:5]
+      session['trending'] = mostActive[:7]
 
     trending = session['trending']
 
@@ -115,8 +114,7 @@ def dashboard():
     if not session.get('spotlightCompany'):
       session['spotlightCompany'] = mostActive[random.randint(0, 9)]
 
-    spotlight = session['spotlightCompany']
-    print(spotlight['symbol'])  
+    spotlight = session['spotlightCompany'] 
 
     #2b get spotlight company details
     if not session.get('spotlightCompanyDetails'):
