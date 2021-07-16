@@ -31,7 +31,7 @@ def wallet(action):
         db.session.commit()
         print('Created new wallet to the DB')
       else:
-        print(user.wallet)
+        print(user.wallet.id)
       
       return redirect('/account')
     

@@ -233,7 +233,7 @@ def account():
         print('wallet IS found for that user')
         wallet = 100
       
-    print(wallet)
+    print(user.wallet.balance)
     return render_template('/account.html', wallet=wallet)
 
 @app.route('/logout')
