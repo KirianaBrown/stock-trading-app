@@ -7,7 +7,7 @@ from flask import Flask, redirect, render_template, request, session, flash, abo
 from flask_session import Session
 # Werkzeug security
 from werkzeug.security import check_password_hash, generate_password_hash
-from .models import db, User
+from .models import db, User, Wallet
 # Helper Functions
 from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, formatDollar, formatPercentage, getCryto,getCompanyDetails, getQuote
 
@@ -54,9 +54,11 @@ def register():
 
     # 4. Create new user in the db
     new_user = User(username=username, password=hash)
+    # new_wallet = Wallet(users=new_user)
 
     try:
       db.session.add(new_user)
+      # db.session.add(new_wallet)
       db.session.commit()
       flash('Successfully Registered')
       return redirect('/')
