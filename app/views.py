@@ -221,8 +221,10 @@ def account():
     user = User.query.get_or_404(session['user_id'])
     if not user:
       wallet = 0
+      print(wallet)
     else:
       wallet = user.wallet
+      print(wallet)
     return render_template('/account.html', wallet=wallet)
 
 @app.route('/logout')
