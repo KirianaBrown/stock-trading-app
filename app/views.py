@@ -199,6 +199,8 @@ def quote(symbol):
           pass
         else:
           session['quoteSymbol'] = symbol
+          print('new symbol different to session passed in')
+          storedQuote = False
     else:
       if storedSymbol == True:
         pass
@@ -211,7 +213,6 @@ def quote(symbol):
 
     quoteSymbol = session['quoteSymbol']
     if not storedQuote:
-
       # 1. get quote
       quote = getQuote(quoteSymbol)
 
@@ -227,6 +228,7 @@ def quote(symbol):
       print('quote and company details stored in session')
       quote = session['storedQuote']
       companyDetails = session['storedCompandyDetails']
+      storedQuote = True
 
     return render_template('/quote.html', quoteSymbol=quoteSymbol, quote=quote, companyDetails=companyDetails)
 
