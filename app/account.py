@@ -31,10 +31,14 @@ def wallet(action):
         db.session.commit()
 
         # 2. create new transaction
-        new_transaction = WalletTransactions(wallet=new_wallet)
+        new_transaction = WalletTransactions(wallet=new_wallet, amount=amount, transactionType='topup')
+        db.session.add(new_transaction)
+        db.session.commit()
 
       else:
         user.wallet.balance += float(amount)
+        new_transaction = WalletTransactions(wallet=user.wallet, amount=amount, transactionType='topup')
+        db.session.add(new_transaction)
         db.session.commit()
 
         flash('Success! Your wallet has been updated')
