@@ -51,12 +51,17 @@
                 <th class="dash-trending--table_head">Amount</th>
                 <th class="dash-trending--table_head">transaction date</th>
             </tr>
-            {% if transaction %}
+            {% if transactions %} {% for transaction in transactions %} {% if transaction.transactionType == 'topup' %}
             <tr>
-                <td class="dash-trending--table_data green">+$109.92</td>
-                <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
+                <td class="dash-trending--table_data green">{{ transaction.amount | formatDollar}}</td>
+                <td class="dash-trending--table_data">{{transaction.transactionDate}}</td>
             </tr>
             {% else %}
+            <tr>
+                <td class="dash-trending--table_data red">{{ transaction.amount | formatDollar}}</td>
+                <td class="dash-trending--table_data">{{transaction.transactionDate}}</td>
+            </tr>
+            {% endif %} {% endfor %} {% else %}
             <tr>
                 <td class="dash-trending--table_data green">$----</td>
                 <td class="dash-trending--table_data">--------</td>

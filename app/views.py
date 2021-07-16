@@ -234,8 +234,7 @@ def account():
       wallet_id = user.wallet.id
 
       # transactions
-      # transactions = db.session.query(WalletTransactions).filter(wallet_id == wallet_id).all()
-      transactions = []
+      transactions = db.session.query(WalletTransactions).filter(wallet_id == wallet_id).all()
       
     return render_template('/account.html', wallet=wallet, transactions=transactions)
 
