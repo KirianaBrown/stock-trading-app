@@ -30,6 +30,9 @@ def wallet(action):
         db.session.add(new_wallet)
         db.session.commit()
 
+        # 2. create new transaction
+        new_transaction = WalletTransactions(wallet=new_wallet)
+
       else:
         user.wallet.balance += float(amount)
         db.session.commit()

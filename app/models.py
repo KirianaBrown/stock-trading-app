@@ -53,4 +53,7 @@ class WalletTransactions(db.Model):
     db.String(60),
     nullable=False
   )
+  amount = db.Column(
+    db.Float
+  )
 
