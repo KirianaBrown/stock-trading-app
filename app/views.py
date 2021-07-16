@@ -7,7 +7,7 @@ from flask import Flask, redirect, render_template, request, session, flash, abo
 from flask_session import Session
 # Werkzeug security
 from werkzeug.security import check_password_hash, generate_password_hash
-from .models import db, User, Wallet
+from .models import db, User, WalletTransactions, Wallet
 # Helper Functions
 from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, formatDollar, formatPercentage, getCryto,getCompanyDetails, getQuote
 
@@ -220,19 +220,23 @@ def portfolio():
 @app.route('/account', methods=['GET', 'POST'])
 def account():
   if request.method == 'GET':
-
+    # 1. get User 
     user = User.query.get_or_404(session['user_id'])
     if not user:
+      return redirect('/login')
+    
+    # 2. Get wallet value & transactions
+    if not user.wallet:
       wallet = 0
+      transactions = []
     else:
-      if user.wallet == None:
-        print('no wallet found for the user')
-        wallet = 0
-      else:
-        print('wallet IS found for that user')
-        wallet = user.wallet.balance
+      wallet = user.wallet.balance
+      wallet_id = user.wallet.id
+
+      # transactions
+      transactions = db.session.query(WalletTransactions).filter(wallet_id == wallet_id).all()
       
-    return render_template('/account.html', wallet=wallet)
+    return render_template('/account.html', wallet=wallet, transactions=transactions)
 
 @app.route('/logout')
 def logout():
