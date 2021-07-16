@@ -1,5 +1,5 @@
 from app import app
-from .models import db
+from .models import db, User
 from flask_session import Session
 # Werkzeug security
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -17,7 +17,7 @@ def wallet(action):
       return 'No amount provided'
 
     # 2. get wallet for current user
-    wallet = 1000
+    user = User.query.get_or_404(session['user_id'])
 
     if action == 'topup':
       # add value to the wallet
