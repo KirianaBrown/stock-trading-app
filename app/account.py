@@ -46,15 +46,26 @@ def wallet(action):
       return redirect('/account')
     
     if action == 'withdrawal':
-      wallet = 1000
+      if not user.wallet:
+        flash('Unable to locate your wallet at the moment')
+        return redirect('/account')
+
+      wallet = user.wallet.balance
       # validate withdrawal value does not exceed wallet
-      if amount < wallet:
+      if amount <= wallet:
         # update balance to show withdrawal
-        balance = wallet - amount
-        # render account page(GET) which will add transaction and flash success message
-        return f'withdrawal selected with an amount of {amount} from wallet {wallet} leaving a balance of {balance}'
+        balance = wallet - float(amount)
+        user.wallet.balance = balance
+
+        new_transaction = WalletTransactions(wallet=user.wallet, amount=-amount, transactionType='withdrawl')
+        db.session.add(new_transaction)
+
+        db.session.commit()
+        return redirect('/account')
+
       else:
-        return f'Unable to withdrawal value of {amount} due to it exceeding current wallet balance of {wallet}'
+        flash('Unable to withdraw those funds as the amount exceeds your wallet balance')
+        return redirect('/account')
 
   return redirect('/account')
 

@@ -220,6 +220,7 @@ def portfolio():
 @app.route('/account', methods=['GET', 'POST'])
 def account():
   if request.method == 'GET':
+
     user = User.query.get_or_404(session['user_id'])
     if not user:
       wallet = 0
