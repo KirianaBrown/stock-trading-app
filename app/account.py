@@ -105,7 +105,7 @@ def password():
     new_password = generate_password_hash(new)
     user.password = new_password
 
-    db.commit()
+    db.session.commit()
     flash('Success! Your password has been updated')
     return redirect('/account')
 

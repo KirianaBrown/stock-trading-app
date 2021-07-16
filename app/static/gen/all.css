@@ -47,7 +47,7 @@ a {
   color: rgba(0, 128, 0, 0.7); }
 
 .red {
-  color: crimson; }
+  color: rgba(255, 0, 0, 0.7); }
 
 .animate-float {
   animation-name: float;
