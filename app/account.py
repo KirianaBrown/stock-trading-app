@@ -18,12 +18,20 @@ def wallet(action):
 
     # 2. get wallet for current user
     user = User.query.get_or_404(session['user_id'])
+    if not user:
+      flash('Unable to update your wallet at the moment - please try again later')
+      redirect('/account')
+    
+    wallet = user.wallet
 
     if action == 'topup':
       # add value to the wallet
       balance = wallet + amount
-      # render the account page (GET) which will add the transaction and flash('success message')
-      return f'topup selected with an amount of {amount} to leave a new wallet balance of {balance}'
+      # update db value
+      user.wallet = balance
+      db.session.commit()
+      flash('Successfully topped up your account')
+      return redirect('/account')
     
     if action == 'withdrawal':
       # validate withdrawal value does not exceed wallet
