@@ -1,5 +1,5 @@
 from app import app
-from .models import db, User
+from .models import db, User, Wallet
 from flask_session import Session
 # Werkzeug security
 from werkzeug.security import check_password_hash, generate_password_hash

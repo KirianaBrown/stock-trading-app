@@ -16,11 +16,7 @@ class User(db.Model):
     db.Text,
     nullable=False
   )
-
-  def __init__(self, username, password):
-    self.username = username,
-    self.password = password,
-
+  wallet = db.relationship('Wallet', backref='users', uselist=False)
 
 class Wallet(db.Model):
   __tablename__ = 'wallet'
@@ -30,7 +26,7 @@ class Wallet(db.Model):
   )
   user_id = db.Column(
     db.Integer,
-    nullable = False
+    db.ForeignKey('users.id')
   )
   balance = db.Column(
     db.Float,
@@ -44,8 +40,3 @@ class Wallet(db.Model):
     db.String(60),
     nullable=False
   )
-
-  def __init__(self, user_id, balance, transactionType):
-    self.user_id = user_id,
-    self.balance = balance,
-    self.transactionType = transactionType
