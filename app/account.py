@@ -80,25 +80,35 @@ def password():
     confirm = req.get('confirm')
 
     # 2. get current users id 
+    user = User.query.get_or_404(session['user_id'])
 
+    if not user:
+      return redirect('/login')
+    
     # 3. get current users password 
-    dbPassword = 'saltme'
+    dbPassword = user.password
 
     # 4. validate
-    if not current == dbPassword:
-      # flash error message
-      return redirect('/account')
-    
-    if not new == confirm:
-      # flash error message
+    if not len(new) >= 8:
+      flash('Error: New password must be at least 8 characters long, please try again')
       return redirect('/account')
 
-    if not len(new) >= 8:
-      #flash error message
+    if not new == confirm:
+      flash('Error: please reenter your password as the confirmation did not match your newly entered password')
       return redirect('/account')
+
+    if not check_password_hash(dbPassword, current):
+      flash('Error: Current password does not match, please try again')
+      return redirect('/account')  
 
     # 5. now validated update (salt the password and update in db)
-    return f'password wants to be changed from {current} to new {new} which has been confirmed {confirm}'
+    new_password = generate_password_hash(new)
+    user.password = new_password
+
+    db.commit()
+    flash('Success! Your password has been updated')
+    return redirect('/account')
+
   else:
     return redirect('/account')
 
