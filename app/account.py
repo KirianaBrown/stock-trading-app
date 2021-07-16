@@ -23,16 +23,14 @@ def wallet(action):
       redirect('/account')
 
     if action == 'topup':
-      # add value to the wallet
-      # balance = wallet + amount
-      # update db value
-      # user.wallet = balance
-      # db.session.commit()
-      flash('Successfully topped up your account')
-      print('successfully updated wallet balance with a topup')
+
+      # 1. get the wallet balance associated with the user
+      
+
       return redirect('/account')
     
     if action == 'withdrawal':
+      wallet = 1000
       # validate withdrawal value does not exceed wallet
       if amount < wallet:
         # update balance to show withdrawal

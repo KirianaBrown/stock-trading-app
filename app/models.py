@@ -32,6 +32,19 @@ class Wallet(db.Model):
     db.Float,
     default=0.00,
   )
+  walletTransactions = db.relationship('WalletTransactions', backref='wallet')
+
+
+class WalletTransactions(db.Model):
+  __tablename__ = 'walletTransactions'
+  id = db.Column(
+    db.Integer,
+    primary_key=True
+  )
+  wallet_id = db.Column(
+    db.Integer,
+    db.ForeignKey('wallet.id')
+  )
   transactionDate = db.Column(
     db.DateTime, 
     default=datetime.utcnow
@@ -40,3 +53,4 @@ class Wallet(db.Model):
     db.String(60),
     nullable=False
   )
+
