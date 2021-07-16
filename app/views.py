@@ -183,30 +183,50 @@ def quote(symbol):
 
   if request.method == 'GET':
 
-    if symbol: 
-      session['quoteSymbol'] = symbol
+    # 1. check what is stored in session
+    storedSymbol = False
+    storedQuote = False
+
+    if session.get('quoteSymbol'):
+      storedSymbol = True
+
+    if session.get('storedQuote'):
+      storedQuote = True
+
+    if symbol:
+      if storedSymbol == True:
+        if storedSymbol == symbol:
+          pass
+        else:
+          session['quoteSymbol'] = symbol
     else:
-      #check if there is a quote symbol already stored
-      if not session.get('quoteSymbol'):
-  
+      if storedSymbol == True:
+        pass
+      else:
         if session.get('spotlightCompany'):
-          
           session['quoteSymbol'] = session['spotlightCompany']['symbol']
         else:
-          
           session['quoteSymbol'] = 'AAPL'
 
 
     quoteSymbol = session['quoteSymbol']
-    print(f'quote symbol == {quoteSymbol}')
+    if not storedQuote:
 
-    # we have the symbol and need the following
+      # 1. get quote
+      quote = getQuote(quoteSymbol)
 
-    # 1. get quote
-    quote = getQuote(quoteSymbol)
+      # 2. get description (industry / description)
+      companyDetails = getCompanyDetails(quoteSymbol)
 
-    # 2. get description (industry / description)
-    companyDetails = getCompanyDetails(quoteSymbol)
+      # 3. store in session details
+      session['storedQuote'] = quote
+      session['storedCompandyDetails'] = companyDetails
+      storedQuote = True
+
+    else:
+      print('quote and company details stored in session')
+      quote = session['storedQuote']
+      companyDetails = session['storedCompandyDetails']
 
     return render_template('/quote.html', quoteSymbol=quoteSymbol, quote=quote, companyDetails=companyDetails)
 
