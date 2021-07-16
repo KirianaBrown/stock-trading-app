@@ -57,3 +57,12 @@ class WalletTransactions(db.Model):
     db.Float
   )
 
+# portfolio
+class Portfolio(db.Model):
+  __tablename__ = "portfolio"
+  id = db.Column(
+    db.Integer,
+    primary_key = True
+  )
+
+# portfoliotransactions
