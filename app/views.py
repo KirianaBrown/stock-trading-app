@@ -185,16 +185,20 @@ def quote(symbol):
 
     if symbol: 
       session['quoteSymbol'] = symbol
-
     else:
-      if not session['quoteSymbol']:
-        if session['spotlightCompany']:
+      #check if there is a quote symbol already stored
+      if not session.get('quoteSymbol'):
+  
+        if session.get('spotlightCompany'):
+          
           session['quoteSymbol'] = session['spotlightCompany']['symbol']
         else:
+          
           session['quoteSymbol'] = 'AAPL'
 
-    
+
     quoteSymbol = session['quoteSymbol']
+    print(f'quote symbol == {quoteSymbol}')
 
     # we have the symbol and need the following
 
