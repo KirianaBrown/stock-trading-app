@@ -199,7 +199,6 @@ def quote(symbol):
           pass
         else:
           session['quoteSymbol'] = symbol
-          print('new symbol different to session passed in')
           storedQuote = False
     else:
       if storedSymbol == True:
@@ -225,7 +224,6 @@ def quote(symbol):
       storedQuote = True
 
     else:
-      print('quote and company details stored in session')
       quote = session['storedQuote']
       companyDetails = session['storedCompandyDetails']
       storedQuote = True
@@ -236,7 +234,11 @@ def quote(symbol):
     # post (quote form to render symbol)
     req = request.form
     symbol = req.get('symbol')
-    return redirect(f'/quote/{symbol}')
+
+    if symbol == session.get('quoteSymbol'):
+      return redirect('/quote')
+    else:
+      return redirect(f'/quote/{symbol}')
 
 @app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
