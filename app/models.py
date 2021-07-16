@@ -17,6 +17,7 @@ class User(db.Model):
     nullable=False
   )
   wallet = db.relationship('Wallet', backref='users', uselist=False)
+  portfolio = db.relationship('Portfolio', backref='users', uselist=False)
 
 class Wallet(db.Model):
   __tablename__ = 'wallet'
@@ -63,6 +64,10 @@ class Portfolio(db.Model):
   id = db.Column(
     db.Integer,
     primary_key = True
+  )
+  user_id = db.Column(
+    db.Integer,
+    db.ForeignKey('users.id')
   )
 
 # portfoliotransactions
