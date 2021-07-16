@@ -223,17 +223,14 @@ def account():
     user = User.query.get_or_404(session['user_id'])
     if not user:
       wallet = 0
-      print('no user found')
     else:
-      print(f'user found in db {user.username}')
       if user.wallet == None:
         print('no wallet found for the user')
         wallet = 0
       else:
         print('wallet IS found for that user')
-        wallet = 100
+        wallet = user.wallet.balance
       
-    print(user.wallet.balance)
     return render_template('/account.html', wallet=wallet)
 
 @app.route('/logout')
