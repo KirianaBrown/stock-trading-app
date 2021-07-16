@@ -21,16 +21,15 @@ def wallet(action):
     if not user:
       flash('Unable to update your wallet at the moment - please try again later')
       redirect('/account')
-    
-    wallet = user.wallet
 
     if action == 'topup':
       # add value to the wallet
-      balance = wallet + amount
+      # balance = wallet + amount
       # update db value
-      user.wallet = balance
-      db.session.commit()
+      # user.wallet = balance
+      # db.session.commit()
       flash('Successfully topped up your account')
+      print('successfully updated wallet balance with a topup')
       return redirect('/account')
     
     if action == 'withdrawal':
