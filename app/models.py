@@ -16,12 +16,10 @@ class User(db.Model):
     db.Text,
     nullable=False
   )
-  wallet = db.relationship('Wallet', backref='user', lazy=True)
 
-  def __init__(self, username, password, wallet):
+  def __init__(self, username, password):
     self.username = username,
     self.password = password,
-    self.wallet = wallet,
 
 
 class Wallet(db.Model):
@@ -32,11 +30,11 @@ class Wallet(db.Model):
   )
   user_id = db.Column(
     db.Integer,
-    db.ForeignKey('user.id'),
     nullable = False
   )
   balance = db.Column(
-    db.Float
+    db.Float,
+    default=0.00,
   )
   transactionDate = db.Column(
     db.DateTime, 
