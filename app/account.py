@@ -1,5 +1,5 @@
 from app import app
-from .models import db, User, Wallet
+from .models import db, User, Wallet, WalletTransactions
 from flask_session import Session
 # Werkzeug security
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -29,10 +29,13 @@ def wallet(action):
         new_wallet = Wallet(balance=amount, users=user)
         db.session.add(new_wallet)
         db.session.commit()
-        print('Created new wallet to the DB')
+
       else:
-        print(user.wallet.id)
-      
+        user.wallet.balance += float(amount)
+        db.session.commit()
+
+        flash('Success! Your wallet has been updated')
+   
       return redirect('/account')
     
     if action == 'withdrawal':
