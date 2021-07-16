@@ -218,7 +218,12 @@ def portfolio():
 @app.route('/account', methods=['GET', 'POST'])
 def account():
   if request.method == 'GET':
-    return render_template('/account.html')
+    user = User.query.get_or_404(session['user_id'])
+    if not user:
+      wallet = 0
+    else:
+      wallet = user.wallet
+    return render_template('/account.html', wallet=wallet)
 
 @app.route('/logout')
 def logout():
