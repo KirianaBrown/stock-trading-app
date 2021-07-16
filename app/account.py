@@ -23,10 +23,16 @@ def wallet(action):
       redirect('/account')
 
     if action == 'topup':
-
       # 1. get the wallet balance associated with the user
+      if not user.wallet:
+        # 1. create new wallet
+        new_wallet = Wallet(balance=amount, users=user)
+        db.session.add(new_wallet)
+        db.session.commit()
+        print('Created new wallet to the DB')
+      else:
+        print(user.wallet)
       
-
       return redirect('/account')
     
     if action == 'withdrawal':

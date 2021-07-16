@@ -227,9 +227,11 @@ def account():
     else:
       print(f'user found in db {user.username}')
       if user.wallet == None:
+        print('no wallet found for the user')
         wallet = 0
       else:
-        wallet = user.wallet
+        print('wallet IS found for that user')
+        wallet = 100
       
     print(wallet)
     return render_template('/account.html', wallet=wallet)
