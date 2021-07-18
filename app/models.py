@@ -81,3 +81,4 @@ class Portfolio(db.Model):
 
 # portfoliotransactions
 # symbol date price quantity 
+class PortfolioTransactions(db.Model):
