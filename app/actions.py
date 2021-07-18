@@ -16,7 +16,15 @@ def buy():
     quantity = request.form.get('quantity')
 
     # 2. get user wallet balance
-    user = db.session
+    user = User.query.get_or_404(session['user_id'])
+    if not user:
+      flash('Unable to execute buy right now, please try again later')
+      return redirect(request.url)
+
+
+
+
+
     wallet = 1000;
 
     # 3. get latest price
