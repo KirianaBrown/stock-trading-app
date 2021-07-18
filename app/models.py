@@ -69,5 +69,15 @@ class Portfolio(db.Model):
     db.Integer,
     db.ForeignKey('users.id')
   )
+  symbol = db.Column(
+    db.String(60),
+    nullable = False
+  )
+  quantity = db.Column(
+    db.Integer
+  )
+
+  portfolioTransactions = db.relationship('PortfolioTransactions', backref='portfolio')
 
 # portfoliotransactions
+# symbol date price quantity 
