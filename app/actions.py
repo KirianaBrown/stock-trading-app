@@ -1,5 +1,7 @@
-from flask.helpers import url_for
 from app import app
+from .models import db, User, Wallet, WalletTransactions
+from flask_session import Session
+from flask.helpers import url_for
 from flask import Flask, redirect, render_template, request, session, flash
 from .helpers import getQuote
 
@@ -14,6 +16,7 @@ def buy():
     quantity = request.form.get('quantity')
 
     # 2. get user wallet balance
+    user = db.session
     wallet = 1000;
 
     # 3. get latest price
