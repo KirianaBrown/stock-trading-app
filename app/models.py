@@ -87,6 +87,10 @@ class PortfolioTransactions(db.Model):
     db.Integer,
     primary_key = True
   )
+  portfolio_id = db.Column(
+    db.Integer,
+    db.ForeignKey('portfolio.id')
+  )
   symbol = db.Column(
     db.String(60),
     nullable = False
@@ -105,4 +109,4 @@ class PortfolioTransactions(db.Model):
   )
   transactionType = db.Column(
     db.String(60)
-  )
+  ) 
