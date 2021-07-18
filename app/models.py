@@ -82,3 +82,8 @@ class Portfolio(db.Model):
 # portfoliotransactions
 # symbol date price quantity 
 class PortfolioTransactions(db.Model):
+  __tablename__ = "portfolioTransactions"
+  id = db.Column(
+    db.Integer,
+    primary_key = True
+  )
