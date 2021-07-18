@@ -87,3 +87,22 @@ class PortfolioTransactions(db.Model):
     db.Integer,
     primary_key = True
   )
+  symbol = db.Column(
+    db.String(60),
+    nullable = False
+  )
+  quantity = db.Column(
+    db.Integer(),
+    nullable = False
+  )
+  unitPrice = db.Column(
+    db.Float(),
+    nullable = False
+  )
+  transactionDate = db.Column(
+    db.DateTime, 
+    default=datetime.utcnow
+  )
+  transactionType = db.Column(
+    db.String(60)
+  )
