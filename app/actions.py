@@ -25,7 +25,7 @@ def buy():
       flash('Missing wallet balance, please top up account before making this buy request.')
       return redirect('/account')
 
-    wallet = 1000;
+    wallet = user.wallet.balance
 
     # 3. get latest price
     data = getQuote(stock)
@@ -35,8 +35,9 @@ def buy():
     total = float(quantity) * float(price)
 
     # 5. compare wallet balance and total $ of purchase
-    if wallet < total:
-      print('not enough funds to purchase')
+    if wallet <= total:
+      flash('Missing funds, please top up your account before executing this buy')
+      return redirect('/portfolio')
 
     remainder = (wallet - total)
 
