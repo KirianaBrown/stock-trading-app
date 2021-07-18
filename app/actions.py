@@ -21,9 +21,9 @@ def buy():
       flash('Unable to execute buy right now, please try again later')
       return redirect(request.url)
 
-
-
-
+    if not user.wallet:
+      flash('Missing wallet balance, please top up account before making this buy request.')
+      return redirect('/account')
 
     wallet = 1000;
 
