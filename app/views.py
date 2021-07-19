@@ -249,7 +249,7 @@ def portfolio():
     print(portfolios)
     print(portfolioTransactions)
 
-    return render_template('/portfolio.html', portfolioTransactions=portfolioTransactions)
+    return render_template('/portfolio.html', portfolios=portfolios,portfolioTransactions=portfolioTransactions)
 
 @app.route('/account', methods=['GET', 'POST'])
 def account():
