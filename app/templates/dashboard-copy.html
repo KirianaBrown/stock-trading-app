@@ -240,9 +240,13 @@
                             <div class="tab-form-group">
                                 <label for="symbol" class='tab-form-label'>symbol</label>
                                 <select id='symbol' type='text' placeholder='AAPL' class='tab-form-input' name='symbol'>
-                                    <option>AAPL</option>
-                                    <option>CLOV</option>
-                                    <option>bye</option>
+                                    {% if symbols %}
+                                    {% for symbol in symbols %}
+                                    <option>{{symbol}}</option>
+                                    {% endfor%}
+                                    {% else%}
+                                    <option>------</option>
+                                    {% endif %}
                                 </select>
                             </div>
                             <div class="tab-form-group">
