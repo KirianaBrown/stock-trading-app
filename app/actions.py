@@ -82,7 +82,7 @@ def sell():
     # 5. calc remainder
     remainder = wallet + total
 
-    return render_template('/confirmation.html', action='sell', symbol=stock, name=data['name'], total=total, price=price, remainder=remainder)
+    return render_template('/confirmation.html', action='sell', symbol=stock, quantity=quantity, name=data['name'], total=total, price=price, remainder=remainder)
 
 
 @app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
