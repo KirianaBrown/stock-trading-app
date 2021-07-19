@@ -7,7 +7,7 @@ from flask import Flask, redirect, render_template, request, session, flash, abo
 from flask_session import Session
 # Werkzeug security
 from werkzeug.security import check_password_hash, generate_password_hash
-from .models import db, User, WalletTransactions, Wallet
+from .models import Portfolio, db, User, WalletTransactions, Wallet
 # Helper Functions
 from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, formatDollar, formatPercentage, getCryto,getCompanyDetails, getQuote
 
@@ -243,6 +243,9 @@ def quote(symbol):
 @app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
   if request.method == 'GET':
+    portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
+    print(portfolios[0].symbol)
+    
     return render_template('/portfolio.html')
 
 @app.route('/account', methods=['GET', 'POST'])
