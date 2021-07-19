@@ -15,6 +15,9 @@ def buy():
     stock = request.form.get('symbol')
     quantity = request.form.get('quantity')
 
+    print(f'stock: {stock}')
+    print(f'quantity: {quantity}')
+
     # 2. get user wallet balance
     user = User.query.get_or_404(session['user_id'])
     if not user:
@@ -27,12 +30,18 @@ def buy():
 
     wallet = user.wallet.balance
 
+    print(f'wallet: {wallet}')
+
     # 3. get latest price
     data = getQuote(stock)
     price = data['latestPrice']
 
+    print(f'price: {price}')
+
     # 4. calc total $ required for purchase
     total = float(quantity) * float(price)
+
+    print(f'total: {total}')
 
     # 5. compare wallet balance and total $ of purchase
     if wallet <= total:
