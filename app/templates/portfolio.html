@@ -98,6 +98,7 @@
                     <th class="dash-trending--table_head">price/unit</th>
                     <th class="dash-trending--table_head">transaction date</th>
                 </tr>
+                {% if portfolioTransctions %}
                 <tr>
                     <td class="dash-trending--table_data">APPL</td>
                     <td class="dash-trending--table_data">MINX version control</td>
@@ -105,76 +106,15 @@
                     <td class="dash-trending--table_data">$109.92</td>
                     <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
                 </tr>
+                {% else %}
                 <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
+                    <td class="dash-trending--table_data">----</td>
+                    <td class="dash-trending--table_data">-------</td>
+                    <td class="dash-trending--table_data">--</td>
+                    <td class="dash-trending--table_data">---</td>
+                    <td class="dash-trending--table_data">----</td>
                 </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
-                <tr>
-                    <td class="dash-trending--table_data">APPL</td>
-                    <td class="dash-trending--table_data">MINX version control</td>
-                    <td class="dash-trending--table_data">2</td>
-                    <td class="dash-trending--table_data">$109.92</td>
-                    <td class="dash-trending--table_data">2021-07-08 05:16:00</td>
-                </tr>
+                {% endif%}
             </table>
         </div>
     </div>
