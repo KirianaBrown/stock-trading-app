@@ -257,6 +257,8 @@ def portfolio():
       quote = getQuote(item.symbol)
       item.price = quote['latestPrice']
       item.total = item.price * item.quantity
+      if not item.name:
+        item.name = quote['name']
 
     return render_template('/portfolio.html', wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions)
 
