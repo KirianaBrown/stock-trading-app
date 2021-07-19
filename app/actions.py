@@ -76,8 +76,17 @@ def sell():
     # 3. total
     total = float(price) * float(quantity)
 
-    # 4. get users wallet
-    wallet = 1999
+    # 4. get user wallet balance
+    user = User.query.get_or_404(session['user_id'])
+    if not user:
+      flash('Unable to execute buy right now, please try again later')
+      return redirect(request.url)
+
+    if not user.wallet:
+      flash('Missing wallet balance, please top up account before making this buy request.')
+      return redirect('/account')
+
+    wallet = user.wallet.balance
 
     # 5. calc remainder
     remainder = wallet + total
@@ -87,16 +96,9 @@ def sell():
 
 @app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
 def confirmation(action):
-   # confirm should be able to receive both a sell and a buy action and perform differently depending if sell x if buy do y
+  # take buy/sell/delete action
+  user = User.query.get_or_404(session['user_id'])
 
-  # should be a request by a user to confirm the purchase provided
-  # if yes then 
-
-  # 1. add stock transaction to users portfolio
-
-  # 2. adjust wallet appropriately
-
-  # 3. return confirmation and render portfolio to show updated transaction details
   if action == 'buy':
     req = request.form
 
@@ -111,7 +113,6 @@ def confirmation(action):
       return redirect('/quote')
 
     # 2. get user
-    user = User.query.get_or_404(session['user_id'])
     if not user:
       flash('There was an error accessing your account, please try again later.')
       return redirect('/login')
@@ -178,6 +179,15 @@ def confirmation(action):
 
     return redirect('/portfolio') 
   elif action == 'sell':
+    # 1. get form details
+    req = request.form
+    symbol = req.get('symbol')
+    quantity = req.get('quantity')
+
+    # 2. validate if user owns stock
+    print(symbol, quantity)
+
+
     return f'confirmation to sell a stock'
   elif action == 'delete':
     # remove db user account
