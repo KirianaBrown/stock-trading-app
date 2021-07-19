@@ -243,13 +243,22 @@ def quote(symbol):
 @app.route('/portfolio', methods=['GET', 'POST'])
 def portfolio():
   if request.method == 'GET':
-    portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
+    # user & wallet 
+    user = User.query.filter_by(id = session['user_id']).first()
+    wallet = user.wallet.balance
+
+    # portfolio transactions
     portfolioTransactions = PortfolioTransactions.query.filter_by(user_id = session['user_id']).all()
 
-    print(portfolios)
-    print(portfolioTransactions)
+    # portfolios
+    portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
 
-    return render_template('/portfolio.html', portfolios=portfolios,portfolioTransactions=portfolioTransactions)
+    for item in portfolios:
+      quote = getQuote(item.symbol)
+      item.price = quote['latestPrice']
+      item.total = item.price * item.quantity
+
+    return render_template('/portfolio.html', wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions)
 
 @app.route('/account', methods=['GET', 'POST'])
 def account():
