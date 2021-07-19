@@ -100,7 +100,13 @@ def confirmation(action):
   if action == 'buy':
     req = request.form
     name = req.get('name')
-    return f'confirmation from a buy form with a name value of {name}'  
+    symbol = req.get('symbol')
+
+  
+
+
+
+    return 'confirmation to purchase stock'  
   elif action == 'sell':
     return f'confirmation to sell a stock'
   elif action == 'delete':

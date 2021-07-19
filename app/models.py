@@ -17,7 +17,8 @@ class User(db.Model):
     nullable=False
   )
   wallet = db.relationship('Wallet', backref='users', uselist=False)
-  portfolio = db.relationship('Portfolio', backref='users', uselist=False)
+  portfolio = db.relationship('Portfolio', backref='users')
+  portfolioTransactions = db.relationship('PortfolioTransactions', backref='users')
 
 class Wallet(db.Model):
   __tablename__ = 'wallet'
@@ -77,19 +78,17 @@ class Portfolio(db.Model):
     db.Integer
   )
 
-  portfolioTransactions = db.relationship('PortfolioTransactions', backref='portfolio')
-
 # portfoliotransactions
-# symbol date price quantity 
+# symbol date price quantity type('buy/sell')
 class PortfolioTransactions(db.Model):
   __tablename__ = "portfolioTransactions"
   id = db.Column(
     db.Integer,
     primary_key = True
   )
-  portfolio_id = db.Column(
+  user_id = db.Column(
     db.Integer,
-    db.ForeignKey('portfolio.id')
+    db.ForeignKey('users.id')
   )
   symbol = db.Column(
     db.String(60),
