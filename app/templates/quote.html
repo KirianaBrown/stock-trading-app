@@ -66,6 +66,14 @@
                 </tbody>
             </table>
         </div>
+        <form class="quote-form" method="POST" action="/buy">
+            <div class="quote-form_group">
+                <label for="quantity" class="quote-form_label">quantity</label>
+                <input type="number" name='quantity' class="quote-form_input" placeholder="1">
+                <input type="text" class="quote-form_input" hidden name="symbol" value={{quote.symbol}}>
+            </div>
+            <button type="submit" class="btn-primary quote-form_action">buy</button>
+        </form>
 
         {% else %}
         <h2 class="quote-company-stock">----</h2>
@@ -99,8 +107,8 @@
         <form class="quote-form" method="POST" action="/buy">
             <div class="quote-form_group">
                 <label for="quantity" class="quote-form_label">quantity</label>
-                <input type="number" name='quantity' class="quote-form_input" placeholder='1 '>
-                <input type="text" class="quote-form_input" hidden name="symbol" value={{quote.symbol}}>
+                <input type="number" name='quantity' class="quote-form_input" placeholder="1">
+                <input type="text" class="quote-form_input" hidden name="symbol" value=''>
             </div>
             <button type="submit" class="btn-primary quote-form_action">buy</button>
         </form>
