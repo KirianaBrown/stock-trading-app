@@ -106,21 +106,17 @@ def confirmation(action):
     price = req.get('price')
     total = req.get('total')
 
-    print(f'symbol: {symbol}')
-    print(f'quantity: {quantity}')
-    print(f'price: {price}')
-    print(f'total: {total}')
-
     if not symbol or not quantity or not price or not total:
       flash('There was an error processing this buy, please try again')
       return redirect('/quote')
 
-    # # 2. get user
+    # 2. get user
     user = User.query.get_or_404(session['user_id'])
-    print(f'user: {user.username}')
+    if not user:
+      flash('There was an error accessing your account, please try again later.')
+      return redirect('/login')
 
-    # # 3. handle wallet transaction
-    print(type(total))
+    # 3. handle wallet transaction
     total = float(total)
     user.wallet.balance -= total
   
@@ -128,7 +124,7 @@ def confirmation(action):
 
     db.session.add(new_transaction)
 
-    # # 4. portfolio
+    # 4. portfolio
     if not user.portfolio:
       print('no portfolio linked to this user')
       # 1. create new portfolio
@@ -136,17 +132,47 @@ def confirmation(action):
       print('created a new portfolio then')
       db.session.add(new_portfolio)
 
-    #   # 2. new transaction
+      # 2. new transaction
       print('create new transaction for buy')
       new_portfolio_transaction = PortfolioTransactions(users=user, symbol=symbol, quantity=quantity, unitPrice=price, transactionType=action)
       print('created new transaction')
       db.session.add(new_portfolio_transaction)
 
-    #   # 3. commit to db records
+      # 3. commit to db records
       db.session.commit()
     # else:
-      portfolios = user.portfolio
-      print(f'user already has a portfolio linked: {portfolios}')
+    else:
+      portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
+
+      symbolExists = False
+      itemID = ''
+
+      for item in portfolios:
+        if item.symbol == symbol:
+          symbolExists = True
+          itemID = item.id
+
+      if symbolExists:
+        print('Symbol exists - updating quantity')
+        # 1. update quantity
+        selectedSymbol = Portfolio.query.filter_by(id = itemID)
+        selectedSymbol.quantity += quantity
+        # 2. New transaction
+        new_portfolio_transaction = PortfolioTransactions(users=user, symbol=symbol, quantity=quantity, unitPrice=price, transactionType=action)
+        # 3. add to db
+        db.session.add(new_portfolio_transaction)
+      else:
+        print('create a new portfolio')
+        # 1. create a new portfolio
+        new_portfolio = Portfolio(users=user, symbol=symbol, quantity=quantity)
+        print('created a new portfolio then')
+        db.session.add(new_portfolio)
+
+        # 2. new transaction
+        print('create new transaction for buy')
+        new_portfolio_transaction = PortfolioTransactions(users=user, symbol=symbol, quantity=quantity, unitPrice=price, transactionType=action)
+        print('created new transaction')
+        db.session.add(new_portfolio_transaction)
 
     db.session.commit()
 

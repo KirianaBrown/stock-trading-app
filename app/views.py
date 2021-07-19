@@ -244,8 +244,7 @@ def quote(symbol):
 def portfolio():
   if request.method == 'GET':
     portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
-    print(portfolios[0].symbol)
-    
+
     return render_template('/portfolio.html')
 
 @app.route('/account', methods=['GET', 'POST'])
