@@ -269,14 +269,18 @@ def portfolio():
     # portfolios
     portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
 
+    # symbols (for select)
+    symbols = []
+
     for item in portfolios:
       quote = getQuote(item.symbol)
       item.price = quote['latestPrice']
       item.total = item.price * item.quantity
+      symbols.append(item.symbol)
       if not item.name:
         item.name = quote['name']
 
-    return render_template('/portfolio.html', wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions)
+    return render_template('/portfolio.html', wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions, symbols=symbols)
 
 @app.route('/account', methods=['GET', 'POST'])
 def account():
