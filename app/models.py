@@ -76,7 +76,7 @@ class Portfolio(db.Model):
   )
   name = db.Column(
     db.String(60),
-    nullable = False
+    default = 'NONE'
   )
   quantity = db.Column(
     db.Integer
@@ -100,7 +100,7 @@ class PortfolioTransactions(db.Model):
   )
   name = db.Column(
     db.String(60),
-    nullable = False
+    default = 'NONE'
   )
   quantity = db.Column(
     db.Integer(),
