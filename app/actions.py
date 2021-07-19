@@ -64,34 +64,24 @@ def sell():
   else:
     # 1. get form data
     req = request.form
-    stock = req.get('symbol')
+    symbol = req.get('symbol')
     quantity = req.get('quantity')
 
-    # 2. get latest price of stock
-    print(stock)
+    # 2. get user 
+    user = User.query.get_or_404(session['user_id'])
 
-    data = getQuote(stock)
+    # 3. get quote
+    data = getQuote(symbol)
     price = data['latestPrice']
 
-    # 3. total
-    total = float(price) * float(quantity)
-
-    # 4. get user wallet balance
-    user = User.query.get_or_404(session['user_id'])
-    if not user:
-      flash('Unable to execute buy right now, please try again later')
-      return redirect(request.url)
-
-    if not user.wallet:
-      flash('Missing wallet balance, please top up account before making this buy request.')
-      return redirect('/account')
-
+    # 4. get wallet
     wallet = user.wallet.balance
-
-    # 5. calc remainder
+    total = int(quantity) * float(price)
+    
+    # 6. calc remainder
     remainder = wallet + total
 
-    return render_template('/confirmation.html', action='sell', symbol=stock, quantity=quantity, name=data['name'], total=total, price=price, remainder=remainder)
+    return render_template('/confirmation.html', action='sell', symbol=symbol, quantity=quantity, name=data['name'], total=total, price=price, remainder=remainder)
 
 
 @app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
