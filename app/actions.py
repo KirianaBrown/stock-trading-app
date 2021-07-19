@@ -155,8 +155,8 @@ def confirmation(action):
       if symbolExists:
         print('Symbol exists - updating quantity')
         # 1. update quantity
-        selectedSymbol = Portfolio.query.filter_by(id = itemID)
-        selectedSymbol.quantity += quantity
+        selectedSymbol = Portfolio.query.filter_by(id = itemID).first()
+        selectedSymbol.quantity += float(quantity)
         # 2. New transaction
         new_portfolio_transaction = PortfolioTransactions(users=user, symbol=symbol, quantity=quantity, unitPrice=price, transactionType=action)
         # 3. add to db

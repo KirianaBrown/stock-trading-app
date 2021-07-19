@@ -245,6 +245,22 @@ def portfolio():
   if request.method == 'GET':
     portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
 
+    symbol = 'AAPL'
+
+    symbolExists = False
+    selectedItem = ''
+
+    for item in portfolios:
+      if item.symbol == symbol:
+        symbolExists = True
+        selectedItem = item.id
+
+    if symbolExists:
+      print('Symbol exists')
+      print(selectedItem)
+      selectedSymbol = Portfolio.query.filter_by(id = selectedItem).first()
+      print(selectedSymbol.quantity)
+
     return render_template('/portfolio.html')
 
 @app.route('/account', methods=['GET', 'POST'])
