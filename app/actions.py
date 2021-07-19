@@ -15,6 +15,10 @@ def buy():
     stock = request.form.get('symbol')
     quantity = request.form.get('quantity')
 
+    if not stock or not quantity:
+      flash('Unable to execute buy right now - missing stock and/or quantity. Please try again!')
+      redirect('/quote')
+
     print(f'stock: {stock}')
     print(f'quantity: {quantity}')
 
@@ -46,7 +50,7 @@ def buy():
     # 5. compare wallet balance and total $ of purchase
     if wallet <= total:
       flash('Missing funds, please top up your account before executing this buy')
-      return redirect('/portfolio')
+      return redirect('/account')
 
     remainder = (wallet - total)
 
