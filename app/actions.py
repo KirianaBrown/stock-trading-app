@@ -106,17 +106,29 @@ def confirmation(action):
     price = req.get('price')
     total = req.get('total')
 
-    # 2. get user
+    print(f'symbol: {symbol}')
+    print(f'quantity: {quantity}')
+    print(f'price: {price}')
+    print(f'total: {total}')
+
+    if not symbol or not quantity or not price or not total:
+      flash('There was an error processing this buy, please try again')
+      return redirect('/quote')
+
+    # # 2. get user
     user = User.query.get_or_404(session['user_id'])
     print(f'user: {user.username}')
 
-    # 3. handle wallet transaction
-    user.wallet.balance -= float(total)
+    # # 3. handle wallet transaction
+    print(type(total))
+    total = float(total)
+    user.wallet.balance -= total
   
-    new_transaction = WalletTransactions(wallet=user.wallet, amount=total, transactionType=action)   
+    new_transaction = WalletTransactions(wallet=user.wallet, amount=total, transactionType=action)  
+
     db.session.add(new_transaction)
 
-    # 4. portfolio
+    # # 4. portfolio
     if not user.portfolio:
       print('no portfolio linked to this user')
       # 1. create new portfolio
@@ -124,16 +136,17 @@ def confirmation(action):
       print('created a new portfolio then')
       db.session.add(new_portfolio)
 
-      # 2. new transaction
+    #   # 2. new transaction
       print('create new transaction for buy')
       new_portfolio_transaction = PortfolioTransactions(users=user, symbol=symbol, quantity=quantity, unitPrice=price, transactionType=action)
       print('created new transaction')
       db.session.add(new_portfolio_transaction)
 
-      # 3. commit to db records
+    #   # 3. commit to db records
       db.session.commit()
-    else:
-      print('user already has a portfolio linked')
+    # else:
+      portfolios = user.portfolio
+      print(f'user already has a portfolio linked: {portfolios}')
 
     db.session.commit()
 

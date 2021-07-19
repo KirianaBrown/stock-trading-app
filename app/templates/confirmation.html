@@ -37,15 +37,18 @@
             </div>
             <div class="quote-form_group">
                 <label for="price" class='confirmation-form_label'>Price per Unit</label>
-                <input type="number" id='price' class="confirmation-form_input" name="price" value={{price}} disabled>
+                <input type="number" class="confirmation-form_input" value={{price}} disabled>
+                <input type="number" id='price' class="confirmation-form_input" name="price" value={{price}} hidden>
             </div>
             <div class="quote-form_group">
                 <label for="quantity" class='confirmation-form_label'>Number of shares</label>
-                <input type="number" id='quantity' class="confirmation-form_input" name="quantity" value={{quantity}} disabled>
+                <input type="number" class="confirmation-form_input" value={{quantity}} disabled>
+                <input type="number" id='quantity' class="confirmation-form_input" name="quantity" value={{quantity}} hidden>
             </div>
             <div class="quote-form_group">
                 <label for="total" class='confirmation-form_label'>Total Cost</label>
-                <input type="number" id='total' class="confirmation-form_input" name="total" value={{total}} disabled>
+                <input type="number" class="confirmation-form_input" value={{total}} disabled>
+                <input type="number" id='total' class="confirmation-form_input" name="total" value={{total}} hidden>
             </div>
             <p class='confirmation-form_text'>Your wallet balance after {{action}}: {{remainder}}</p>
             <div class="flex-button-group">
