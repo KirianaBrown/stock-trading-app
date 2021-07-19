@@ -176,7 +176,7 @@ def confirmation(action):
 
     db.session.commit()
 
-    return 'Success stock has been purchase and added to portfolio'  
+    return redirect('/portfolio') 
   elif action == 'sell':
     return f'confirmation to sell a stock'
   elif action == 'delete':
