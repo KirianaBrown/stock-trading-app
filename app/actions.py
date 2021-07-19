@@ -1,5 +1,5 @@
 from app import app
-from .models import db, User, Wallet, WalletTransactions
+from .models import Portfolio, PortfolioTransactions, db, User, Wallet, WalletTransactions
 from flask_session import Session
 from flask.helpers import url_for
 from flask import Flask, redirect, render_template, request, session, flash
@@ -99,14 +99,45 @@ def confirmation(action):
   # 3. return confirmation and render portfolio to show updated transaction details
   if action == 'buy':
     req = request.form
-    name = req.get('name')
+
+    # 1. get form values
     symbol = req.get('symbol')
+    quantity = req.get('quantity')
+    price = req.get('price')
+    total = req.get('total')
 
+    # 2. get user
+    user = User.query.get_or_404(session['user_id'])
+    print(f'user: {user.username}')
+
+    # 3. handle wallet transaction
+    user.wallet.balance -= float(total)
   
+    new_transaction = WalletTransactions(wallet=user.wallet, amount=total, transactionType=action)   
+    db.session.add(new_transaction)
 
+    # 4. portfolio
+    if not user.portfolio:
+      print('no portfolio linked to this user')
+      # 1. create new portfolio
+      new_portfolio = Portfolio(users=user, symbol=symbol, quantity=quantity)
+      print('created a new portfolio then')
+      db.session.add(new_portfolio)
 
+      # 2. new transaction
+      print('create new transaction for buy')
+      new_portfolio_transaction = PortfolioTransactions(users=user, symbol=symbol, quantity=quantity, unitPrice=price, transactionType=action)
+      print('created new transaction')
+      db.session.add(new_portfolio_transaction)
 
-    return 'confirmation to purchase stock'  
+      # 3. commit to db records
+      db.session.commit()
+    else:
+      print('user already has a portfolio linked')
+
+    db.session.commit()
+
+    return 'Success stock has been purchase and added to portfolio'  
   elif action == 'sell':
     return f'confirmation to sell a stock'
   elif action == 'delete':
