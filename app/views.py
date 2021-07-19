@@ -150,14 +150,18 @@ def dashboard():
     # portfolios
     portfolios = Portfolio.query.filter_by(user_id = session['user_id']).all()
 
+    # symbols for select
+    symbols = []
+
     for item in portfolios:
       quote = getQuote(item.symbol)
       item.price = quote['latestPrice']
       item.total = item.price * item.quantity
+      symbols.append(item.symbol)
       if not item.name:
         item.name = quote['name']
 
-    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions)
+    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions, symbols=symbols)
 
 @app.route('/explore')
 def explore():
