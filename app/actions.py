@@ -173,9 +173,23 @@ def confirmation(action):
     req = request.form
     symbol = req.get('symbol')
     quantity = req.get('quantity')
+    price = req.get('price')
 
     # 2. validate if user owns stock
-    print(symbol, quantity)
+    print(symbol, quantity, price)
+
+    # 3. if user owns the stock then validate quantity is less than on hand
+    if not user.portfolio:
+      flash('Error processing this sell, check your details and account and try again')
+      return redirect('/sell')
+
+    # 4. process updating the quantity of the stock 
+
+    # 5. record a portfolio transaction
+
+    # 6. add total to wallet
+
+    # 7. record a wallet transaction
 
 
     return f'confirmation to sell a stock'
