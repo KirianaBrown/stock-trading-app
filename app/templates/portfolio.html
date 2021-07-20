@@ -21,7 +21,7 @@
                         <select id='symbol' type='text' placeholder='AAPL' name='symbol' class='tab-form-input'>
                             {% if symbols %}
                             {% for symbol in symbols %}
-                          <option>{{symbol}}</option>
+                          <option>{{symbol[0]}}</option>
                           {% endfor %}
                           {% else %}
                           <option>-----</option>
