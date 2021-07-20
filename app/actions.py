@@ -60,7 +60,7 @@ def buy():
 @app.route('/sell', methods=['POST', 'GET'])
 def sell():
   if request.method == 'GET':
-    return redirect(request.url)
+    return redirect('/portfolio')
   else:
     # 1. get form data
     req = request.form
@@ -174,6 +174,7 @@ def confirmation(action):
     symbol = req.get('symbol')
     quantity = req.get('quantity')
     price = req.get('price')
+    name = req.get('name')
 
     # 2. validate if user owns stock
     print(symbol, quantity, price)
@@ -195,22 +196,36 @@ def confirmation(action):
 
     # 4. process updating the quantity of the stock 
     if symbolExists:
-      print('there')
-      print(portfolioItem.symbol)
-      print(portfolioItem.quantity)
+      print('symbol in portfolio linked to user')
+      if portfolioItem.quantity > quantity:
+        flash('Error processing this sell, it appears you are trying to sell more shares than you currently own. Please check details and try again.')
+        return redirect(request.url)
+      else:
+        print('able to process bc correct value')
+        # 5. record a portfolio transaction
+        portfolioItem.quantity -= float(quantity)
+        new_portfolio_transaction = PortfolioTransactions(user_id=user.id, symbol=symbol, name=name, quantity=quantity, unitPrice=price, transactionType=action)
+
+        # 6. add total to wallet
+        total = int(quantity) * price
+        user.wallet.balance += float(total)
+
+        # 7. record a wallet transaction
+        wallet_id = user.wallet.id
+        new_transaction = WalletTransactions(wallet_id=wallet_id, transactionType=action, amount=total,)
+
+        # 8. commit to db
+        db.session.add(new_portfolio_transaction)
+        db.session.add(new_transaction)
+        db.session.commit()
+
+        flash('Success processing this sell')
+        return redirect('/portfolio')
+
     else:
       flash('Error processing this sell, check your account and try again')
       return redirect('/sell')
 
-
-    # 5. record a portfolio transaction
-
-    # 6. add total to wallet
-
-    # 7. record a wallet transaction
-
-
-    return f'confirmation to sell a stock'
   elif action == 'delete':
     # remove db user account
     # render index
