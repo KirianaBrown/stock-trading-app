@@ -21,18 +21,18 @@
                         <select id='symbol' type='text' placeholder='AAPL' name='symbol' class='tab-form-input'>
                             {% if symbols %}
                             {% for symbol in symbols %}
-                          <option>{{symbol[0]}}</option>
-                          {% endfor %}
-                          {% else %}
-                          <option>-----</option>
-                          {% endif %}
+                            <option>{{symbol[0]}}</option>
+                            {% endfor %}
+                            {% else %}
+                            <option>----</option>
+                            {% endif %}
                         </select>
+                        <div class="tab-form-group">
+                            <label for="quantity" class='tab-form-label'>quantity</label>
+                            <input id='quanitity' type='number' placeholder="1" class='tab-form-input' name='quantity' value="1">
+                        </div>
+                        <button type='submit' class='tab-form-action btn-primary'>Sell</button>
                     </div>
-                    <div class="tab-form-group">
-                        <label for="quantity" class='tab-form-label'>quantity</label>
-                        <input id='quanitity' type='number' placeholder="1" class='tab-form-input' name='quantity' value="1">
-                    </div>
-                    <button type='submit' class='tab-form-action btn-primary'>Sell</button>
                 </form>
             </div>
         </div>
