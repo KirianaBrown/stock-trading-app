@@ -191,13 +191,13 @@ def confirmation(action):
 
     for item in portfolios:
       if item.symbol == symbol:
-        symbolExists = True
+        symbolInPortfolio = True
         portfolioItem = item
 
     # 4. process updating the quantity of the stock 
-    if symbolExists:
+    if symbolInPortfolio:
       print('symbol in portfolio linked to user')
-      if portfolioItem.quantity > quantity:
+      if portfolioItem.quantity > float(quantity):
         flash('Error processing this sell, it appears you are trying to sell more shares than you currently own. Please check details and try again.')
         return redirect(request.url)
       else:
