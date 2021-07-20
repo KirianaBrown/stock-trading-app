@@ -50,7 +50,7 @@
                 <input type="number" class="confirmation-form_input" value={{total}} disabled>
                 <input type="number" id='total' class="confirmation-form_input" name="total" value={{total}} hidden>
             </div>
-            <p class='confirmation-form_text'>Your wallet balance after {{action}}: {{remainder}}</p>
+            <p class='confirmation-form_text'>Your wallet balance after {{action}}: {{remainder | formatDollar}}</p>
             <div class="flex-button-group">
                 <input type='button' onclick="history.back(-1)" class="btn-tertiary" value='cancel'>
                 <button type="submit" class="btn-primary">{{action}}</button>
