@@ -183,7 +183,25 @@ def confirmation(action):
       flash('Error processing this sell, check your details and account and try again')
       return redirect('/sell')
 
+    symbolInPortfolio = False
+    portfolioItem = ''
+
+    portfolios = Portfolio.query.filter_by(user_id = user.id).all()
+
+    for item in portfolios:
+      if item.symbol == symbol:
+        symbolExists = True
+        portfolioItem = item
+
     # 4. process updating the quantity of the stock 
+    if symbolExists:
+      print('there')
+      print(portfolioItem.symbol)
+      print(portfolioItem.quantity)
+    else:
+      flash('Error processing this sell, check your account and try again')
+      return redirect('/sell')
+
 
     # 5. record a portfolio transaction
 
