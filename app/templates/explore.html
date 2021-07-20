@@ -89,12 +89,12 @@
                     <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
                         <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
                     </div>
-                    <div class="dash-portfolio-table_data">{{stock.price | formatDollar}} usd <br>
-                        <p class='dash-portfolio-table__minor '>current</p>
+                    <div class="dash-portfolio-table_data">{{stock.price | formatDollar}} <br>
+
                     </div>
 
                     <div class="dash-portfolio-table_data green">+{{stock.changePercentage | formatPercentage}}<br>
-                        <p class='dash-portfolio-table__minor '>change</p>
+
                     </div>
                 </div>
                 {% endfor %} {% else %}
@@ -122,12 +122,10 @@
                     <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
                         <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
                     </div>
-                    <div class="dash-portfolio-table_data">{{stock.price | formatDollar}} usd <br>
-                        <p class='dash-portfolio-table__minor '>current</p>
+                    <div class="dash-portfolio-table_data">{{stock.price | formatDollar}}
                     </div>
 
-                    <div class="dash-portfolio-table_data red">{{stock.changePercentage | formatPercentage}}<br>
-                        <p class='dash-portfolio-table__minor '>percentage change</p>
+                    <div class="dash-portfolio-table_data red">{{stock.changePercentage | formatPercentage}}
                     </div>
                 </div>
                 {% endfor %} {% else %}

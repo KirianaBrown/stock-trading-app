@@ -618,10 +618,12 @@ a {
       height: 5rem;
       padding: .5rem; }
     .dash-portfolio-table_data {
-      color: #3e4975; }
+      color: #3e4975;
+      margin: 0rem .5rem; }
     .dash-portfolio-table-name {
       color: #aab4ff;
-      font-size: 1.4rem; }
+      font-size: 1.4rem;
+      width: 180px; }
     .dash-portfolio-table__minor {
       color: #b3bbd7;
       margin-top: .5rem;

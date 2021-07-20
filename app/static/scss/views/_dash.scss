@@ -171,10 +171,12 @@
         }
         &_data {
             color: $color-text-dark;
+            margin: 0rem .5rem;
         }
         &-name {
             color: $color-text-highlight;
             font-size: 1.4rem;
+            width: 180px;
         }
         &__minor {
             color: $color-text;
