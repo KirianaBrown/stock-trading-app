@@ -259,6 +259,9 @@ a {
     font-size: 1rem;
     color: #3e4975; }
 
+.dashboard-content {
+  display: none; }
+
 .header {
   display: flex;
   justify-content: space-between;
