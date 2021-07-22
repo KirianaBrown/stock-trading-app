@@ -1,0 +1,7 @@
+.wallet {
+    background-color: hsl(227, 33%, 18%);
+    &-text {
+        font-size: 2rem;
+        color: $color-text-highlight!important;
+    }
+}
