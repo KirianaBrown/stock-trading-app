@@ -52,6 +52,9 @@ a {
 .blue {
   color: #2E75DF; }
 
+.color-text {
+  color: #3e4975; }
+
 .animate-float {
   animation-name: float;
   animation-timing-function: ease;
