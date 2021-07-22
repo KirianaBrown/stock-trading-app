@@ -241,6 +241,8 @@ a {
   .wallet-text {
     font-size: 2rem;
     color: #aab4ff !important; }
+  .wallet-img {
+    background-color: #2E75DF !important; }
 
 .header {
   display: flex;
