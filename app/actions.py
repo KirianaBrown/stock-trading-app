@@ -229,7 +229,10 @@ def confirmation(action):
   elif action == 'delete':
     # remove db user account
     # render index
-    return f'confirmation to delete account'
+    req = request.form
+    id = req.get('id')
+
+    return f'confirmation to delete account with the id {id}'
   else:
-    return 'confirmation has been hit without a link'
+    return redirect(request.url)
 

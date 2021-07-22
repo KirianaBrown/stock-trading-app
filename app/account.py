@@ -116,4 +116,5 @@ def password():
     
 @app.route('/delete', methods=['GET', 'POST'])
 def delete():
-  return render_template('/confirmation.html', action='delete')
+  id = session.get('user_id')
+  return render_template('/confirmation.html', action='delete', id=id)

@@ -15,7 +15,7 @@
             <img src="{{url_for('static', filename='img/dashboard/account.svg')}}" alt='company details' class='quote-company-icon'>
         </div>
         <form class="confirmation-form" method="POST" action="/confirmation/{{action}}">
-            <input hidden name='id'>
+            <input hidden name='id' value={{id}}>
             <div class="flex-button-group">
                 <input type='button' onclick="history.back(-1)" class="btn-tertiary" value='cancel'>
                 <button type="submit" class="btn-delete">{{action}}</button>
