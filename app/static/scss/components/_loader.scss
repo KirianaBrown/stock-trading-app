@@ -1,14 +1,25 @@
-.dashboard-content {
+.dashboard-content-content {
     display: none;
 }
 
 .loader {
-    top: 200 px;
     margin: auto;
     position: absolute;
+    top: 40%;
+    left: 50%;
     z-index: 1000;
-    width: 160px;
-    height: 24px;
-    background: url('./img/logo.svg') no-repeat;
+    width: 200px;
+    height: 204px;
+    background: url('../img/logo.svg') no-repeat;
     cursor: wait;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: translateX(-100px);
+    }
+    to {
+        transform: translateX(0px);
+    }
 }

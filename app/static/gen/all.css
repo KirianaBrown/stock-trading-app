@@ -259,8 +259,26 @@ a {
     font-size: 1rem;
     color: #3e4975; }
 
-.dashboard-content {
+.dashboard-content-content {
   display: none; }
+
+.loader {
+  margin: auto;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  z-index: 1000;
+  width: 200px;
+  height: 204px;
+  background: url("../img/logo.svg") no-repeat;
+  cursor: wait;
+  animation: spin 1s linear infinite; }
+
+@keyframes spin {
+  from {
+    transform: translateX(-100px); }
+  to {
+    transform: translateX(0px); } }
 
 .header {
   display: flex;
@@ -359,7 +377,7 @@ a {
       padding-left: 10px; }
     .dashboard-list--text {
       margin-left: .8rem; }
-  .dashboard-content {
+  .dashboard-content-content {
     border-radius: 5px;
     background-color: #151928;
     color: #b3bbd7;

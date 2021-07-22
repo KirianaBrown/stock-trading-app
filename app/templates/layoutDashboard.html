@@ -35,19 +35,21 @@
                 </li>
             </ul>
         </div>
-        <div class="loader"></div>
         <div class="dashboard-content">
-            <!-- <div class="dashboard-title">{{ active_page }}</div> -->
-            {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="loader"></div>
+            <div class="dashboard-content-content">
+                <!-- <div class="dashboard-title">{{ active_page }}</div> -->
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
 
-            <div class='flash'>
-                <div class="flash-message">
-                    {{ message | safe }}
+                <div class='flash'>
+                    <div class="flash-message">
+                        {{ message | safe }}
+                    </div>
+                    <button class='flash-button btn-tertiary' onclick="closePopUp()">Close</button>
                 </div>
-                <button class='flash-button btn-tertiary' onclick="closePopUp()">Close</button>
-            </div>
 
-            {% endfor %} {% endif %} {% endwith %} {% block dashboard%} {% endblock %}
+                {% endfor %} {% endif %} {% endwith %} {% block dashboard%} {% endblock %}
+            </div>
         </div>
     </div>
 </div>

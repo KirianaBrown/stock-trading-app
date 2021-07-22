@@ -23,5 +23,33 @@ function openCity(evt, action) {
 const closePopUp = () => {
     let flashMessage = document.querySelector(".flash");
     flashMessage.style.display = "none";
-    console.log("flash hidden");
 };
+
+// const preloader = () => {};
+
+// window.onload = () => {
+//     console.log("onload called");
+//     setTimeout(() => {
+//         document.querySelector(".loader").style.display = "none";
+//         document.querySelector(".dashboard-content-content").style.display =
+//             "block";
+//     }, 1000);
+// };
+
+function onReady(callback) {
+    var intervalId = window.setInterval(function() {
+        if (document.getElementsByTagName("body")[0] !== undefined) {
+            window.clearInterval(intervalId);
+            callback.call(this);
+        }
+    }, 1000);
+}
+
+function setVisible(selector, visible) {
+    document.querySelector(selector).style.display = visible ? "block" : "none";
+}
+
+onReady(function() {
+    setVisible(".dashboard-content-content", true);
+    setVisible(".loader", false);
+});
