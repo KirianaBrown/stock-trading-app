@@ -244,6 +244,21 @@ a {
   .wallet-img {
     background-color: #2E75DF !important; }
 
+.flash {
+  background-color: rgba(215, 219, 234, 0.95);
+  font-size: 1rem;
+  border-left: 5px solid #2E75DF;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  .flash-message {
+    font-size: 1.4rem;
+    color: #3e4975; }
+
 .header {
   display: flex;
   justify-content: space-between;

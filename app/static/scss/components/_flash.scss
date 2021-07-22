@@ -1,5 +1,16 @@
 .flash {
-    background-color: aqua;
-    width: 100%;
+    background-color: $color-white-light;
+    font-size: 1rem;
+    border-left: 5px solid $color-blue-main;
+    width: 90%;
+    margin: 0 auto;
     padding: 1rem;
+    border-radius: $border-radius;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-message {
+        font-size: 1.4rem;
+        color: $color-text-dark;
+    }
 }
