@@ -1,3 +1,14 @@
 .dashboard-content {
     display: none;
 }
+
+.loader {
+    top: 200 px;
+    margin: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 160px;
+    height: 24px;
+    background: url('./img/logo.svg') no-repeat;
+    cursor: wait;
+}
