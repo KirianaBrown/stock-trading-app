@@ -61,6 +61,7 @@ def wallet(action):
         db.session.add(new_transaction)
 
         db.session.commit()
+        flash('Success! Your wallet has been updated')
         return redirect('/account')
 
       else:
