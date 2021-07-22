@@ -19,3 +19,9 @@ function openCity(evt, action) {
     document.getElementById(action).style.display = "block";
     evt.currentTarget.className += " tab-active";
 }
+
+const closePopUp = () => {
+    let flashMessage = document.querySelector(".flash");
+    flashMessage.style.display = "none";
+    console.log("flash hidden");
+};
