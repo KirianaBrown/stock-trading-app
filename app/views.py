@@ -161,7 +161,7 @@ def dashboard():
       if not item.name:
         item.name = quote['name']
 
-    return render_template('/dashboard-copy.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions, symbols=symbols)
+    return render_template('/dashboard.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions, symbols=symbols)
 
 @app.route('/explore')
 def explore():
