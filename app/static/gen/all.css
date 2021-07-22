@@ -239,7 +239,8 @@ a {
 .wallet {
   background-color: #1f253d; }
   .wallet-text {
-    font-size: 2rem; }
+    font-size: 2rem;
+    color: #aab4ff !important; }
 
 .header {
   display: flex;
