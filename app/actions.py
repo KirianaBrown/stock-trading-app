@@ -232,7 +232,11 @@ def confirmation(action):
     req = request.form
     id = req.get('id')
 
-    return f'confirmation to delete account with the id {id}'
+    user = User.query.filter_by(id=id).first()
+    db.session.delete(user)
+    db.session.commit
+    db.session.clear()
+    return redirect('/')
   else:
     return redirect(request.url)
 
