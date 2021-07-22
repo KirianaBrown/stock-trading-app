@@ -49,6 +49,9 @@ a {
 .red {
   color: rgba(255, 0, 0, 0.7); }
 
+.blue {
+  color: #2E75DF; }
+
 .animate-float {
   animation-name: float;
   animation-timing-function: ease;
@@ -62,6 +65,17 @@ a {
     transform: translate3d(10px, 10px, 0px); }
   100% {
     transform: translate3d(-10px, -10px, 0px); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); } }
 
 .btn-delete, .btn-tertiary, .btn-secondary, .btn-primary {
   border-radius: 5px;
@@ -272,13 +286,8 @@ a {
   height: 204px;
   background: url("../img/logo.svg") no-repeat;
   cursor: wait;
-  animation: spin 1s linear infinite; }
-
-@keyframes spin {
-  from {
-    transform: translateX(-100px); }
-  to {
-    transform: translateX(0px); } }
+  transform: scale(1);
+  animation: pulse 1s infinite; }
 
 .header {
   display: flex;
@@ -295,7 +304,7 @@ a {
     .header-logo--name {
       margin-left: 1rem;
       font-size: 1rem;
-      color: #2E75DF; }
+      color: #3e4975; }
   .header-nav {
     padding: 1rem; }
     .header-nav--items {
