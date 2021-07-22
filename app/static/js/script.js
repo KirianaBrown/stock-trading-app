@@ -25,17 +25,6 @@ const closePopUp = () => {
     flashMessage.style.display = "none";
 };
 
-// const preloader = () => {};
-
-// window.onload = () => {
-//     console.log("onload called");
-//     setTimeout(() => {
-//         document.querySelector(".loader").style.display = "none";
-//         document.querySelector(".dashboard-content-content").style.display =
-//             "block";
-//     }, 1000);
-// };
-
 function onReady(callback) {
     var intervalId = window.setInterval(function() {
         if (document.getElementsByTagName("body")[0] !== undefined) {
