@@ -63,6 +63,7 @@
                     {% if trending %} {% for stock in trending %}
                     <tr>
                         <td class="dash-trending--table_data">{{loop.index}}</td>
+                        <td class="dash-trending--table_data">{{stock.symbol}}</td>
                         <td class="dash-trending--table_data">{{stock.name}}</td>
                         <td class="dash-trending--table_data">{{stock.price | formatDollar}}</td>
                         {% if stock.changePrice > 0 %}
