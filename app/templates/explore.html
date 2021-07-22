@@ -50,6 +50,7 @@
                 <table class="dash-trending--table">
                     <tr class="dash-trending--table_header">
                         <th class="dash-trending--table_head">#</th>
+                        <th class="dash-trending--table_head">symbol</th>
                         <th class="dash-trending--table_head">name</th>
                         <th class="dash-trending--table_head">price/unit</th>
                         <th class="dash-trending--table_head">change</th>
@@ -57,6 +58,7 @@
                     {% if mostActive %} {% for stock in mostActive %}
                     <tr>
                         <td class="dash-trending--table_data">{{loop.index}}</td>
+                        <td class="dash-trending--table_data">{{stock.symbol}}</td>
                         <td class="dash-trending--table_data">{{stock.name}}</td>
                         <td class="dash-trending--table_data">{{stock.price | formatDollar}}</td>
                         {% if stock.changePrice > 0 %}
