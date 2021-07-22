@@ -23,5 +23,4 @@ function openCity(evt, action) {
 const closePopUp = () => {
     let flashMessage = document.querySelector(".flash");
     flashMessage.style.display = "none";
-    console.log("flash hidden");
 };
