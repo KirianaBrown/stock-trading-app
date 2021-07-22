@@ -43,13 +43,13 @@
             <div class="dash-portfolio--content ">
                 <table class='dash-portfolio-table'>
                     {% if wallet %}
-                    <tr class='dash-portfolio-table__item'>
+                    <tr class='dash-portfolio-table__item wallet'>
                         <td>
                             <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
                         </td>
                         <td class="dash-portfolio-table_data dash-portfolio-table-name ">Your Wallet <br>
                         </td>
-                        <td class="dash-portfolio-table_data green ">{{wallet | formatDollar}}
+                        <td class="dash-portfolio-table_data green wallet-text">{{wallet | formatDollar}}
                         </td>
                         <td class="dash-portfolio-table_data green ">
                             <a href='/account' class='btn-tertiary'>Top Up</a>

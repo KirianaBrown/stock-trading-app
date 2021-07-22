@@ -236,6 +236,11 @@ a {
   background-color: #1B2136;
   border: none; }
 
+.wallet {
+  background-color: #1f253d; }
+  .wallet-text {
+    font-size: 2rem; }
+
 .header {
   display: flex;
   justify-content: space-between;
