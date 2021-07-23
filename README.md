@@ -1,5 +1,6 @@
 #KB Trader - Stock Trader Simulation App
 
+```
 # Clone this repository
 
 $ git clone https://github.com/KirianaBrown/stock-trading-app.git
@@ -32,3 +33,5 @@ export API_KEY=<apikey>
 # Run app
 
 $ flask run
+
+```
