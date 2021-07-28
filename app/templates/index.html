@@ -11,11 +11,23 @@
 <div class="hero">
     <div class="hero-left">
         <div class="hero-headings">
-            <h1 class="hero-header1">Investing is planning for the future</h1>
+            <h1 class="hero-header1 animate-left-first">Investing is </h1>
+            <h1 class="hero-header1 animate-left-second">planning for </h1>
+            <h1 class="hero-header1 animate-left-third">the future. </h1>
             <h3 class="hero-sub">and every little bit helps. </h3>
         </div>
     </div>
     <div class="hero-right">
+        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+
+        <div class='flash'>
+            <div class="flash-message">
+                {{ message | safe }}
+            </div>
+            <button class='flash-button btn-tertiary' onclick="closePopUp()">Close</button>
+        </div>
+
+        {% endfor %} {% endif %} {% endwith %}
         <div class="hero-right-content">
             <!-- forms -->
             <div class="dash-actions-content">
