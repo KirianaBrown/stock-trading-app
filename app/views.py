@@ -70,7 +70,7 @@ def register():
 def login():
   if request.method == 'GET':
     session.clear()
-    return render_template('/login.html')
+    return render_template('index.html')
   else:
     # 1. get form data
     username = request.form.get('username').lower()
