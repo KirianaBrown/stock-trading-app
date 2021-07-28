@@ -1,26 +1,21 @@
-.animate-left-first {
+%animate-left {
     animation-name: fade-in-left;
     animation-timing-function: ease;
+}
+
+.animate-left-first {
+    @extend %animate-left;
     animation-duration: 2s;
 }
 
 .animate-left-second {
-    animation-name: fade-in-left;
-    animation-timing-function: ease;
+    @extend %animate-left;
     animation-duration: 4s;
 }
 
 .animate-left-third {
-    animation-name: fade-in-left;
-    animation-timing-function: ease;
+    @extend %animate-left;
     animation-duration: 6s;
-}
-
-.animate-float {
-    animation-name: float;
-    animation-timing-function: ease;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
 }
 
 .animate-fade-in {
@@ -46,21 +41,6 @@
     100% {
         transform: translateX(0px);
         opacity: 1;
-    }
-}
-
-@keyframes float {
-    0% {
-        // transform: translateY(-10px);
-        transform: translate3d(-10px, -10px, 0px);
-    }
-    50% {
-        // transform: translateY(10px);
-        transform: translate3d(10px, 10px, 0px);
-    }
-    100% {
-        // transform: translateY(-10px);
-        transform: translate3d(-10px, -10px, 0px);
     }
 }
 

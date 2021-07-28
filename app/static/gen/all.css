@@ -55,26 +55,18 @@ a {
 .color-text {
   color: #3e4975; }
 
-.animate-left-first {
+.animate-left-third, .animate-left-second, .animate-left-first {
   animation-name: fade-in-left;
-  animation-timing-function: ease;
+  animation-timing-function: ease; }
+
+.animate-left-first {
   animation-duration: 2s; }
 
 .animate-left-second {
-  animation-name: fade-in-left;
-  animation-timing-function: ease;
   animation-duration: 4s; }
 
 .animate-left-third {
-  animation-name: fade-in-left;
-  animation-timing-function: ease;
   animation-duration: 6s; }
-
-.animate-float {
-  animation-name: float;
-  animation-timing-function: ease;
-  animation-duration: 4s;
-  animation-iteration-count: infinite; }
 
 .animate-fade-in {
   animation-name: fade-in;
@@ -94,14 +86,6 @@ a {
   100% {
     transform: translateX(0px);
     opacity: 1; } }
-
-@keyframes float {
-  0% {
-    transform: translate3d(-10px, -10px, 0px); }
-  50% {
-    transform: translate3d(10px, 10px, 0px); }
-  100% {
-    transform: translate3d(-10px, -10px, 0px); } }
 
 @keyframes pulse {
   0% {
