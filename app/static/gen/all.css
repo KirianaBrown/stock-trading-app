@@ -516,7 +516,8 @@ a {
     padding-top: 4rem;
     color: #3e4975; }
   .section-cards {
-    display: flex; }
+    display: flex;
+    margin-top: 4rem; }
 
 .dash-row {
   display: grid;
