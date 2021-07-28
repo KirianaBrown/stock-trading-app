@@ -520,11 +520,33 @@ a {
     margin-top: 4rem; }
   .section-content {
     background-color: rgba(215, 219, 234, 0.95);
+    height: 60vh;
     opacity: .8;
     padding: 1rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    .section-content_text {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .section-content_text--header {
+        font-size: 6rem;
+        color: #2E75DF; }
+      .section-content_text--text {
+        font-size: 2rem;
+        margin-top: 2rem;
+        color: #3e4975; }
+    .section-content_image {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
 
 .dash-row {
   display: grid;

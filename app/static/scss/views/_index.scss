@@ -105,10 +105,36 @@
     }
     &-content {
         background-color: $color-white-light;
+        height: 60vh;
         opacity: .8;
         padding: 1rem 4rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        &_text {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &--header {
+                font-size: 6rem;
+                color: $color-blue-main;
+            }
+            &--text {
+                font-size: 2rem;
+                margin-top: 2rem;
+                color: $color-text-dark
+            }
+        }
+        &_image {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
