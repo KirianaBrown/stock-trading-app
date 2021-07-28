@@ -8,6 +8,7 @@
     <title>{% block title %} {% endblock %}</title>
     {% assets "all_css" %}
     <link rel="stylesheet" href="{{ ASSET_URL }}"> {% endassets %}
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image/ico" href="{{ url_for('static', filename='img/logo.ico')}}">
 </head>
 
@@ -59,6 +60,10 @@
     </footer>
     {% assets "all_js" %}
     <script src="{{ ASSET_URL }}"></script> {% endassets %}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
