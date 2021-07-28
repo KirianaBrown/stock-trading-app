@@ -1,8 +1,52 @@
+.animate-left-first {
+    animation-name: fade-in-left;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+}
+
+.animate-left-second {
+    animation-name: fade-in-left;
+    animation-timing-function: ease;
+    animation-duration: 4s;
+}
+
+.animate-left-third {
+    animation-name: fade-in-left;
+    animation-timing-function: ease;
+    animation-duration: 6s;
+}
+
 .animate-float {
     animation-name: float;
     animation-timing-function: ease;
     animation-duration: 4s;
     animation-iteration-count: infinite;
+}
+
+.animate-fade-in {
+    animation-name: fade-in;
+    animation-timing-function: ease;
+    animation-duration: 10s;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-left {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 
 @keyframes float {
