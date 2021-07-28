@@ -15,28 +15,16 @@
     <header class="header">
         <div class="header-logo">
             <a href="/" class='flex'>
-                <!-- <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Kb Trader Logo" class="header-logo--img"> -->
+                <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Kb Trader Logo" class="header-logo--img">
                 <h1 class="header-logo--name"><span class='blue'>KB</span>Trader</h1>
             </a>
         </div>
         <nav class="header-nav">
             <ul class="header-nav--items">
                 {% if session.user_id %}
-
                 <li class="header-nav--item">
                     <a href="/logout" class="header-nav--item_link btn-tertiary">
                      Logout
-                    </a>
-                </li>
-                {% else %}
-                <li class="header-nav--item">
-                    <a href="/register" class="header-nav--item_link btn-tertiary">
-                     Register
-                    </a>
-                </li>
-                <li class="header-nav--item">
-                    <a href="/login" class="header-nav--item_link btn-primary">
-                     Login
                     </a>
                 </li>
                 {% endif %}
