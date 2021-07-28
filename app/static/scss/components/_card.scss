@@ -1,3 +1,26 @@
 .card {
-    border-radius: $border-radius;
+    padding: 2rem;
+    border-radius: 50px;
+    margin: 4rem;
+    border: $color-black-lighter solid 1px;
+    background: #1B2136;
+    box-shadow: 20px 20px 60px #171c2e, -20px -20px 60px #1f263e;
+    &-title {
+        color: $color-blue-main;
+        font-size: 2rem;
+        text-transform: capitalize;
+        margin: 2rem 0rem;
+    }
+    &-text {
+        line-height: 1.7;
+        font-size: 1.2rem;
+        color: $color-white-light;
+    }
+    &-icon {
+        background-color: $color-blue-main;
+        padding: 1rem;
+        border-radius: 50%;
+        height: 10rem;
+        width: 10rem;
+    }
 }

@@ -187,7 +187,27 @@ a {
       margin-bottom: .5rem; }
 
 .card {
-  border-radius: 5px; }
+  padding: 2rem;
+  border-radius: 50px;
+  margin: 4rem;
+  border: #20263a solid 1px;
+  background: #1B2136;
+  box-shadow: 20px 20px 60px #171c2e, -20px -20px 60px #1f263e; }
+  .card-title {
+    color: #2E75DF;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin: 2rem 0rem; }
+  .card-text {
+    line-height: 1.7;
+    font-size: 1.2rem;
+    color: rgba(215, 219, 234, 0.95); }
+  .card-icon {
+    background-color: #2E75DF;
+    padding: 1rem;
+    border-radius: 50%;
+    height: 10rem;
+    width: 10rem; }
 
 .tab {
   overflow: hidden;
@@ -486,7 +506,7 @@ a {
       color: #3e4975; }
 
 .section {
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   background-color: #1B2136; }
   .section-heading {
