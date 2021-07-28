@@ -106,5 +106,9 @@
     &-content {
         background-color: $color-white-light;
         opacity: .8;
+        padding: 1rem 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }

@@ -521,7 +521,10 @@ a {
   .section-content {
     background-color: rgba(215, 219, 234, 0.95);
     opacity: .8;
-    height: 50vh; }
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
 
 .dash-row {
   display: grid;
