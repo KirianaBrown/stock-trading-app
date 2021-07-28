@@ -3,4 +3,82 @@
 {% block title %} Kb Trader {% endblock %}
 
 <!-- Content -->
-{% block main %} {% endblock%}
+{% block main %}
+<img class='heroImage' src="{{url_for('static', filename='img/landing/backgroundhero.jpg')}}" alt="hero landing">
+
+<div class="heroBackground"></div>
+
+<div class="hero">
+    <div class="hero-left">
+        <div class="hero-headings">
+            <h1 class="hero-header1">Investing is planning for the future</h1>
+            <h3 class="hero-sub">and every little bit helps. </h3>
+        </div>
+    </div>
+    <div class="hero-right">
+        <div class="hero-right-content">
+            <!-- forms -->
+            <div class="dash-actions-content">
+                <!-- Tab links -->
+                <div class="tab">
+                    <button class="tab-links tab-active" onclick="openCity(event, 'Login')">Login</button>
+                    <button class="tab-links" onclick="openCity(event, 'Register')">Register</button>
+                </div>
+                <!-- Tab content -->
+                <div id="Login" class="tab-content first">
+                    <form class='tab-form' method='POST' action='/login'>
+                        <div class="tab-form-group">
+                            <label for="username" class='tab-form-label'>Username</label>
+                            <input id='username' type='text' placeholder='username' class='tab-form-input' name='username'>
+                        </div>
+                        <div class="tab-form-group">
+                            <label for="password" class='tab-form-label'>Password</label>
+                            <input id='password' type='password' name='password' placeholder='password' class='tab-form-input'>
+                        </div>
+                        <button type='submit' class='tab-form-action btn-primary'>Login</button>
+                    </form>
+                </div>
+
+                <div id="Register" class="tab-content">
+                    <form class='tab-form' method='POST' action='/register'>
+                        <div class="tab-form-group">
+                            <label for="username" class='tab-form-label'>Username</label>
+                            <input id='username' type='text' placeholder='username' class='tab-form-input' name='username'>
+                        </div>
+                        <div class="tab-form-group">
+                            <label for="password" class='tab-form-label'>Password</label>
+                            <input id='password' type='password' placeholder='password' class='tab-form-input' name='password'>
+                        </div>
+                        <div class="tab-form-group">
+                            <label for="confirm" class='tab-form-label'>Confirm Password</label>
+                            <input id='confirm' type='password' placeholder='confirm password' class='tab-form-input' name='confirm'>
+                        </div>
+                        <button type='submit' class='tab-form-action btn-primary'>Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="subhero">
+    <div class='subhero-content'>
+        <ul class='subhero-content-list'>
+            <li class='subhero-content-list_item'>🚀 Easy Trading</li>
+            <li class='subhero-content-list_item'>💫 Low Cost</li>
+            <li class='subhero-content-list_item'>📌 Diverse Range of Options</li>
+        </ul>
+    </div>
+    <div class='subhero-content'>
+        <h6>Featured stock</h6>
+        <div class="subhero-content-stocks">
+            <img src="{{url_for('static', filename='img/stocks/apple.svg')}}" alt="apple stock logo" class='subhero-content-stocks_stock'>
+            <img src="{{url_for('static', filename='img/stocks/spotify-2.svg')}}" alt="spotify stock logo" class='subhero-content-stocks_stock'>
+            <img src="{{url_for('static', filename='img/stocks/alphabet.svg')}}" alt="alphabet stock logo" class='subhero-content-stocks_stock'>
+            <img src="{{url_for('static', filename='img/stocks/coca-cola.svg')}}" alt="coca-cola stock logo" class='subhero-content-stocks_stock'>
+            <img src="{{url_for('static', filename='img/stocks/gree-electric-appliances-logo.svg')}}" alt="gree electric appliances stock logo" class='subhero-content-stocks_stock'>
+            <img src="{{url_for('static', filename='img/stocks/aaa-chicago-motor-club.svg')}}" alt="aaa chicago motor club stock logo" class='subhero-content-stocks_stock'>
+        </div>
+    </div>
+    <div class='subhero-content subhero-content_footer'>Powered by <a href="https://iextrading.com/developer">IEX</a></div>
+</section>
+{% endblock%}
