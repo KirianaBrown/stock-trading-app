@@ -518,6 +518,10 @@ a {
   .section-cards {
     display: flex;
     margin-top: 4rem; }
+  .section-content {
+    background-color: rgba(215, 219, 234, 0.95);
+    opacity: .8;
+    height: 50vh; }
 
 .dash-row {
   display: grid;

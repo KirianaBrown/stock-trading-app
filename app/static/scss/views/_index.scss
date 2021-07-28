@@ -103,4 +103,8 @@
         display: flex;
         margin-top: 4rem;
     }
+    &-content {
+        background-color: $color-white-light;
+        opacity: .8;
+    }
 }
