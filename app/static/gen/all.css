@@ -613,7 +613,8 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    text-align: center; }
     .section-base-header {
       font-size: 4rem;
       color: #3e4975;
@@ -999,15 +1000,25 @@ a {
     background-color: cyan; } }
 
 @media only screen and (max-width: 900px) {
+  html {
+    font-size: 60%; }
   body {
-    font-size: 60%;
-    background-color: orange; } }
+    background-color: orange; }
+  .hero-header1 {
+    font-size: 8rem; }
+  .card {
+    padding: 1rem;
+    margin: 2rem; }
+    .card-text {
+      font-size: 1rem; }
+    .card-icon {
+      height: 8rem;
+      width: 8rem; } }
 
 @media only screen and (max-width: 600px) {
-  body {
+  html {
     font-size: 50%;
-    width: 100%;
-    background-color: crimson; }
+    width: 100%; }
   .hero {
     display: block; }
     .hero-header1 {
