@@ -69,6 +69,12 @@ def sell():
     symbol = req.get('symbol')
     quantity = req.get('quantity')
 
+    print(symbol)
+
+    if symbol == '------':
+      flash('Unable to process sale of stock')
+      return redirect('/dashboard')
+
     # 2. get user 
     user = User.query.get_or_404(session['user_id'])
 
