@@ -361,8 +361,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  display: none; }
+  text-align: center; }
   .footer-image {
     height: 10rem; }
   .footer-name {
