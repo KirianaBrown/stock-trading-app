@@ -1018,11 +1018,14 @@ a {
       height: auto; }
   .section {
     height: auto; }
+    .section-cards {
+      margin-top: 1rem;
+      margin-bottom: 1rem; }
     .section-heading {
       font-size: 2rem; }
     .section-subhero {
       width: 100vw;
-      height: auto;
+      height: 10vh;
       display: grid;
       grid-template-columns: 20% 65% 15%; }
       .section-subhero-content {
@@ -1037,8 +1040,8 @@ a {
           flex-wrap: wrap;
           justify-content: space-evenly; }
           .section-subhero-content-stocks_stock {
-            height: 2rem;
-            width: 2rem;
+            height: 2.5rem;
+            width: 2.5rem;
             margin: 0rem .5rem; }
         .section-subhero-content-list {
           margin-left: 0rem; }
@@ -1049,28 +1052,13 @@ a {
         height: 100%;
         width: 100%; }
         .section-content_text--header {
-          font-size: 2rem; }
+          font-size: 1.3rem; }
         .section-content_text--text {
           font-size: .8rem;
           line-height: 1.5; }
       .section-content_img {
-        width: 60%;
+        width: 80%;
         height: auto; }
-    .section-content {
-      height: auto;
-      padding: 1rem 2rem; }
-      .section-content_text {
-        height: 100%;
-        width: 100%; }
-        .section-content_text--header {
-          font-size: 2rem; }
-        .section-content_text--text {
-          font-size: 1rem;
-          line-height: 1.7;
-          margin-top: 1rem; }
-      .section-content_image {
-        height: 100%;
-        width: 100%; }
     .section-testimonial {
       padding: 1rem; }
       .section-testimonial-image {
@@ -1084,4 +1072,18 @@ a {
         .section-testimonial-text-content {
           font-size: 1rem; }
         .section-testimonial-text-name {
-          font-size: .8; } }
+          font-size: .8; }
+    .section-base {
+      height: 50vh; }
+      .section-base-header {
+        font-size: 2rem; }
+  .card {
+    padding: 1rem;
+    margin: .5rem; }
+    .card-title {
+      font-size: 1rem; }
+    .card-text {
+      font-size: .8rem; }
+    .card-icon {
+      height: 5rem;
+      width: 5rem; } }
