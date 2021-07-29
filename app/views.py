@@ -98,6 +98,7 @@ def login():
     return redirect('/dashboard')
 
 @app.route('/dashboard', methods=['GET', 'POST'])
+@login_required
 def dashboard():
   if request.method == 'GET':
   
@@ -164,6 +165,7 @@ def dashboard():
     return render_template('/dashboard.html', bitcoin=bitcoin, litecoin=litecoin, eth=eth, trending=trending, spotlight=spotlight, spotlightCompanyDetails=spotlightCompanyDetails, wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions, symbols=symbols)
 
 @app.route('/explore')
+@login_required
 def explore():
   # 1. Get most active
   if not session.get('listMostActive'):
@@ -199,6 +201,7 @@ def explore():
 
 @app.route('/quote', defaults={'symbol': ''}, methods=['GET', 'POST'])
 @app.route('/quote/<string:symbol>')
+@login_required
 def quote(symbol):
 
   if request.method == 'GET':
@@ -261,6 +264,7 @@ def quote(symbol):
       return redirect(f'/quote/{symbol}')
 
 @app.route('/portfolio', methods=['GET', 'POST'])
+@login_required
 def portfolio():
   if request.method == 'GET':
     # user & wallet 
@@ -292,6 +296,7 @@ def portfolio():
     return render_template('/portfolio.html', wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions, symbols=symbols)
 
 @app.route('/account', methods=['GET', 'POST'])
+@login_required
 def account():
   if request.method == 'GET':
     # 1. get User 
@@ -313,6 +318,7 @@ def account():
     return render_template('/account.html', wallet=wallet, transactions=transactions)
 
 @app.route('/logout')
+@login_required
 def logout():
   session.clear()
   return redirect('/')

@@ -5,8 +5,10 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask.helpers import url_for
 from flask import Flask, redirect, render_template, request, session, flash
+from .helpers import login_required
 
 @app.route('/wallet/<string:action>', methods=['GET', 'POST'])
+@login_required
 def wallet(action):
   if request.method == 'POST':
     # 1. get amount from form
@@ -72,6 +74,7 @@ def wallet(action):
 
 
 @app.route('/password', methods=['GET', 'POST'])
+@login_required
 def password():
   if request.method == 'POST':
     # 1. get form values
@@ -115,6 +118,7 @@ def password():
 
     
 @app.route('/delete', methods=['GET', 'POST'])
+@login_required
 def delete():
   id = session.get('user_id')
   return render_template('/confirmation.html', action='delete', id=id)

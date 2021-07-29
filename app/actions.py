@@ -3,9 +3,10 @@ from .models import Portfolio, PortfolioTransactions, db, User, Wallet, WalletTr
 from flask_session import Session
 from flask.helpers import url_for
 from flask import Flask, redirect, render_template, request, session, flash
-from .helpers import getQuote
+from .helpers import getQuote, login_required
 
 @app.route('/buy', methods=['GET','POST'])
+@login_required
 def buy():
   if request.method == 'GET':
     return redirect(request.url)
@@ -58,6 +59,7 @@ def buy():
     return render_template('/confirmation.html', action='buy', symbol=stock, quantity=quantity, name=data['name'], total=total, price=price, remainder=remainder)
 
 @app.route('/sell', methods=['POST', 'GET'])
+@login_required
 def sell():
   if request.method == 'GET':
     return redirect('/portfolio')
@@ -85,6 +87,7 @@ def sell():
 
 
 @app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
+@login_required
 def confirmation(action):
   # take buy/sell/delete action
   user = User.query.get_or_404(session['user_id'])
