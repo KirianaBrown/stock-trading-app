@@ -323,6 +323,8 @@ def account():
       wallet_id = user.wallet.id
       # transactions
       transactions = WalletTransactions.query.filter_by(wallet_id=wallet_id).all()
+      
+    return render_template('/account.html', wallet=wallet, transactions=transactions)
 
 @app.route('/logout')
 @login_required
