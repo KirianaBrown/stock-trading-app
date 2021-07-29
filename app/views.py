@@ -9,7 +9,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from .models import Portfolio, PortfolioTransactions, db, User, WalletTransactions, Wallet
 # Helper Functions
-from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, formatDollar, formatPercentage, getCryto,getCompanyDetails, getQuote
+from .helpers import check_registration_valid, getListGainers, getListMostActive, getListLosers, formatDollar, formatPercentage, getCryto,getCompanyDetails, getQuote, login_required
 
 
 from dotenv import load_dotenv
