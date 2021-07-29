@@ -1,5 +1,6 @@
 import os
 import requests
+from functools import wraps
 
 def check_registration_valid(username, password, confirmation='none'):
 
