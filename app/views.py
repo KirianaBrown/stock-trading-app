@@ -308,6 +308,11 @@ def account():
     user = User.query.get_or_404(session['user_id'])
     if not user:
       return redirect('/login')
+
+    id = session.get('user_id')
+    name = session.get('username')
+
+    print(f'the session user is: {id}{name}')
     
     # 2. Get wallet value & transactions
     if not user.wallet:
@@ -316,11 +321,8 @@ def account():
     else:
       wallet = user.wallet.balance
       wallet_id = user.wallet.id
-
       # transactions
-      transactions = db.session.query(WalletTransactions).filter(wallet_id == wallet_id).all()
-      
-    return render_template('/account.html', wallet=wallet, transactions=transactions)
+      transactions = WalletTransactions.query.filter_by(wallet_id=wallet_id).all()
 
 @app.route('/logout')
 @login_required
