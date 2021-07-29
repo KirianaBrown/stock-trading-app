@@ -1019,6 +1019,8 @@ a {
   html {
     font-size: 50%;
     width: 100%; }
+  body {
+    background-color: crimson; }
   .hero {
     display: block; }
     .hero-header1 {

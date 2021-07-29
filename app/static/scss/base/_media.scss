@@ -1,0 +1,148 @@
+@media only screen and (min-width: 1600px) {
+    body {
+        background-color: cyan;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    html {
+        font-size: 60%;
+    }
+    body {
+        background-color: orange;
+    }
+    .hero {
+        &-header1 {
+            font-size: 8rem;
+        }
+    }
+    .card {
+        padding: 1rem;
+        margin: 2rem;
+        &-text {
+            font-size: 1rem;
+        }
+        &-icon {
+            height: 8rem;
+            width: 8rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 50%;
+        width: 100%;
+    }
+    body {
+        background-color: crimson;
+    }
+    .hero {
+        display: block;
+        &-header1 {
+            font-size: 4rem;
+        }
+        &-left {
+            height: 20vh;
+        }
+        &-right {
+            height: auto;
+        }
+    }
+    .section {
+        height: auto;
+        &-cards {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        &-heading {
+            font-size: 2rem;
+        }
+        &-subhero {
+            width: 100vw;
+            height: 10vh;
+            display: grid;
+            grid-template-columns: 20% 65% 15%;
+            &-content {
+                background-color: white;
+                color: $color-text-dark;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                &-stocks {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    &_stock {
+                        height: 2.5rem;
+                        width: 2.5rem;
+                        margin: 0rem .5rem;
+                    }
+                }
+                &-list {
+                    margin-left: 0rem;
+                }
+            }
+        }
+        &-content {
+            height: auto;
+            padding: 1rem 1rem;
+            &_text {
+                height: 100%;
+                width: 100%;
+                &--header {
+                    font-size: 1.3rem;
+                }
+                &--text {
+                    font-size: .8rem;
+                    line-height: 1.5;
+                }
+            }
+            &_img {
+                width: 80%;
+                height: auto;
+            }
+        }
+        &-testimonial {
+            padding: 1rem;
+            &-image {
+                height: auto;
+            }
+            &--img {
+                height: 12rem;
+                width: 12rem;
+            }
+            &-text {
+                height: auto;
+                padding: 4rem;
+                &-content {
+                    font-size: 1rem;
+                }
+                &-name {
+                    font-size: .8;
+                }
+            }
+        }
+        &-base {
+            height: 50vh;
+            &-header {
+                font-size: 2rem;
+            }
+        }
+    }
+    .card {
+        padding: 1rem;
+        margin: .5rem;
+        &-title {
+            font-size: 1rem;
+        }
+        &-text {
+            font-size: .8rem;
+        }
+        &-icon {
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+}
