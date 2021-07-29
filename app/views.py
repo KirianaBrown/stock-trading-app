@@ -298,8 +298,6 @@ def portfolio():
       if not item.name:
         item.name = quote['name']
 
-    print(symbols[0][0])
-
     return render_template('/portfolio.html', wallet=wallet,portfolios=portfolios,portfolioTransactions=portfolioTransactions, symbols=symbols)
 
 @app.route('/account', methods=['GET', 'POST'])
