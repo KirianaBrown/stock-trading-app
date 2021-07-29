@@ -106,5 +106,111 @@
         </div>
     </div>
 </div>
+<div class="account-mq">
+    <div class="dash-trending--header">
+        <h3 class="dash-heading portfolio-right-sell_heading">Wallet</h3>
+    </div>
+    <div class="account-wallet-value">
+        <h5 class="account-wallet-heading">Current Amount in Wallet</h5>
+        <div class="account-wallet-value_dollar">{{wallet | formatDollar}}</div>
+    </div>
+
+    <!-- Tab links -->
+    <div class="tab">
+        <button class="tab-links tab-active" onclick="openCity(event, 'TopUp')">Top up</button>
+        <button class="tab-links" onclick="openCity(event, 'Withdrawal')">Withdrawal</button>
+    </div>
+    <!-- Tab content -->
+    <div id="TopUp" class="tab-content first">
+        <form class='tab-form' method='POST' action='/wallet/topup'>
+            <div class="tab-form-group">
+                <label for="quantity" class='tab-form-label'>$ amount</label>
+                <input id='quantity' type='number' name='amount' placeholder='1' class='tab-form-input'>
+            </div>
+            <button type='submit' class='tab-form-action btn-primary'>Top Up</button>
+        </form>
+    </div>
+
+    <div id="Withdrawal" class="tab-content">
+        <form class='tab-form' method='POST' action='/wallet/withdrawal'>
+            <div class="tab-form-group">
+                <label for="quantity" class='tab-form-label'>$ amount</label>
+                <input id='quantity' type='number' placeholder='1' class='tab-form-input' name='amount'>
+            </div>
+            <button type='submit' class='tab-form-action btn-primary'>Withdrawl</button>
+        </form>
+    </div>
+
+    <button class="accordion">Transaction History</button>
+    <div class="panel">
+        <div class="dash-trending--header account-history">
+            <h3 class="dash-heading portfolio-right-sell_heading">transaction history</h3>
+        </div>
+        <table class="dash-trending--table">
+            <tr class="dash-trending--table_header">
+                <th class="dash-trending--table_head">Amount</th>
+                <th class="dash-trending--table_head">Type</th>
+                <th class="dash-trending--table_head">transaction date</th>
+            </tr>
+            {% if transactions %} {% for transaction in transactions %} {% if transaction.transactionType == 'topup' or transaction.transactionType == 'sell' %}
+            <tr>
+                <td class="dash-trending--table_data green">+{{ transaction.amount | formatDollar}}</td>
+                <td class="dash-trending--table_data">{{transaction.transactionType}}</td>
+                <td class="dash-trending--table_data">{{transaction.transactionDate}}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td class="dash-trending--table_data red">-{{ transaction.amount | formatDollar}}</td>
+                <td class="dash-trending--table_data">{{transaction.transactionType}}</td>
+                <td class="dash-trending--table_data">{{transaction.transactionDate}}</td>
+            </tr>
+            {% endif %} {% endfor %} {% else %}
+            <tr>
+                <td class="dash-trending--table_data green">$----</td>
+                <td class="dash-trending--table_data">--------</td>
+            </tr>
+            {% endif %}
+        </table>
+    </div>
+
+    <button class="accordion">Change Password</button>
+    <div class="panel">
+        <div class="dash-trending--header">
+            <h3 class="dash-heading portfolio-right-sell_heading">Password Change</h3>
+        </div>
+        <!-- Tab content -->
+        <div id="UpdatePassword" class="password-tab-content first">
+            <form class='tab-form' action='/password' method='POST'>
+                <div class="tab-form-group">
+                    <label for="current" class='tab-form-label'>Current Password</label>
+                    <input id='current' type='password' placeholder='Current Password' class='tab-form-input' name='current'>
+                </div>
+                <div class="tab-form-group">
+                    <label for="new" class='tab-form-label'>New Password</label>
+                    <input id='new' type='password' placeholder='New Password' class='tab-form-input' name='new'>
+                </div>
+                <div class="tab-form-group">
+                    <label for="confirm" class='tab-form-label'>Confirm New Password</label>
+                    <input id='confirm' type='password' placeholder='Confirm New Password' class='tab-form-input' name='confirm'>
+                </div>
+                <button type='submit' class='tab-form-action btn-primary'>Update Password</button>
+            </form>
+        </div>
+    </div>
+
+    <button class="accordion">Delete Account</button>
+    <div class="panel">
+        <div class="dash-trending--header">
+            <h3 class="dash-heading portfolio-right-sell_heading">Delete Account</h3>
+        </div>
+        <div class="account-remove">
+            <p class="account-remove-text">By deleting your account, your account will be removed from our records and funds deposited into your linked payment method.</p>
+            <p class="account-remove-text"> <strong>WARNING: </strong>this action is irreversible</p>
+            <a href='/delete' class='account-remove-action'>
+                <button class='btn-delete'>Delete Account</button>
+            </a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
