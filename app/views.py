@@ -273,7 +273,10 @@ def portfolio():
   if request.method == 'GET':
     # user & wallet 
     user = User.query.filter_by(id = session['user_id']).first()
-    wallet = user.wallet.balance
+    if not user.wallet:
+      wallet = 0
+    else:
+      wallet = user.wallet.balance
 
     # portfolio transactions
     portfolioTransactions = PortfolioTransactions.query.filter_by(user_id = session['user_id']).all()
