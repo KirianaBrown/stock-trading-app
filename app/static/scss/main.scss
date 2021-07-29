@@ -1,7 +1,6 @@
 @import './base/_variables.scss';
 @import './base/_base.scss';
 @import './base/animation';
-@import './base/media';
 @import './components/button';
 @import './components/forms';
 @import './components/card.scss';
@@ -20,3 +19,4 @@
 @import './views/portfolio';
 @import './views/account';
 @import './views/confirmation';
+@import './base/media';
