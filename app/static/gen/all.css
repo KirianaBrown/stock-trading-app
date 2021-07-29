@@ -521,7 +521,7 @@ a {
   .section-content {
     background-color: rgba(215, 219, 234, 0.95);
     height: 60vh;
-    opacity: .8;
+    opacity: .95;
     padding: 1rem 4rem;
     display: flex;
     justify-content: space-between;
@@ -534,10 +534,11 @@ a {
       align-items: center;
       justify-content: center; }
       .section-content_text--header {
-        font-size: 6rem;
+        font-size: 5rem;
         color: #2E75DF; }
       .section-content_text--text {
-        font-size: 2rem;
+        font-size: 1.2rem;
+        line-height: 1.7;
         margin-top: 2rem;
         color: #3e4975; }
     .section-content_image {
@@ -547,6 +548,38 @@ a {
       flex-direction: column;
       align-items: center;
       justify-content: center; }
+  .section-testimonial {
+    padding: 4rem; }
+    .section-testimonial--card {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      align-items: center;
+      justify-content: center; }
+    .section-testimonial-image {
+      background-color: rgba(215, 219, 234, 0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40vh;
+      opacity: .8; }
+    .section-testimonial--img {
+      height: 24rem;
+      width: 24rem; }
+    .section-testimonial-text {
+      background-color: #2E75DF;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem; }
+      .section-testimonial-text-content {
+        font-size: 2rem;
+        line-height: 1.7; }
+      .section-testimonial-text-name {
+        font-size: 1.6;
+        font-style: italic;
+        color: #3e4975; }
 
 .dash-row {
   display: grid;
