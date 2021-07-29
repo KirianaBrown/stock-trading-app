@@ -101,6 +101,30 @@ a {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); } }
 
+@media only screen and (min-width: 1600px) {
+  body {
+    background-color: cyan; } }
+
+@media only screen and (max-width: 900px) {
+  body {
+    font-size: 60%; } }
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 50%;
+    width: 100% !important; }
+  .hero {
+    display: block !important; }
+    .hero-header1 {
+      font-size: 4rem !important; }
+    .hero-left {
+      height: 20vh !important; }
+    .hero-right {
+      height: auto !important; }
+  .subhero-content-stocks_stock {
+    height: 2rem;
+    width: 2rem; } }
+
 .btn-delete, .btn-tertiary, .btn-secondary, .btn-primary {
   border-radius: 5px;
   cursor: pointer;
@@ -496,33 +520,6 @@ a {
     .hero-right-content {
       width: 80%; }
 
-.subhero {
-  width: 100vw;
-  height: 18vh;
-  display: grid;
-  grid-template-columns: 20% 65% 15%; }
-  .subhero-content {
-    background-color: white;
-    color: #3e4975;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; }
-    .subhero-content-stocks {
-      display: flex;
-      justify-content: space-evenly; }
-      .subhero-content-stocks_stock {
-        height: 5rem;
-        width: 5rem;
-        margin: 0rem 2rem; }
-    .subhero-content-list {
-      list-style-type: none;
-      margin-left: 4rem; }
-      .subhero-content-list_item {
-        color: inherit; }
-    .subhero-content_footer {
-      color: #3e4975; }
-
 .section {
   height: 80vh;
   width: 100vw;
@@ -542,6 +539,32 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center; }
+  .section-subhero {
+    width: 100vw;
+    height: 18vh;
+    display: grid;
+    grid-template-columns: 20% 65% 15%; }
+    .section-subhero-content {
+      background-color: white;
+      color: #3e4975;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .section-subhero-content-stocks {
+        display: flex;
+        justify-content: space-evenly; }
+        .section-subhero-content-stocks_stock {
+          height: 5rem;
+          width: 5rem;
+          margin: 0rem 2rem; }
+      .section-subhero-content-list {
+        list-style-type: none;
+        margin-left: 4rem; }
+        .section-subhero-content-list_item {
+          color: inherit; }
+      .section-subhero-content_footer {
+        color: #3e4975; }
   .section-content {
     background-color: rgba(215, 219, 234, 0.95);
     height: 60vh;
