@@ -524,18 +524,24 @@ a {
       color: #3e4975; }
 
 .section {
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   background-color: #1B2136; }
   .section-heading {
     font-size: 6rem;
     text-align: center;
     text-transform: capitalize;
-    padding-top: 4rem;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
     color: #3e4975; }
   .section-cards {
     display: flex;
     margin-top: 4rem; }
+  .section-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
   .section-content {
     background-color: rgba(215, 219, 234, 0.95);
     height: 60vh;

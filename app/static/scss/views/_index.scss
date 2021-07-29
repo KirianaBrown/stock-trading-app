@@ -89,19 +89,26 @@
 }
 
 .section {
-    height: 100vh;
+    height: 80vh;
     width: 100vw;
     background-color: $color-blue-darkest;
     &-heading {
         font-size: 6rem;
         text-align: center;
         text-transform: capitalize;
-        padding-top: 4rem;
+        margin-bottom: 2rem;
+        padding-top: 2rem;
         color: $color-text-dark;
     }
     &-cards {
         display: flex;
         margin-top: 4rem;
+    }
+    &-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     &-content {
         background-color: $color-white-light;
