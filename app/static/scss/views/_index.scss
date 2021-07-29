@@ -146,6 +146,12 @@
             align-items: center;
             justify-content: center;
         }
+        &--card-2 {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            align-items: center;
+            justify-content: center;
+        }
         &-image {
             background-color: $color-white-light;
             display: flex;

@@ -555,6 +555,11 @@ a {
       grid-template-columns: 30% 70%;
       align-items: center;
       justify-content: center; }
+    .section-testimonial--card-2 {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      align-items: center;
+      justify-content: center; }
     .section-testimonial-image {
       background-color: rgba(215, 219, 234, 0.95);
       display: flex;
