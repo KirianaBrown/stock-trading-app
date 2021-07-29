@@ -1,0 +1,27 @@
+{% extends './layoutDashboard.html' %}
+
+<!-- Active Page -->
+{% set active_page = 'error' %}
+<!-- page title -->
+{% block title %} 404 Error {% endblock %}
+
+<!-- main content -->
+{% block dashboard %}
+<div class="error-container">
+    <div class="error-image">
+        <img src="{{ url_for('static', filename='img/error/error.svg')}}" alt="404 Error">
+    </div>
+    <div class="error-content">
+        <div class="error-name">
+            <div class="error-heading">404</div>
+            <div class="error-subheading">It looks like you have hit an error!</div>
+        </div>
+        <div class="error-instructions">
+            <p class="error-paragraph">The page you are looking for has not been found. Head back to the homepage.</p>
+            <a href="/">
+                <button class="btn-primary">HOME</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

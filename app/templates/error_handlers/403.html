@@ -1,0 +1,27 @@
+{% extends './layoutDashboard.html' %}
+
+<!-- Active Page -->
+{% set active_page = 'error' %}
+<!-- page title -->
+{% block title %} 403 Error {% endblock %}
+
+<!-- main content -->
+{% block dashboard %}
+<div class="error-container">
+    <div class="error-image">
+        <img src="{{ url_for('static', filename='img/error/error.svg')}}" alt="403 Access Error">
+    </div>
+    <div class="error-content">
+        <div class="error-name">
+            <div class="error-heading">403</div>
+            <div class="error-subheading">It looks like you have hit an access error!</div>
+        </div>
+        <div class="error-instructions">
+            <p class="error-paragraph">The page you are looking for is not avaliable for you. Head back to the homepage.</p>
+            <a href="/">
+                <button class="btn-primary">HOME</button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
