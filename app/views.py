@@ -323,5 +323,18 @@ def logout():
   session.clear()
   return redirect('/')
 
+# Error handling
+@app.errorhandler(403)
+def forbidden(e):
+  return render_template("/error_handlers/403.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+  return render_template("/error_handlers/404.html")
+
+@app.errorhandler(500)
+def server_error(e):
+  return render_template("/error_handlers/500.html")
+
 
   
