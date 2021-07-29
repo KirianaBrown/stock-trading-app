@@ -429,6 +429,25 @@ a {
   .dashboard-title {
     font-size: 1.4rem; }
 
+.error-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; }
+
+.error-heading {
+  font-size: 6rem;
+  color: crimson;
+  font-style: bold;
+  padding: 1rem; }
+
+.error-paragraph {
+  line-height: 1.7;
+  font-size: 1.2;
+  margin: 2rem 0rem; }
+
 .heroImage {
   width: 100vw;
   height: 100vh;
