@@ -1044,9 +1044,8 @@ a {
   .account-mq {
     display: block; }
   .header {
-    position: fixed; }
-  .body-wrapper {
-    margin-top: 4rem; } }
+    background-color: white;
+    margin-bottom: 1rem; } }
 
 @media only screen and (max-width: 600px) {
   html {
