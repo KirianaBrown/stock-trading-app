@@ -33,6 +33,10 @@
     .account-mq {
         display: block;
     }
+    .header {
+        position: fixed;
+        margin-bottom: 4rem;
+    }
 }
 
 @media only screen and (max-width: 600px) {
