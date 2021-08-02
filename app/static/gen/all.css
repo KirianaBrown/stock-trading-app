@@ -1062,7 +1062,9 @@ a {
   .quote {
     display: block; }
   .explore-section {
-    display: none; } }
+    display: none; }
+  .explore-section-content_item {
+    max-width: 280px; } }
 
 @media only screen and (max-width: 600px) {
   html {
