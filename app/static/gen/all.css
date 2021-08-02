@@ -58,6 +58,9 @@ a {
 .underline {
   text-decoration: underline; }
 
+.margin {
+  margin: 2rem 0rem; }
+
 .animate-left-third, .animate-left-second, .animate-left-first {
   animation-name: fade-in-left;
   animation-timing-function: ease; }
@@ -789,13 +792,10 @@ a {
     width: 100%; }
 
 .green {
-  color: rgba(13, 206, 13, 0.7); }
+  color: rgba(0, 128, 0, 0.7); }
 
 .red {
-  color: rgba(243, 42, 42, 0.952); }
-
-.margin {
-  margin: 2rem 0rem; }
+  color: rgba(255, 0, 0, 0.7); }
 
 .explore-row-full {
   width: 98%;
@@ -1064,7 +1064,9 @@ a {
   .explore-section {
     display: none; }
   .explore-section-content_item {
-    max-width: 280px; } }
+    max-width: 280px; }
+  .dash-row {
+    display: block; } }
 
 @media only screen and (max-width: 600px) {
   html {
