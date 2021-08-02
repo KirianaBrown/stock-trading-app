@@ -1044,8 +1044,10 @@ a {
   .account-mq {
     display: block; }
   .header {
-    background-color: white;
-    margin-bottom: 1rem; } }
+    margin-bottom: 1rem; }
+  .dashboard-list--text {
+    display: none;
+    color: purple; } }
 
 @media only screen and (max-width: 600px) {
   html {

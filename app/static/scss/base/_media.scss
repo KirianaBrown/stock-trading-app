@@ -36,6 +36,10 @@
     .header {
         margin-bottom: 1rem;
     }
+    .dashboard-list--text {
+        display: none;
+        color: purple;
+    }
 }
 
 @media only screen and (max-width: 600px) {
