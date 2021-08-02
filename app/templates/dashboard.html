@@ -34,9 +34,9 @@
                         <div class="dash-spotlight--content_text-price">
                             <div class="dash-spotlight--content_text-price">price</div>
                             {% if spotlight.changePrice > 0 %}
-                            <div class="dash-spotlight--content_text-details green">{{spotlight.price | formatDollar}} (up {{spotlight.changePercentage | formatPercentage}})</div>
+                            <div class="dash-spotlight--content_text-details green">${{spotlight.price | formatDollar}} usd (+{{spotlight.changePercentage | formatPercentage}})</div>
                             {% else %}
-                            <div class="dash-spotlight--content_text-details red">{{spotlight.price | formatDollar}} (down {{spotlight.formatPercentage}})</div>
+                            <div class="dash-spotlight--content_text-details red">{{spotlight.price | formatDollar}} usd ({{spotlight.changePercentage | formatPercentage}})</div>
                             {% endif %}
                         </div>
                     </div>
