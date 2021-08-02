@@ -998,13 +998,14 @@ a {
   justify-content: center;
   align-items: center; }
   .confirmation-content {
-    width: 100%;
+    width: 500px;
     text-align: center;
     border-radius: 5px;
     box-shadow: 2px 2px 10px 0px #0a0a14;
     padding: 2rem; }
   .confirmation-form {
     display: inline-block;
+    width: 100%;
     padding: 2rem; }
     .confirmation-form_input {
       padding: .8rem;
