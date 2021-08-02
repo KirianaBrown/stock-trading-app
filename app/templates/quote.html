@@ -8,7 +8,7 @@
 <!-- main content -->
 {% block dashboard %}
 <div class="quote">
-    <div class="quote-top">
+    <div class="quote-left">
         <div class="dash-actions-content">
             <h1 class='quote-header'>Quote</h1>
             <!-- Tab content -->
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="quote-base">
+    <div class="quote-right">
         <div class="quote-company">
             <div class="quote-company-symbol">
                 <img src="{{url_for('static', filename='img/dashboard/buy.svg')}}" alt='company details' class='quote-company-icon'>
@@ -109,8 +109,7 @@
             <button type="submit" class="btn-primary quote-form_action disabled">buy</button>
         </form>
         {% endif %}
-
-
     </div>
+</div>
 
-    {% endblock %}
+{% endblock %}
