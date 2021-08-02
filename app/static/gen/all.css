@@ -1046,8 +1046,7 @@ a {
   .header {
     margin-bottom: 1rem; }
   .dashboard-list--text {
-    display: none;
-    color: purple; } }
+    display: none; } }
 
 @media only screen and (max-width: 600px) {
   html {
