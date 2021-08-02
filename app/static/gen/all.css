@@ -976,6 +976,16 @@ a {
   display: none;
   overflow: hidden; }
 
+.accordion:after {
+  content: '\02795';
+  font-size: 13px;
+  color: #3e4975;
+  float: right;
+  margin-left: 5px; }
+
+.active:after {
+  content: "\2796"; }
+
 .confirmation {
   height: 90%;
   width: 100%;

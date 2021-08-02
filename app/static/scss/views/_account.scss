@@ -67,3 +67,15 @@
     display: none;
     overflow: hidden;
 }
+
+.accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: $color-text-dark;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+}
