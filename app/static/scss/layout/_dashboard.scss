@@ -45,6 +45,7 @@
         background-color: $color-black-darkest;
         color: $color-text;
         padding: 2rem;
+        min-height: 100vh;
     }
     &-title {
         font-size: 1.4rem;
