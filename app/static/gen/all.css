@@ -809,13 +809,16 @@ a {
     font-size: 1.4rem; }
   .explore-section-content {
     margin-top: 1rem;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 1rem; }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
     .explore-section-content_item {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
+      max-width: 350px;
+      margin-right: .5rem;
+      margin-bottom: .5rem;
       padding: 1rem;
       border-radius: 5px;
       border: solid 1px #0a0a14;
