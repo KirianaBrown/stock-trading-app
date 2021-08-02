@@ -1082,6 +1082,8 @@ a {
     width: 100%; }
   body {
     background-color: crimson; }
+  .footer {
+    font-size: .8rem; }
   .hero {
     display: block; }
     .hero-header1 {
