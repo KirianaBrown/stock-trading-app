@@ -1071,7 +1071,9 @@ a {
   .dash-row {
     display: block; }
   .mx {
-    display: block; } }
+    display: block; }
+  .dash-spotlight--content_image {
+    height: 14rem; } }
 
 @media only screen and (max-width: 600px) {
   html {
@@ -1163,4 +1165,6 @@ a {
     width: 3rem;
     display: none; }
   .explore-section-content_item {
-    max-width: 170px; } }
+    max-width: 170px; }
+  .dash-spotlight--content_image {
+    height: 10rem; } }

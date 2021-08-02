@@ -57,6 +57,9 @@
     .mx {
         display: block;
     }
+    .dash-spotlight--content_image {
+        height: 14rem;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -182,5 +185,8 @@
     }
     .explore-section-content_item {
         max-width: 170px;
+    }
+    .dash-spotlight--content_image {
+        height: 10rem;
     }
 }
