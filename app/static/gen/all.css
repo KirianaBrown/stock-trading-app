@@ -1056,7 +1056,9 @@ a {
   .header {
     margin-bottom: 1rem; }
   .dashboard-list--text {
-    display: none; } }
+    display: none; }
+  .portfolio {
+    display: block; } }
 
 @media only screen and (max-width: 600px) {
   html {
