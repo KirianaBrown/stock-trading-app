@@ -1060,7 +1060,9 @@ a {
   .portfolio {
     display: block; }
   .quote {
-    display: block; } }
+    display: block; }
+  .explore-section {
+    display: none; } }
 
 @media only screen and (max-width: 600px) {
   html {
