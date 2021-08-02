@@ -1038,7 +1038,7 @@ a {
   body {
     background-color: cyan; } }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   html {
     font-size: 60%; }
   body {
