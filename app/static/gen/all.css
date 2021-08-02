@@ -107,7 +107,7 @@ a {
 .btn-delete, .btn-tertiary, .btn-secondary, .btn-primary {
   border-radius: 5px;
   cursor: pointer;
-  padding: 1rem 4rem;
+  padding: 1rem 2rem;
   text-transform: uppercase;
   margin: .25rem;
   letter-spacing: 1.5px;
