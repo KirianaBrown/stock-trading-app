@@ -827,6 +827,9 @@ a {
 .losers-header {
   margin-top: 4rem; }
 
+.mx {
+  display: none; }
+
 .quote {
   min-height: 100%;
   min-width: 100%;
@@ -1066,6 +1069,8 @@ a {
   .explore-section-content_item {
     max-width: 280px; }
   .dash-row {
+    display: block; }
+  .mx {
     display: block; } }
 
 @media only screen and (max-width: 600px) {
@@ -1152,4 +1157,10 @@ a {
       font-size: .8rem; }
     .card-icon {
       height: 5rem;
-      width: 5rem; } }
+      width: 5rem; }
+  .dash-portfolio-table_img {
+    height: 3rem;
+    width: 3rem;
+    display: none; }
+  .explore-section-content_item {
+    max-width: 170px; } }

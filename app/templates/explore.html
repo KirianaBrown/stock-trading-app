@@ -147,73 +147,74 @@
                 {% endif %}
             </div>
         </div>
-        <!-- mx -->
-        <button class="accordion">Top Gainers</button>
-        <div class="panel">
-            <div class="explore-section-content">
-                {% if gainers %} {% for stock in gainers %}
-                <div class="explore-section-content_item">
-                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
-                        <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
-                    </div>
-                    <div class="dash-portfolio-table_data">{{stock.price | formatDollar}} <br>
+        <div class="mx">
+            <!-- mx -->
+            <button class="accordion">Top Gainers</button>
+            <div class="panel">
+                <div class="explore-section-content">
+                    {% if gainers %} {% for stock in gainers %}
+                    <div class="explore-section-content_item">
+                        <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                        <div class="dash-portfolio-table_data dash-portfolio-table-name">{{ stock.symbol }}<br>
+                            <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
+                        </div>
+                        <div class="dash-portfolio-table_data">{{stock.price | formatDollar}} <br>
 
-                    </div>
+                        </div>
 
-                    <div class="dash-portfolio-table_data green">+{{stock.changePercentage | formatPercentage}}<br>
+                        <div class="dash-portfolio-table_data green">+{{stock.changePercentage | formatPercentage}}<br>
 
+                        </div>
                     </div>
+                    {% endfor %} {% else %}
+                    <div class="explore-section-content_item">
+                        <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                        <div class="dash-portfolio-table_data dash-portfolio-table-name ">----<br>
+                            <p class=' dash-portfolio-table__minor '>---</p>
+                        </div>
+                        <div class="dash-portfolio-table_data">--- usd <br>
+                            <p class='dash-portfolio-table__minor '>current</p>
+                        </div>
+                        <div class="dash-portfolio-table_data green">+---<br>
+                            <p class='dash-portfolio-table__minor '>change</p>
+                        </div>
+                    </div>
+                    {% endif %}
                 </div>
-                {% endfor %} {% else %}
-                <div class="explore-section-content_item">
-                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">----<br>
-                        <p class=' dash-portfolio-table__minor '>---</p>
-                    </div>
-                    <div class="dash-portfolio-table_data">--- usd <br>
-                        <p class='dash-portfolio-table__minor '>current</p>
-                    </div>
-                    <div class="dash-portfolio-table_data green">+---<br>
-                        <p class='dash-portfolio-table__minor '>change</p>
-                    </div>
-                </div>
-                {% endif %}
             </div>
-        </div>
-        <!-- mx -->
-        <button class="accordion">Top Losers</button>
-        <div class="panel">
-            <div class="explore-section-content">
-                {% if losers %} {% for stock in losers %}
-                <div class="explore-section-content_item">
-                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
-                        <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
-                    </div>
-                    <div class="dash-portfolio-table_data">{{stock.price | formatDollar}}
-                    </div>
+            <!-- mx -->
+            <button class="accordion">Top Losers</button>
+            <div class="panel">
+                <div class="explore-section-content">
+                    {% if losers %} {% for stock in losers %}
+                    <div class="explore-section-content_item">
+                        <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                        <div class="dash-portfolio-table_data dash-portfolio-table-name ">{{ stock.symbol }}<br>
+                            <p class=' dash-portfolio-table__minor '>{{stock.name}}</p>
+                        </div>
+                        <div class="dash-portfolio-table_data">{{stock.price | formatDollar}}
+                        </div>
 
-                    <div class="dash-portfolio-table_data red">{{stock.changePercentage | formatPercentage}}
+                        <div class="dash-portfolio-table_data red">{{stock.changePercentage | formatPercentage}}
+                        </div>
                     </div>
-                </div>
-                {% endfor %} {% else %}
-                <div class="explore-section-content_item">
-                    <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
-                    <div class="dash-portfolio-table_data dash-portfolio-table-name ">----<br>
-                        <p class=' dash-portfolio-table__minor '>----</p>
-                    </div>
-                    <div class="dash-portfolio-table_data">--- usd <br>
-                        <p class='dash-portfolio-table__minor '>current</p>
-                    </div>
+                    {% endfor %} {% else %}
+                    <div class="explore-section-content_item">
+                        <img src="{{url_for( 'static', filename='/img/dashboard/buy.svg' )}} " alt='stock symbol' class='dash-portfolio-table_img'>
+                        <div class="dash-portfolio-table_data dash-portfolio-table-name ">----<br>
+                            <p class=' dash-portfolio-table__minor '>----</p>
+                        </div>
+                        <div class="dash-portfolio-table_data">--- usd <br>
+                            <p class='dash-portfolio-table__minor '>current</p>
+                        </div>
 
-                    <div class="dash-portfolio-table_data red">----<br>
-                        <p class='dash-portfolio-table__minor '>percentage change</p>
+                        <div class="dash-portfolio-table_data red">----<br>
+                            <p class='dash-portfolio-table__minor '>percentage change</p>
+                        </div>
                     </div>
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
-
         </div>
     </div>
 

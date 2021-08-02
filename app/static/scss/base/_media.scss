@@ -54,6 +54,9 @@
     .dash-row {
         display: block;
     }
+    .mx {
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -171,5 +174,13 @@
             height: 5rem;
             width: 5rem;
         }
+    }
+    .dash-portfolio-table_img {
+        height: 3rem;
+        width: 3rem;
+        display: none;
+    }
+    .explore-section-content_item {
+        max-width: 170px;
     }
 }
