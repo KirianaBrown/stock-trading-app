@@ -104,3 +104,4 @@ $ flask run
 - [iexcloud API](https://iexcloud.io/)
 - [AOS.css](https://michalsnik.github.io/aos/)
 - [Img Shields](https://shields.io)
+- [Design Insp](https://dribbble.com/shots/4646555-Tradex-Trading-Dashboard/attachments/1049696?mode=media)
