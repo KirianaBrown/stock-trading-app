@@ -162,16 +162,12 @@ def confirmation(action):
         # 3. add to db
         db.session.add(new_portfolio_transaction)
       else:
-        print('create a new portfolio')
         # 1. create a new portfolio
         new_portfolio = Portfolio(users=user, symbol=symbol, quantity=quantity)
-        print('created a new portfolio then')
         db.session.add(new_portfolio)
 
         # 2. new transaction
-        print('create new transaction for buy')
         new_portfolio_transaction = PortfolioTransactions(users=user, symbol=symbol, quantity=quantity, unitPrice=price, transactionType=action)
-        print('created new transaction')
         db.session.add(new_portfolio_transaction)
 
     db.session.commit()
