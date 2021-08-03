@@ -47,7 +47,7 @@ def register():
     # 3. Check if username already exists in DB
     if db.session.query(User).filter(User.username == username).count() == 1:
       flash('Oops username is already taken please try again')
-      return redirect(request.url)
+      return render_template('/index.html')
     
     # 4. hash password
     hash = generate_password_hash(password, salt_length=16)
@@ -61,10 +61,10 @@ def register():
       # db.session.add(new_wallet)
       db.session.commit()
       flash('Successfully Registered')
-      return redirect('/')
+      return render_template('/login.html')
     except:
-      flash('Server error adding new user to DB')
-      return redirect('/')
+      abort(500)
+      return render_template('/index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -82,21 +82,15 @@ def login():
       flash(flash_message)
       return render_template('/index.html')
 
-    # if flash_message:
-    #   # flash(flash_message)
-    #   flash('error')
-    #   print('error')
-    #   return redirect(request.url)
-
     # 3. check user from DB
     user = User.query.filter_by(username=username).first()
     if not user:
-      flash('Oops please check your username and try again')
-      return redirect(request.url)
+      flash('Check your username and try again')
+      return render_template('/index.html')
     
     if not check_password_hash(user.password, password):
-      flash('Oops wrong password - please try again')
-      return redirect(request.url)
+      flash('Error with your password - please try again')
+      return render_template('/index.html')
     
     session['user_id'] = user.id
     session['username'] = user.username
