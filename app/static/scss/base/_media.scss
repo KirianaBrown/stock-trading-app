@@ -8,9 +8,6 @@
     html {
         font-size: 60%;
     }
-    body {
-        background-color: orange;
-    }
     .hero {
         &-header1 {
             font-size: 8rem;
@@ -66,9 +63,6 @@
     html {
         font-size: 50%;
         width: 100%;
-    }
-    body {
-        background-color: crimson;
     }
     .footer {
         font-size: .8rem;
