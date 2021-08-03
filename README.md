@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/KirianaBrown/stock-trading-app.git">
-    <img src="./app/static/img/logo.svg" alt="Logo" width="80" height="80">
+    <img src="./app/static/img/readme.png" alt="Project Demo">
   </a>
 
   <h3 align="center">Stock Trading Simulator</h3>
@@ -15,26 +15,16 @@
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![image](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![image](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![image](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![image](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-<img src="./app/static/img/readme.png" alt="Project Demo">
-Design to simulate a real time stock trading portfolio manager, this application provides real time stock trading data and the management of an investiment portfolio.
-
-### Built With
-
-![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
-
-- Frameworks
-
-![image](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![image](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-
-- Hosting
-
-![image](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
+An investment manager (simulation) that provides real-time stock prices and portfolio management allowing you to easily trade (buy/sell)\* stocks within the market.
 
 ### How To Use
 
