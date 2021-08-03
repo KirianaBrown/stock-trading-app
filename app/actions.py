@@ -20,9 +20,6 @@ def buy():
       flash('Unable to execute buy right now - missing stock and/or quantity. Please try again!')
       redirect('/quote')
 
-    print(f'stock: {stock}')
-    print(f'quantity: {quantity}')
-
     # 2. get user wallet balance
     user = User.query.get_or_404(session['user_id'])
     if not user:
@@ -35,18 +32,12 @@ def buy():
 
     wallet = user.wallet.balance
 
-    print(f'wallet: {wallet}')
-
     # 3. get latest price
     data = getQuote(stock)
     price = data['latestPrice']
 
-    print(f'price: {price}')
-
     # 4. calc total $ required for purchase
     total = float(quantity) * float(price)
-
-    print(f'total: {total}')
 
     # 5. compare wallet balance and total $ of purchase
     if wallet <= total:
@@ -68,8 +59,6 @@ def sell():
     req = request.form
     symbol = req.get('symbol')
     quantity = req.get('quantity')
-
-    print(symbol)
 
     if symbol == '------':
       flash('Unable to process sale of stock')
@@ -182,7 +171,6 @@ def confirmation(action):
     name = req.get('name')
 
     # 2. validate if user owns stock
-    print(symbol, quantity, price)
 
     # 3. if user owns the stock then validate quantity is less than on hand
     if not user.portfolio:
@@ -201,12 +189,10 @@ def confirmation(action):
 
     # 4. process updating the quantity of the stock 
     if symbolInPortfolio:
-      print('symbol in portfolio linked to user')
       if portfolioItem.quantity < float(quantity):
         flash('Error processing this sell, it appears you are trying to sell more shares than you currently own. Please check details and try again.')
         return redirect(request.url)
       else:
-        print('able to process bc correct value')
         # 5. record a portfolio transaction
         portfolioItem.quantity -= float(quantity)
         new_portfolio_transaction = PortfolioTransactions(user_id=user.id, symbol=symbol, name=name, quantity=quantity, unitPrice=price, transactionType=action)
