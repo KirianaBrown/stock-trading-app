@@ -307,7 +307,8 @@ a {
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
-  display: flex; }
+  display: flex;
+  z-index: 6000; }
   .flash-message {
     font-size: 1rem;
     color: #3e4975; }
@@ -1041,8 +1042,6 @@ a {
 @media only screen and (max-width: 1024px) {
   html {
     font-size: 60%; }
-  body {
-    background-color: orange; }
   .hero-header1 {
     font-size: 8rem; }
   .card {
@@ -1080,8 +1079,6 @@ a {
   html {
     font-size: 50%;
     width: 100%; }
-  body {
-    background-color: crimson; }
   .footer {
     font-size: .8rem; }
   .hero {

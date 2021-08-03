@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     display: flex;
+    z-index: 6000;
     &-message {
         font-size: 1rem;
         color: $color-text-dark;

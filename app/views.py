@@ -78,9 +78,14 @@ def login():
 
     # 2. validate
     flash_message = check_registration_valid(username,password)
-    if flash_message:
-      flash(flash_message)
-      return redirect(request.url)
+
+    flash('Unable to execute buy right now - missing stock and/or quantity. Please try again!')
+    redirect('/')
+    # if flash_message:
+    #   # flash(flash_message)
+    #   flash('error')
+    #   print('error')
+    #   return redirect(request.url)
 
     # 3. check user from DB
     user = User.query.filter_by(username=username).first()
