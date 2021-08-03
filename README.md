@@ -10,6 +10,7 @@
   <p align="center">
     A stock trading simulation application which allows users to get upto date share prices and curate a portfolio of investments.
 </p>
+
 ![image](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -19,14 +20,10 @@
 
 ## About The Project
 
-<img src="./app/static/img/readme.png" alt="Project Demo" width="200" height="200">
+<img src="./app/static/img/readme.png" alt="Project Demo">
 Design to simulate a real time stock trading portfolio manager, this application provides real time stock trading data and the management of an investiment portfolio.
 
 ### Built With
-
-- Languages
-
-- Database
 
 ![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
