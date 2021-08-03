@@ -7,7 +7,6 @@ function switchTabs(evt, action) {
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
-    c;
     tablinks = document.getElementsByClassName("tab-links");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace("tab-active", "");
