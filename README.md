@@ -24,7 +24,7 @@
 
 ## About The Project
 
-<img src="./app/static/img/readme.png" alt="Project Demo" width="350" height="350">
+<img src="./app/static/img/readme1.png" alt="Project Demo" width="350" height="350">
 
 An investment manager (simulation) that provides real-time stock prices and portfolio management allowing you to easily trade (buy/sell)\* stocks within the market.
 
