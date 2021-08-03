@@ -2,10 +2,10 @@
 <br />
 <p align="center">
   <a href="https://github.com/KirianaBrown/stock-trading-app.git">
-    <img src="./app/static/img/readme.png" alt="Project Demo" width="350" height="350">
+    <img src="./app/static/img/logo.svg" alt="Project Demo" width="100" height="100">
   </a>
 
-  <h3 align="center">Stock Trading Simulator</h3>
+  <h2 align="center">Stock Trading Simulator</h2>
 
   <p align="center">
     A stock trading simulation application which allows users to get upto date share prices and curate a portfolio of investments.
@@ -15,7 +15,6 @@
 ![image](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![image](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![image](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-<br>
 ![image](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![image](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 ![image](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
@@ -25,7 +24,20 @@
 
 ## About The Project
 
+<img src="./app/static/img/readme.png" alt="Project Demo" width="350" height="350">
+
 An investment manager (simulation) that provides real-time stock prices and portfolio management allowing you to easily trade (buy/sell)\* stocks within the market.
+
+Powered by [IEXCLOUD](https://iexcloud.io/) API, get real-time quote of what is happening in the stock market, including a list of the latest top gainers and top losers helping you to maximise and expand your portfolio. Simulate trading within the stock market by buying and selling some of the worlds most recognised active stocks so you can take this learning to the FOREX.
+
+###### Features
+
+- Portfolio
+- Real-Time Quote
+- Most Active / Top Gainers / Top Losers List
+- Stock Spotlights
+- Account Management
+- Full Transaction History
 
 ### How To Use
 
@@ -75,8 +87,8 @@ API_KEY="yourAPIkey"
 ```bash
 $ export FLASK_APP=run
 $ export FLASK_ENV=development
-$ export API_KEY=<your api key>
-$ export SECRET_KEY=<your secret key>
+$ export API_KEY=""
+$ export SECRET_KEY=""
 ```
 
 8. Launch app
