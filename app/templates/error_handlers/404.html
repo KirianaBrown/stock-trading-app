@@ -1,4 +1,4 @@
-{% extends './layoutDashboard.html' %}
+{% extends './layout.html' %}
 
 <!-- Active Page -->
 {% set active_page = 'error' %}
@@ -6,7 +6,7 @@
 {% block title %} 404 Error {% endblock %}
 
 <!-- main content -->
-{% block dashboard %}
+{% block main %}
 <div class="error-container">
     <div class="error-image">
         <img src="{{ url_for('static', filename='img/error/error.svg')}}" alt="404 Error">
