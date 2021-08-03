@@ -46,7 +46,7 @@ def register():
 
     # 3. Check if username already exists in DB
     if db.session.query(User).filter(User.username == username).count() == 1:
-      flash('Oops username is already taken please try again')
+      flash('Username is already taken please try again')
       return render_template('/index.html')
     
     # 4. hash password
@@ -54,17 +54,14 @@ def register():
 
     # 4. Create new user in the db
     new_user = User(username=username, password=hash)
-    # new_wallet = Wallet(users=new_user)
 
     try:
       db.session.add(new_user)
-      # db.session.add(new_wallet)
       db.session.commit()
       flash('Successfully Registered')
       return render_template('/login.html')
     except:
       abort(500)
-      return render_template('/index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
