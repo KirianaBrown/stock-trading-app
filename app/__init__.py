@@ -27,7 +27,6 @@ app.config.update(SECRET_KEY=os.urandom(24))
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-db.init_app(app)
 
 # init session
 app.config["SESSION_PERMANENT"] = False
@@ -39,3 +38,4 @@ from app import views, actions, account
 
 def create_app():
     db.init_app(app)
+

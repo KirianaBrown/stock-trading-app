@@ -17,7 +17,7 @@ class Config(object):
   SQLALCHEMY_TRACK_MODIFICATIONS = False
 
   # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-  SQLALCHEMY_DATABASE_URI = "postgres://yidgkedsjcbodl:6ece5a22b752a4b6d03f58a63a482aac7c8f17af3984636863fbf99b014b3510@ec2-18-214-195-34.compute-1.amazonaws.com:5432/ddutm86ijpvmv4"
+  SQLALCHEMY_DATABASE_URI = "postgresql://yidgkedsjcbodl:6ece5a22b752a4b6d03f58a63a482aac7c8f17af3984636863fbf99b014b3510@ec2-18-214-195-34.compute-1.amazonaws.com:5432/ddutm86ijpvmv4"
 
 class ProductionConfig(Config):
   pass
