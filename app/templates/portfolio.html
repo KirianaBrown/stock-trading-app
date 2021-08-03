@@ -51,7 +51,7 @@
                         </td>
                         <td class="dash-portfolio-table_data wallet-text">{{wallet | formatDollar}}
                         </td>
-                        <td class="dash-portfolio-table_data green">
+                        <td class="">
                             <a href="/account" class='btn-tertiary'>Top Up</a>
                         </td>
                     </tr>
@@ -100,7 +100,7 @@
                 <tr class="dash-trending--table_header">
                     <th class="dash-trending--table_head">Type</th>
                     <th class="dash-trending--table_head">SYMBOL</th>
-                    <th class="dash-trending--table_head">name</th>
+
                     <th class="dash-trending--table_head">shares</th>
                     <th class="dash-trending--table_head">price/unit</th>
                     <th class="dash-trending--table_head">transaction date</th>
@@ -113,7 +113,7 @@
                     <td class="dash-trending--table_data">Sell</td>
                     {% endif %}
                     <td class="dash-trending--table_data">{{item.symbol}}</td>
-                    <td class="dash-trending--table_data">{{item.name}}</td>
+
                     <td class="dash-trending--table_data">{{item.quantity}}</td>
                     <td class="dash-trending--table_data">{{item.unitPrice |formatDollar}}</td>
                     <td class="dash-trending--table_data">{{item.transactionDate}}</td>

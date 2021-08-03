@@ -1178,4 +1178,12 @@ a {
   .dash-portfolio-table__minor {
     font-size: .7rem; }
   .wallet-text {
-    font-size: 1.4rem; } }
+    font-size: 1.4rem; }
+  .btn-tertiary {
+    padding: 0rem; }
+  .dash-trending--table_data {
+    font-size: .8rem;
+    padding: .25rem; }
+  .footer-container-left,
+  .footer-container-right {
+    margin: 0.5rem; } }
