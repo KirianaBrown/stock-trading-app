@@ -78,9 +78,10 @@ def login():
 
     # 2. validate
     flash_message = check_registration_valid(username,password)
+    if flash_message:
+      flash(flash_message)
+      return render_template('/index.html')
 
-    flash('Unable to execute buy right now - missing stock and/or quantity. Please try again!')
-    redirect('/')
     # if flash_message:
     #   # flash(flash_message)
     #   flash('error')

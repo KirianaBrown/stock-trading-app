@@ -7,16 +7,6 @@
 <img class='heroImage' src="{{url_for('static', filename='img/landing/backgroundhero.jpg')}}" alt="hero landing">
 
 <div class="heroBackground"></div>
-{% with messages = get_flashed_messages() %} {% if messages %}
-
-<div class='flash'>
-    <div class="flash-message">
-        {{ message | safe }}
-    </div>
-    <button class='flash-button btn-tertiary' onclick="closePopUp()">Close</button>
-</div>
-{% else %}
-<p>No messages</p> {% endif %} {% endwith %}
 
 <div class="hero" id='register'>
     <div class="hero-left">
@@ -28,6 +18,14 @@
         </div>
     </div>
     <div class="hero-right">
+        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages%}
+        <div class='flash'>
+            <div class="flash-message">
+                {{ message | safe}}
+            </div>
+            <button class='flash-button btn-tertiary' onclick="closePopUp()">Close</button>
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
         <div class="hero-right-content">
             <!-- forms -->
             <div class="dash-actions-content">
