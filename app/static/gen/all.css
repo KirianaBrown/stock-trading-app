@@ -1035,10 +1035,6 @@ a {
 .flex-button-group {
   margin-top: 3rem; }
 
-@media only screen and (min-width: 1600px) {
-  body {
-    background-color: cyan; } }
-
 @media only screen and (max-width: 1024px) {
   html {
     font-size: 60%; }
