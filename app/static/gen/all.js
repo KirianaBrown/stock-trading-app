@@ -1,6 +1,6 @@
 console.log("hello from the console");
 
-function openCity(evt, action) {
+function switchTabs(evt, action) {
     let i, tabcontent, tablinks;
 
     // Get all elements with class="tabcontent" and hide them
