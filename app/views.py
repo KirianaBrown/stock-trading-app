@@ -295,6 +295,7 @@ def portfolio():
       quote = getQuote(item.symbol)
       item.price = quote['latestPrice']
       item.total = item.price * item.quantity
+      item.name = quote['name']
       symbols.append([
         item.symbol,
         item.quantity
