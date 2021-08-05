@@ -11,7 +11,6 @@ function switchTabs(evt, action) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace("tab-active", "");
     }
-
     document.getElementById(action).style.display = "block";
     evt.currentTarget.className += " tab-active";
 }
