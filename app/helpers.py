@@ -18,6 +18,8 @@ def check_registration_valid(username, password, confirmation='none'):
 
   if not username and not password:
     return 'Ooops please enter a username and password'
+  if ' ' in username:
+    return 'Please ensure username does not contain a space'
   if not username:
     return 'Oops missing a username - please try again'
   if not password:
