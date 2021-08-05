@@ -47,7 +47,7 @@
             </div>
             <div class="quote-form_group">
                 <label for="total" class='confirmation-form_label'>Total Cost</label>
-                <input type="number" class="confirmation-form_input" value={{total}} disabled>
+                <input type="text" class="confirmation-form_input" value={{formattedTotal}} disabled>
                 <input type="number" id='total' class="confirmation-form_input" name="total" value={{total}} hidden>
             </div>
             <p class='confirmation-form_text'>Your wallet balance after {{action}}: {{remainder | formatDollar}}</p>

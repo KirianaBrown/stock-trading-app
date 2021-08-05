@@ -3,7 +3,7 @@ from .models import Portfolio, PortfolioTransactions, db, User, Wallet, WalletTr
 from flask_session import Session
 from flask.helpers import url_for
 from flask import Flask, redirect, render_template, request, session, flash
-from .helpers import getQuote, login_required
+from .helpers import formatDollar, getQuote, login_required, formatDollar
 
 @app.route('/buy', methods=['GET','POST'])
 @login_required
@@ -45,9 +45,11 @@ def buy():
       return redirect('/account')
 
     remainder = (wallet - total)
+    formattedTotal = formatDollar(total)
+    print(formattedTotal)
 
     # 6. render results to ui for user confirmation
-    return render_template('/confirmation.html', action='buy', symbol=stock, quantity=quantity, name=data['name'], total=total, price=price, remainder=remainder)
+    return render_template('/confirmation.html', action='buy', symbol=stock, quantity=quantity, name=data['name'], total=total, formattedTotal=formattedTotal, price=price, remainder=remainder)
 
 @app.route('/sell', methods=['POST', 'GET'])
 @login_required
