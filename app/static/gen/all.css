@@ -327,7 +327,8 @@ a {
   background: url("../img/logo.svg") no-repeat;
   cursor: wait;
   transform: scale(1);
-  animation: pulse 1s infinite; }
+  animation: pulse 1s infinite;
+  box-shadow: none !important; }
 
 .header {
   display: flex;
