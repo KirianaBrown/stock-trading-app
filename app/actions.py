@@ -46,7 +46,6 @@ def buy():
 
     remainder = (wallet - total)
     formattedTotal = formatDollar(total)
-    print(formattedTotal)
 
     # 6. render results to ui for user confirmation
     return render_template('/confirmation.html', action='buy', symbol=stock, quantity=quantity, name=data['name'], total=total, formattedTotal=formattedTotal, price=price, remainder=remainder)
@@ -79,8 +78,9 @@ def sell():
     
     # 6. calc remainder
     remainder = wallet + total
+    formattedTotal = formatDollar(total)
 
-    return render_template('/confirmation.html', action='sell', symbol=symbol, quantity=quantity, name=data['name'], total=total, price=price, remainder=remainder)
+    return render_template('/confirmation.html', action='sell', symbol=symbol, quantity=quantity, name=data['name'], total=total, formattedTotal=formattedTotal, price=price, remainder=remainder)
 
 
 @app.route('/confirmation/<string:action>', methods=['GET', 'POST'])
