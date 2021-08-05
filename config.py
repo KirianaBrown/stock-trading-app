@@ -30,3 +30,4 @@ class DevelopmentConfig(Config):
   TEMPLATES_AUTO_RELOAD = True
   SECRET_KEY: os.environ.get("SECRET_KEY")
   SESSION_PERMANENT = False
+  API_KEY=os.environ.get('API_KEY')

@@ -124,8 +124,13 @@ def dashboard():
     
     # 3. get bitcoin
     if not session.get('bitcoin'):
-      session['bitcoin'] = getCryto('btcusd') 
-    bitcoin = float(session['bitcoin']['price'])
+      session['bitcoin'] = getCryto('btcusd')
+
+    if session['bitcoin']:
+      bitcoin = float(session['bitcoin']['price'])
+      print(bitcoin)
+    else:
+      return 'no bitcoin registered'
 
     # 4. get cardona
     if not session.get('litecoin'):
@@ -154,6 +159,8 @@ def dashboard():
 
     # symbols for select
     symbols = []
+
+    print(portfolios)
 
     for item in portfolios:
       quote = getQuote(item.symbol)

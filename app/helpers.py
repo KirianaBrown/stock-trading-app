@@ -44,12 +44,9 @@ def getListMostActive():
   # cloud.iexapis.com ~ MOST ACTIVE ~
     # Contact API and convert into python dictionary
     try:
-        # api_key_test = os.environ.get('API_KEY_TEST')
         api_key = os.environ.get('API_KEY')
         url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
-        # url = f'https://sandbox.iexapis.com/stable/stock/market/list/mostactive/?token={api_key_test}'
         response = requests.get(url)
-        # response.raise_for_status()
     except requests.RequestException:
         return None
 
@@ -62,7 +59,6 @@ def getListMostActive():
           data.append({
             "name": list[item]["companyName"],
             "symbol": list[item]["symbol"],
-            # "img_url": getLogo(list[item]["symbol"]),
             "price": list[item]["latestPrice"],
             "changePercentage": (list[item]["changePercent"] * 100),
             "changePrice": list[item]["change"],
@@ -76,12 +72,9 @@ def getListGainers():
   # cloud.iexapis.com ~ MOST ACTIVE ~
     # Contact API and convert into python dictionary
     try:
-        # api_key_test = os.environ.get('API_KEY_TEST')
         api_key = os.environ.get('API_KEY')
         url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
-        # url = f'https://sandbox.iexapis.com/stable/stock/market/list/gainers/?token={api_key_test}'
         response = requests.get(url)
-        # response.raise_for_status()
     except requests.RequestException:
         return None
 
@@ -94,7 +87,6 @@ def getListGainers():
           data.append({
             "name": list[item]["companyName"],
             "symbol": list[item]["symbol"],
-            # "img_url": getLogo(list[item]["symbol"]),
             "price": list[item]["latestPrice"],
             "changePercentage": (list[item]["changePercent"] * 100),
             "changePrice": list[item]["change"],
@@ -106,15 +98,12 @@ def getListGainers():
 
 def getListLosers():
   # cloud.iexapis.com ~ MOST ACTIVE ~
-    # Contact API and convert into python dictionary
-    # "img_url": getLogo(list[item]["symbol"]),
+    # Contact API and convert into python 
     try:
-        # api_key_test = os.environ.get('API_KEY_TEST')
         api_key = os.environ.get('API_KEY')
         url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
-        # url = f'https://sandbox.iexapis.com/stable/stock/market/list/losers/?token={api_key_test}'
+
         response = requests.get(url)
-        # response.raise_for_status()
     except requests.RequestException:
         return None
 
@@ -139,9 +128,8 @@ def getListLosers():
 
 def getCryto(symbol):
   try:
-    # api_key_test: os.environ.get('API_KEY_TEST')
-    api_key: os.environ.get('API_KEY')
-    url = f'https://iexapis.com/stable/crypto/{symbol}/price/?token={os.environ.get("API_KEY")}'
+    api_key = os.environ.get('API_KEY')
+    url = f'https://cloud.iexapis.com/stable/crypto/{symbol}/price/?token={api_key}'
 
     response = requests.get(url)
   except requests.RequestException:
@@ -157,10 +145,8 @@ def getCompanyDetails(symbol):
   # cloud.iexapis.com ~ company details  ~
     # Contact API and convert into python dictionary
     try:
-        # api_key_test = os.environ.get('API_KEY_TEST')
         api_key = os.environ.get('API_KEY')
-        url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
-        # url = f'https://sandbox.iexapis.com/stable/stock/{symbol}/company/?token={api_key_test}'
+        url = f'https://cloud.iexapis.com/stable/stock/{symbol}/company/?token={api_key}'
 
         response = requests.get(url)
     except requests.RequestException:
@@ -176,10 +162,8 @@ def getCompanyDetails(symbol):
 def getQuote(symbol):
   # cloud.iexapis.com ~ quote ~
   try: 
-    # api_key_test = os.environ.get('API_KEY_TEST')
     api_key = os.environ.get('API_KEY')
-    url = f'https://cloud.iexapis.com/stable/stock/market/list/mostactive/?token={api_key}'
-    # url = f'https://sandbox.iexapis.com/stable/stock/{symbol}/quote/?token={api_key_test}'
+    url = f'https://cloud.iexapis.com/stable/stock/{symbol}/quote/?token={api_key}'
 
     response = requests.get(url)
     response.raise_for_status()
