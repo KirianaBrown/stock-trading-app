@@ -5,7 +5,9 @@
     <img src="./app/static/img/logo.svg" alt="Project Demo" width="100" height="100">
   </a>
 
-  <h2 align="center">Stock Trading Simulator</h2>
+  <a href="https://stocks50.herokuapp.com/" target="__blank">
+    <h2 align="center">Stock Trading Simulator</h2>
+  </a>
 
   <p align="center">
     A stock trading simulation application which allows users to get upto date share prices and curate a portfolio of investments.
